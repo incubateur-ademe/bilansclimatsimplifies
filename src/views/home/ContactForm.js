@@ -14,17 +14,23 @@ export default function ContactForm() {
         Entrez votre email ci-dessous pour être recontacté à la sortie de cet
         outil
       </StyledText>
-      <form onSubmit={() => console.log(email)}>
+      <form
+        onSubmit={(e) => {
+          e.preventDefault()
+          console.log(email)
+        }}
+      >
         <TextInput
           value={email}
           onChange={(e) => {
             setEmail(e.target.value)
           }}
           label='Votre email'
+          name='email'
           type='email'
           required
         />
-        <Button type='submit'>Me tenir informé</Button>
+        <Button submit>Me tenir informé</Button>
       </form>
     </Highlight>
   )
