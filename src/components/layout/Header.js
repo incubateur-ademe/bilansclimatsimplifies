@@ -1,5 +1,4 @@
-import React, { useEffect, useState } from 'react'
-import { Link as RouterLink, useLocation } from 'react-router-dom'
+import React from 'react'
 import {
   Header as Wrapper,
   HeaderOperator,
@@ -11,15 +10,6 @@ import {
 import Ademe from 'components/base/Ademe'
 
 export default function Header() {
-  const location = useLocation()
-  const [path, setPath] = useState(() => location.pathname || '')
-  const [isOpen, setIsOpen] = useState(false)
-
-  useEffect(() => {
-    if (path !== location.pathname) {
-      setPath(location.pathname)
-    }
-  }, [path, setPath, location])
   return (
     <Wrapper>
       <HeaderBody>
