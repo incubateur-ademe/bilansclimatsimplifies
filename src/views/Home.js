@@ -4,7 +4,7 @@ import { Row, Col, Text, Title } from '@dataesr/react-dsfr'
 import ContactForm from './home/ContactForm'
 export default function Home() {
   return (
-    <Row>
+    <Row gutters alignItems='middle'>
       <Col>
         <Title as='h1'>Bilans Climat Simplifiés</Title>
         <Text size='lead'>
