@@ -12,9 +12,7 @@ import {
 export default function Header() {
   return (
     <Footer>
-      <FooterBody
-        description={`Retrouvez très prochainement l'outil Bilan Climat simplifié afin de réaliser vos bilans carbone d'entreprise sur les postes 1 & 2 du scope 1.`}
-      >
+      <FooterBody description='Plateforme réglementaire telle que prévue par l’article 244 de la loi n° 2020-1721 du 29 décembre 2020.'>
         <Logo splitCharacter={10}>République Française</Logo>
         <FooterBodyItem>
           <Link href='https://www.ademe.fr/'>ademe.fr</Link>
