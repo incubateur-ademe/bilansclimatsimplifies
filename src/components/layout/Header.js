@@ -17,7 +17,10 @@ export default function Header() {
         <HeaderOperator>
           <Ademe />
         </HeaderOperator>
-        <Service title='Bilans Climat Simplifiés' />
+        <Service
+          title='Bilans Climat Simplifiés'
+          description='Plateforme réglementaire telle que prévue par l’article 244 de la loi n° 2020-1721 du 29 décembre 2020.'
+        />
       </HeaderBody>
     </Wrapper>
   )
