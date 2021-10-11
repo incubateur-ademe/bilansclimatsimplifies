@@ -1,20 +1,29 @@
 import React from 'react'
-import { Row, Col, Text, Title, Highlight } from '@dataesr/react-dsfr'
+import { Row, Col, Text, Title } from '@dataesr/react-dsfr'
 
 import ContactForm from './home/ContactForm'
+
 export default function Home() {
   return (
-    <Row gutters alignItems='middle'>
-      <Col>
-        <Title as='h1'>Bilans Climat Simplifiés</Title>
-        <Text size='lead'>
-          Vous êtes une entreprise de moins de 500 salariés et avez reçu une
-          aide de l’Etat dans le cadre du Plan de Relance ? Vous pourrez
-          prochainement calculer et publier votre Bilan Climat Simplifié sur ce
-          site.
-        </Text>
-        <ContactForm />
-        <Highlight>
+    <>
+      <Row gutters alignItems='middle'>
+        <Col>
+          <Title as='h1'>Bilans Climat Simplifiés</Title>
+          <Text size='lead'>
+            Vous êtes une entreprise de moins de 500 salariés et avez reçu une
+            aide de l’Etat dans le cadre du Plan de Relance ? Vous pourrez
+            prochainement calculer et publier votre Bilan Climat Simplifié sur
+            ce site.
+          </Text>
+        </Col>
+      </Row>
+      <Row gutters alignItems='middle'>
+        <Col>
+          <ContactForm />
+        </Col>
+      </Row>
+      <Row gutters alignItems='middle'>
+        <Col>
           <Text>
             Le Bilan Climat Simplifié prévu au 1° du I de l'article 244 de la
             loi n° 2020-1721 porte sur les émissions de Gaz à Effet de Serre
@@ -37,8 +46,8 @@ export default function Home() {
               l’environnement.
             </li>
           </ul>
-        </Highlight>
-      </Col>
-    </Row>
+        </Col>
+      </Row>
+    </>
   )
 }

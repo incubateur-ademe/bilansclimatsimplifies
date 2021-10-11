@@ -1,34 +1,29 @@
 import React, { useState } from 'react'
 import styled from 'styled-components'
-import {
-  TextInput,
-  Button,
-  Callout,
-  CalloutTitle,
-  CalloutText,
-  Alert,
-} from '@dataesr/react-dsfr'
+
+import { TextInput, Button, Callout, Text, Alert } from '@dataesr/react-dsfr'
 
 import useSubscribeEmail from 'hooks/useSubscribeEmail'
 
-const Form = styled.form``
+const StyledCallout = styled(Callout)`
+  margin-bottom: 2rem;
+`
 export default function ContactForm() {
   const [email, setEmail] = useState('')
 
   const mutation = useSubscribeEmail()
   return (
-    <Callout>
-      <Form
+    <StyledCallout>
+      <form
         onSubmit={(e) => {
           e.preventDefault()
           mutation.mutate(email)
         }}
       >
-        <CalloutTitle>Contact</CalloutTitle>
-        <CalloutText>
+        <Text>
           Entrez votre email ci-dessous pour être recontacté à la sortie de cet
           outil
-        </CalloutText>
+        </Text>
         <TextInput
           value={email}
           onChange={(e) => {
@@ -57,7 +52,7 @@ export default function ContactForm() {
         {mutation.isSuccess && (
           <Alert title='Vous êtes inscrit' type='success' small />
         )}
-      </Form>
-    </Callout>
+      </form>
+    </StyledCallout>
   )
 }
