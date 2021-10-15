@@ -33,6 +33,7 @@ export default function Home() {
             <a
               href='https://www.legifrance.gouv.fr/jorf/article_jo/JORFARTI000042753853'
               target='_blank'
+              rel='noreferrer'
             >
               1° du I de l'article 244 de la loi n° 2020-1721
             </a>{' '}
