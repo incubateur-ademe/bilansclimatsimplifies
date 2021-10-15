@@ -1,19 +1,28 @@
 import React, { useState } from 'react'
 import styled from 'styled-components'
 
-import { TextInput, Button, Callout, Text, Alert } from '@dataesr/react-dsfr'
+import { TextInput, Button, Highlight, Text, Alert } from '@dataesr/react-dsfr'
 
 import useSubscribeEmail from 'hooks/useSubscribeEmail'
 
-const StyledCallout = styled(Callout)`
-  margin-bottom: 2rem;
+const StyledHighlight = styled(Highlight)`
+  max-width: 36.5rem;
+  margin: 0 0 2rem;
+  padding: 1rem 0 0 2rem;
+
+  p {
+    margin-bottom: 1rem;
+  }
+`
+const StyledButton = styled(Button)`
+  margin-bottom: 1rem;
 `
 export default function ContactForm() {
   const [email, setEmail] = useState('')
 
   const mutation = useSubscribeEmail()
   return (
-    <StyledCallout>
+    <StyledHighlight>
       <form
         onSubmit={(e) => {
           e.preventDefault()
@@ -21,8 +30,7 @@ export default function ContactForm() {
         }}
       >
         <Text>
-          Entrez votre email ci-dessous pour être recontacté à la sortie de cet
-          outil
+          Entrez votre email pour être recontacté à la sortie de cet outil
         </Text>
         <TextInput
           value={email}
@@ -34,9 +42,9 @@ export default function ContactForm() {
           type='email'
           required
         />
-        <Button submit disabled={mutation.isLoading}>
+        <StyledButton submit disabled={mutation.isLoading}>
           Me tenir informé
-        </Button>
+        </StyledButton>
         {mutation.isError && (
           <Alert
             title={
@@ -53,6 +61,6 @@ export default function ContactForm() {
           <Alert title='Vous êtes inscrit' type='success' small />
         )}
       </form>
-    </StyledCallout>
+    </StyledHighlight>
   )
 }

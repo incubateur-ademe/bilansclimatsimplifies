@@ -5,7 +5,7 @@ import Header from './Header'
 import Footer from './Footer'
 
 const StyledContainer = styled(Container)`
-  max-width: 64rem;
+  max-width: 49rem;
   min-height: 100vh;
   padding: 3rem 0;
 `

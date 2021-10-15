@@ -1,8 +1,12 @@
 import React from 'react'
+import styled from 'styled-components'
 import { Row, Col, Text, Title } from '@dataesr/react-dsfr'
 
 import ContactForm from './home/ContactForm'
 
+const StyledText = styled(Text)`
+  margin-bottom: 0.75rem;
+`
 export default function Home() {
   return (
     <>
@@ -24,12 +28,18 @@ export default function Home() {
       </Row>
       <Row gutters alignItems='middle'>
         <Col>
-          <Text>
-            Le Bilan Climat Simplifié prévu au 1° du I de l'article 244 de la
-            loi n° 2020-1721 porte sur les émissions de Gaz à Effet de Serre
-            (GES) directes produites par les sources d'énergie fixes et mobiles
-            nécessaires aux activités de votre entreprise :{' '}
-          </Text>
+          <StyledText>
+            Le Bilan Climat Simplifié prévu au{' '}
+            <a
+              href='https://www.legifrance.gouv.fr/jorf/article_jo/JORFARTI000042753853'
+              target='_blank'
+            >
+              1° du I de l'article 244 de la loi n° 2020-1721
+            </a>{' '}
+            porte sur les émissions de Gaz à Effet de Serre (GES) directes
+            produites par les sources d'énergie fixes et mobiles nécessaires aux
+            activités de votre entreprise :{' '}
+          </StyledText>
           <ul>
             <li>
               Le poste 1 du Bilan Climat Simplifié correspond aux émissions
@@ -39,13 +49,15 @@ export default function Home() {
             <li>
               Le poste 2 du Bilan Climat Simplifié correspond aux émissions
               directes de GES des sources mobiles contrôlées par votre
-              entreprise. Le calculateur de ce site vous proposera selon une
-              approche de contrôle opérationnel d’identifier et de quantifier
-              ces émissions de façon cohérente avec la méthodologie
-              réglementaire relative à l’article R. 229-49 du code de
-              l’environnement.
+              entreprise.
             </li>
           </ul>
+          <StyledText>
+            Le calculateur de ce site vous proposera selon une approche de
+            contrôle opérationnel d’identifier et de quantifier ces émissions de
+            façon cohérente avec la méthodologie réglementaire relative à
+            l’article R. 229-49 du code de l’environnement.
+          </StyledText>
         </Col>
       </Row>
     </>
