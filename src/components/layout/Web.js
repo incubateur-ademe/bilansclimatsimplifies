@@ -5,9 +5,10 @@ import Header from './Header'
 import Footer from './Footer'
 
 const StyledContainer = styled(Container)`
-  max-width: 49rem;
+  max-width: 52rem;
   min-height: 100vh;
-  padding: 3rem 0;
+  padding-top: 3rem;
+  padding-bottom: 3rem;
 `
 export default function Web(props) {
   return (
