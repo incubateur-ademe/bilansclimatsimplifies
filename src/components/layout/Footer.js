@@ -12,7 +12,7 @@ import {
 export default function Header() {
   return (
     <Footer>
-      <FooterBody description='Plateforme réglementaire telle que prévue par l’article 244 de la loi n° 2020-1721 du 29 décembre 2020.'>
+      <FooterBody description='Plateforme de calcul et transmission des bilans simplifiés prévus par l’article 244 de la loi n° 2020-1721 du 29 décembre 2020'>
         <Logo splitCharacter={10}>République Française</Logo>
         <FooterBodyItem>
           <Link href='https://www.ademe.fr/'>ademe.fr</Link>
