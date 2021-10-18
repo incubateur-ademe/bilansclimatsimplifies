@@ -14,7 +14,7 @@ export default function Home() {
         <Col>
           <Title as='h1'>Bilans Climat Simplifiés</Title>
           <Text size='lead'>
-            Vous êtes une entreprise de moins de 500 salariés et avez reçu une
+            Vous êtes une entreprise employant entre 50 et 500 salariés et avez reçu une
             aide de l’Etat dans le cadre du Plan de Relance ? Vous pourrez
             prochainement calculer et publier votre Bilan Climat Simplifié sur
             ce site.
