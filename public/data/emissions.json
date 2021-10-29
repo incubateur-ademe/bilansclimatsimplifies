@@ -1,0 +1,32 @@
+[
+  {
+    "id": 1,
+    "bilan": 3,
+    "poste": 2,
+    "type": "Type 1 du poste 2",
+    "valeur": 1.0,
+    "unite": "Unité 1",
+    "note": "Note 1",
+    "resultat": 4
+  },
+  {
+    "id": 2,
+    "bilan": 3,
+    "poste": 1,
+    "type": "Type 1 du poste 1",
+    "valeur": 1.0,
+    "unite": "Unité 1",
+    "note": "Note 1",
+    "resultat": 2
+  },
+  {
+    "id": 3,
+    "bilan": 3,
+    "poste": 1,
+    "type": "Type 2 du poste 1",
+    "valeur": 3.0,
+    "unite": "Unité 2",
+    "note": "Note 2",
+    "resultat": 4
+  }
+]

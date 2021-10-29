@@ -2,7 +2,7 @@ import React from 'react'
 import styled from 'styled-components'
 import { Row, Col, Text, Title } from '@dataesr/react-dsfr'
 
-import ContactForm from './home/ContactForm'
+import LoginForm from './home/LoginForm'
 
 const StyledText = styled(Text)`
   margin-bottom: 0.75rem;
@@ -14,16 +14,15 @@ export default function Home() {
         <Col>
           <Title as='h1'>Bilans Climat Simplifiés</Title>
           <Text size='lead'>
-            Vous êtes une entreprise employant entre 50 et 500 salariés et avez reçu une
-            aide de l’Etat dans le cadre du Plan de Relance ? Vous pourrez
-            prochainement calculer et publier votre Bilan Climat Simplifié sur
-            ce site.
+            Vous êtes une entreprise employant entre 50 et 500 salariés et avez
+            reçu une aide de l’Etat dans le cadre du Plan de Relance ? Calculez
+            et publiez votre Bilan Climat Simplifié sur ce site.
           </Text>
         </Col>
       </Row>
       <Row gutters alignItems='middle'>
         <Col>
-          <ContactForm />
+          <LoginForm />
         </Col>
       </Row>
       <Row gutters alignItems='middle'>
