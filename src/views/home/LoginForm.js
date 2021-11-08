@@ -57,7 +57,7 @@ export default function ContactForm() {
           }}
           label={`Mot de passe`}
           name='password'
-          type='text'
+          type='password'
           required
         />
         <StyledButton submit disabled={mutation.isLoading}>

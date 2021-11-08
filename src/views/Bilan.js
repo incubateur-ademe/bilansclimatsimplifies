@@ -2,7 +2,7 @@ import React, { useEffect } from 'react'
 import { useParams, useHistory } from 'react-router-dom'
 
 import { useBilan } from 'hooks/useBilans'
-import { useEmissions } from 'hooks/useEmissions'
+import { useEmissions } from 'hooks/useBilans'
 
 export default function Bilan() {
   const history = useHistory()

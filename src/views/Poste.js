@@ -2,7 +2,7 @@ import React from 'react'
 import { useParams } from 'react-router-dom'
 
 import { useBilan } from 'hooks/useBilans'
-import { useEmissions } from 'hooks/useEmissions'
+import { useEmissions } from 'hooks/useBilans'
 import MagicLink from 'components/base/MagicLink'
 import Emission from './poste/Emission'
 import Empty from './poste/Empty'

@@ -2,6 +2,7 @@ import React from 'react'
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom'
 import { QueryClient, QueryClientProvider } from 'react-query'
 
+import PrivateRoute from 'components/base/PrivateRoute'
 import Web from 'components/layout/Web'
 import Home from 'views/Home'
 import NewBilan from 'views/NewBilan'
@@ -17,18 +18,18 @@ function App() {
       <QueryClientProvider client={queryClient}>
         <Web>
           <Switch>
-            <Route path='/bilans/nouveau'>
+            <PrivateRoute path='/bilans/nouveau'>
               <NewBilan />
-            </Route>
-            <Route path='/bilans/:id/:poste'>
+            </PrivateRoute>
+            <PrivateRoute path='/bilans/:id/:poste'>
               <Poste />
-            </Route>
-            <Route path='/bilans/:id'>
+            </PrivateRoute>
+            <PrivateRoute path='/bilans/:id'>
               <Bilan />
-            </Route>
-            <Route path='/bilans'>
+            </PrivateRoute>
+            <PrivateRoute path='/bilans'>
               <Bilans />
-            </Route>
+            </PrivateRoute>
             <Route path='/'>
               <Home />
             </Route>

@@ -1,6 +1,8 @@
 import React from 'react'
 import styled from 'styled-components'
-import { Container } from '@dataesr/react-dsfr'
+import { Button, Container } from '@dataesr/react-dsfr'
+
+import { useLocalToken } from 'hooks/useUser'
 import Header from './Header'
 import Footer from './Footer'
 
@@ -11,9 +13,12 @@ const StyledContainer = styled(Container)`
   padding-bottom: 3rem;
 `
 export default function Web(props) {
+  const { token, setToken } = useLocalToken()
+  console.log(token)
   return (
     <>
       <Header />
+      {token && <Button onClick={() => setToken(null)}>Logout</Button>}
       <StyledContainer role='main'>{props.children}</StyledContainer>
       <Footer />
     </>

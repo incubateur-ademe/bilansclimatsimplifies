@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 import { Button, TextInput } from '@dataesr/react-dsfr'
 
-import { useEmissionsMutation } from 'hooks/useEmissions'
+import { useEmissionsCreation } from 'hooks/useBilans'
 
 export default function NewEmission(props) {
   const [open, setOpen] = useState(false)
@@ -11,7 +11,7 @@ export default function NewEmission(props) {
   const [unite, setUnite] = useState('')
   const [note, setNote] = useState('')
 
-  const mutation = useEmissionsMutation()
+  const mutation = useEmissionsCreation()
 
   return open ? (
     <form
