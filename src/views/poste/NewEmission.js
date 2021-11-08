@@ -53,8 +53,11 @@ export default function NewEmission(props) {
         value={note}
         onChange={(e) => setNote(e.target.value)}
       />
-      <Button onClick={() => setOpen(false)}>Annuler</Button>
+
       <Button submit>Ajouter une source d'émission</Button>
+      <br />
+      <br />
+      <Button onClick={() => setOpen(false)}>Annuler</Button>
     </form>
   ) : (
     <Button onClick={() => setOpen(true)}>Ajouter une source d'émission</Button>

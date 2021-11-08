@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react'
 import styled from 'styled-components'
 import { Button, TextInput } from '@dataesr/react-dsfr'
 
-import { useEmissionsMutation } from 'hooks/useBilans'
+import { useEmissionsMutation, useEmissionsDeletion } from 'hooks/useBilans'
 
 const Wrapper = styled.div`
   border: 1px solid;
@@ -24,6 +24,7 @@ export default function Emission(props) {
   }, [props.emission])
 
   const mutation = useEmissionsMutation(props.emission.id)
+  const deletion = useEmissionsDeletion(props.emission.id)
 
   return (
     <Wrapper>
@@ -70,14 +71,22 @@ export default function Emission(props) {
       ) : (
         <>
           <h2>
-            {props.emission.type} - {props.emission.note}
+            {props.emission.type}{' '}
+            {props.emission.note && <>- {props.emission.note}</>}
           </h2>
           <div>
             {props.emission.valeur} {props.emission.unite}
           </div>
+          <div>
+            <strong>{props.emission.resultat}</strong>
+          </div>
           <Button onClick={() => setEdit(true)}>Éditer</Button>
+          <br />
         </>
       )}
+
+      <br />
+      <Button onClick={() => deletion.mutate()}>Supprimer</Button>
     </Wrapper>
   )
 }
