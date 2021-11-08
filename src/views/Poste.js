@@ -1,7 +1,8 @@
 import React from 'react'
-import { useParams } from 'react-router-dom'
+import { useParams, useHistory } from 'react-router-dom'
+import { Button } from '@dataesr/react-dsfr'
 
-import { useBilan } from 'hooks/useBilans'
+import { useBilan, useBilansMutation } from 'hooks/useBilans'
 import { useEmissions } from 'hooks/useEmissions'
 import MagicLink from 'components/base/MagicLink'
 import Emission from './poste/Emission'
@@ -9,11 +10,14 @@ import Empty from './poste/Empty'
 import NewEmission from './poste/NewEmission'
 
 export default function Poste() {
+  const history = useHistory()
+
   const { id, poste: posteSlug } = useParams()
   const poste = posteSlug === 'poste1' ? 1 : 2
 
   const { data: bilan } = useBilan(id)
   const { data: emissions } = useEmissions(id)
+  const mutation = useBilansMutation(id)
 
   return (
     <div>
@@ -50,7 +54,22 @@ export default function Poste() {
             <MagicLink to={`/bilans/${id}/poste1`}>
               Revenir au poste 1
             </MagicLink>{' '}
-            <MagicLink to={`/bilans/${id}`}>Valider mon bilan</MagicLink>
+            <Button
+              onClick={() =>
+                mutation.mutate(
+                  {
+                    statut: 'publié',
+                  },
+                  {
+                    onSuccess: () => {
+                      history.push(`/bilans/${id}`)
+                    },
+                  }
+                )
+              }
+            >
+              Valider mon bilan
+            </Button>
           </>
         )}
       </div>

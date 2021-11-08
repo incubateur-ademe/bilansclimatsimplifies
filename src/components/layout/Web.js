@@ -23,7 +23,6 @@ export default function Web(props) {
         {token && <Button onClick={() => setToken(null)}>Logout</Button>}
         {props.children}
       </StyledContainer>
-      <Button onClick={() => setToken('12')}>Test</Button>
       <Footer />
     </>
   )
