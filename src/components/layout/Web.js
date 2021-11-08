@@ -1,8 +1,8 @@
-import React from 'react'
+import React, { useContext } from 'react'
 import styled from 'styled-components'
 import { Button, Container } from '@dataesr/react-dsfr'
 
-import { useLocalToken } from 'hooks/useUser'
+import AuthContext from 'utils/AuthContext'
 import Header from './Header'
 import Footer from './Footer'
 
@@ -13,13 +13,17 @@ const StyledContainer = styled(Container)`
   padding-bottom: 3rem;
 `
 export default function Web(props) {
-  const { token, setToken } = useLocalToken()
-  console.log(token)
+  const { token, setToken } = useContext(AuthContext)
+
   return (
     <>
       <Header />
-      {token && <Button onClick={() => setToken(null)}>Logout</Button>}
-      <StyledContainer role='main'>{props.children}</StyledContainer>
+
+      <StyledContainer role='main'>
+        {token && <Button onClick={() => setToken(null)}>Logout</Button>}
+        {props.children}
+      </StyledContainer>
+      <Button onClick={() => setToken('12')}>Test</Button>
       <Footer />
     </>
   )

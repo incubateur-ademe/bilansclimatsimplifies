@@ -1,6 +1,7 @@
 import React from 'react'
 
 import { useBilans } from 'hooks/useBilans'
+
 import MagicLink from 'components/base/MagicLink'
 import Bilan from './bilans/Bilan'
 import Empty from './bilans/Empty'

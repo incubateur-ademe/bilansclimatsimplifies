@@ -2,7 +2,8 @@ import React, { useEffect } from 'react'
 import { useParams, useHistory } from 'react-router-dom'
 
 import { useBilan } from 'hooks/useBilans'
-import { useEmissions } from 'hooks/useBilans'
+import { useEmissions } from 'hooks/useEmissions'
+import MagicLink from 'components/base/MagicLink'
 
 export default function Bilan() {
   const history = useHistory()
@@ -18,6 +19,7 @@ export default function Bilan() {
 
   return (
     <div>
+      <MagicLink to={`/bilans`}>Retour à la liste des bilans</MagicLink>
       <h1>
         {bilan && bilan.raisonSociale} - {bilan && bilan.annee} - Bilan terminé
       </h1>

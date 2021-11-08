@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react'
 import styled from 'styled-components'
 import { Button, TextInput } from '@dataesr/react-dsfr'
 
-import { useEmissionsMutation, useEmissionsDeletion } from 'hooks/useBilans'
+import { useEmissionsMutation, useEmissionsDeletion } from 'hooks/useEmissions'
 
 const Wrapper = styled.div`
   border: 1px solid;

@@ -2,7 +2,7 @@ import React from 'react'
 import { useParams } from 'react-router-dom'
 
 import { useBilan } from 'hooks/useBilans'
-import { useEmissions } from 'hooks/useBilans'
+import { useEmissions } from 'hooks/useEmissions'
 import MagicLink from 'components/base/MagicLink'
 import Emission from './poste/Emission'
 import Empty from './poste/Empty'
@@ -17,6 +17,7 @@ export default function Poste() {
 
   return (
     <div>
+      <MagicLink to={`/bilans`}>Retour à la liste des bilans</MagicLink>
       <h1>
         {bilan && bilan.raisonSociale} - {bilan && bilan.annee} - Poste {poste}
       </h1>

@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 import { Button, TextInput } from '@dataesr/react-dsfr'
 
-import { useEmissionsCreation } from 'hooks/useBilans'
+import { useEmissionsCreation } from 'hooks/useEmissions'
 
 export default function NewEmission(props) {
   const [open, setOpen] = useState(false)

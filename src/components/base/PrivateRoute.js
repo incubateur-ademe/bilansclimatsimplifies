@@ -1,10 +1,10 @@
-import React from 'react'
+import React, { useContext } from 'react'
 import { Route, Redirect } from 'react-router-dom'
 
-import { useLocalToken } from 'hooks/useUser'
+import AuthContext from 'utils/AuthContext'
 
 export default function PrivateRoute({ children, ...rest }) {
-  const { token } = useLocalToken()
+  const { token } = useContext(AuthContext)
 
   return (
     <Route

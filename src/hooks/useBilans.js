@@ -13,57 +13,27 @@ export function useBilan(id) {
     axios.get(`${apiUrl}/bilans/${id || ''}`).then((res) => res.data)
   )
 }
-
+export function useBilansCreation() {
+  const queryClient = useQueryClient()
+  return useMutation((bilan) => axios.post(`${apiUrl}/bilans/`, bilan), {
+    onSettled: () => {
+      queryClient.invalidateQueries(['bilans'])
+    },
+  })
+}
 export function useBilansMutation(id) {
   const queryClient = useQueryClient()
-  return useMutation(
-    (bilan) => axios.get(`${apiUrl}/bilans/${id || ''}`, bilan),
-    {
-      onSettled: () => {
-        queryClient.invalidateQueries(['bilans'])
-      },
-    }
-  )
-}
-
-export function useEmissions(bilan) {
-  return useQuery(['emissions', bilan], () =>
-    axios.get(`${apiUrl}/bilans/${bilan}/emissions`).then((res) =>
-      res.data.map((emission) => ({
-        ...emission,
-        resultat: emission.valeur * 2,
-      }))
-    )
-  )
-}
-
-export function useEmissionsCreation() {
-  const queryClient = useQueryClient()
-  return useMutation(
-    (emission) => axios.post(`${apiUrl}/emissions/`, emission),
-    {
-      onSettled: () => {
-        queryClient.invalidateQueries(['emissions'])
-      },
-    }
-  )
-}
-export function useEmissionsMutation(id) {
-  const queryClient = useQueryClient()
-  return useMutation(
-    (emission) => axios.patch(`${apiUrl}/emissions/${id}`, emission),
-    {
-      onSettled: () => {
-        queryClient.invalidateQueries(['emissions'])
-      },
-    }
-  )
-}
-export function useEmissionsDeletion(id) {
-  const queryClient = useQueryClient()
-  return useMutation(() => axios.delete(`${apiUrl}/emissions/${id}`), {
+  return useMutation((bilan) => axios.patch(`${apiUrl}/bilans/${id}`, bilan), {
     onSettled: () => {
-      queryClient.invalidateQueries(['emissions'])
+      queryClient.invalidateQueries(['bilans'])
+    },
+  })
+}
+export function useBilansDeletion(id) {
+  const queryClient = useQueryClient()
+  return useMutation(() => axios.delete(`${apiUrl}/bilans/${id || ''}`), {
+    onSettled: () => {
+      queryClient.invalidateQueries(['bilans'])
     },
   })
 }

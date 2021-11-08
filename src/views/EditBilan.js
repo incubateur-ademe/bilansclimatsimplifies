@@ -1,12 +1,17 @@
-import React, { useState } from 'react'
-import { useHistory } from 'react-router-dom'
+import React, { useState, useEffect } from 'react'
+import { useParams, useHistory } from 'react-router-dom'
 
-import { useBilansCreation } from 'hooks/useBilans'
+import { useBilan, useBilansMutation } from 'hooks/useBilans'
 import { Alert, Button, TextInput } from '@dataesr/react-dsfr'
 import MagicLink from 'components/base/MagicLink'
 
-export default function AddBilan() {
+export default function EditBilan() {
   const history = useHistory()
+
+  const { id } = useParams()
+
+  const { data: bilan } = useBilan(id)
+  const mutation = useBilansMutation(id)
 
   const [raisonSociale, setRaisonSociale] = useState('')
   const [nombreSalaries, setNombreSalaries] = useState('')
@@ -15,7 +20,16 @@ export default function AddBilan() {
   const [region, setRegion] = useState('')
   const [annee, setAnnee] = useState('')
 
-  const mutation = useBilansCreation()
+  useEffect(() => {
+    if (bilan) {
+      setRaisonSociale(bilan.raisonSociale)
+      setNombreSalaries(bilan.nombreSalaries)
+      setSiren(bilan.siren)
+      setNaf(bilan.naf)
+      setRegion(bilan.region)
+      setAnnee(bilan.annee)
+    }
+  }, [bilan])
 
   return (
     <form
@@ -75,7 +89,7 @@ export default function AddBilan() {
         required
       />
       <MagicLink to='/bilans'>Annuler</MagicLink>
-      <Button submit>Ajouter un bilan</Button>
+      <Button submit>Éditer ce bilan</Button>
       {mutation.isError && (
         <Alert type='error' title='Une erreur est survenue' />
       )}
