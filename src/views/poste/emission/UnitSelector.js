@@ -28,7 +28,10 @@ export default function TypeSelector(props) {
         ...(props.type
           ? Object.entries(
               facteurEmission[props.type].facteurs['France continentale']
-            ).map((fe) => ({ value: fe[0], label: fe[0] }))
+            ).map((fe) => ({
+              value: fe[0].split('/')[1],
+              label: fe[0].split('/')[1],
+            }))
           : []),
       ]}
     />

@@ -15,6 +15,7 @@ export default function TypeSelector(props) {
         { value: '', label: '', disabled: true, hidden: true },
         ...Object.entries(facteurEmission)
           .filter((entry) => Number(entry[1].poste) === props.poste)
+          .sort((a, b) => (a[0].toLowerCase() > b[0].toLowerCase() ? 1 : -1))
           .map((entry) => ({ value: entry[0], label: entry[0] })),
       ]}
     />

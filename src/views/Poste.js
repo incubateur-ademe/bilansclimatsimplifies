@@ -1,6 +1,7 @@
 import React from 'react'
+import styled from 'styled-components'
 import { useParams, useHistory } from 'react-router-dom'
-import { Button, ButtonGroup, Title } from '@dataesr/react-dsfr'
+import { Button, ButtonGroup, Callout, CalloutTitle } from '@dataesr/react-dsfr'
 
 import { useBilan, useBilansMutation } from 'hooks/useBilans'
 import { useEmissions } from 'hooks/useEmissions'
@@ -9,6 +10,9 @@ import Emission from './poste/Emission'
 import Empty from './poste/Empty'
 import NewEmission from './poste/NewEmission'
 
+const StyledCalloutTitle = styled(CalloutTitle)`
+  text-align: center;
+`
 export default function Poste() {
   const history = useHistory()
 
@@ -44,22 +48,18 @@ export default function Poste() {
         <Empty />
       )}
       <NewEmission bilan={id} poste={poste} />
-      <div>
-        <hr />
-        <Title as='h2'>
+      <br />
+      <br />
+      <Callout hasInfoIcon={false}>
+        <StyledCalloutTitle as='h3'>
           {' '}
-          Total :{' '}
-          {emissions &&
-            emissions
-              .filter((emission) => emission.poste === poste)
-              .reduce((acc, cur) => acc + cur.resultat, 0)}{' '}
-          kgCO2e
-        </Title>
+          Total : {bilan && bilan[`poste${poste}`]} kgCO2e
+        </StyledCalloutTitle>
         {poste === 1 ? (
-          <ButtonGroup isInlineFrom='md' align='right'>
+          <ButtonGroup isInlineFrom='md' align='center' isEquisized>
             <MagicLink to={`/bilans/${id}/`}>
               <Button secondary icon='fr-fi-arrow-left-s-line-double'>
-                Revenir aux informations du bilan
+                Revenir au bilan
               </Button>
             </MagicLink>
             <MagicLink to={`/bilans/${id}/poste2`}>
@@ -72,9 +72,9 @@ export default function Poste() {
             </MagicLink>
           </ButtonGroup>
         ) : (
-          <ButtonGroup isInlineFrom='md' align='right'>
+          <ButtonGroup isInlineFrom='md' align='center' isEquisized>
             <MagicLink to={`/bilans/${id}/poste1`}>
-              <Button icon='fr-fi-arrow-left-s-line-double'>
+              <Button secondary icon='fr-fi-arrow-left-s-line-double'>
                 Revenir au poste 1
               </Button>
             </MagicLink>
@@ -98,7 +98,7 @@ export default function Poste() {
             </Button>
           </ButtonGroup>
         )}
-      </div>
+      </Callout>
     </div>
   )
 }

@@ -58,7 +58,7 @@ export default function Emission(props) {
               <TypeSelector
                 value={type}
                 onChange={setType}
-                poste={props.poste}
+                poste={props.emission.poste}
               />
               <Values>
                 <TextInput
