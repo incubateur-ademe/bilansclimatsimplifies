@@ -18,7 +18,7 @@ export default function Poste(props) {
   const [localValue, setLocalValue] = useState(
     props.bilan[`poste${props.index}`]
   )
-  console.log(props.index)
+
   return (
     <Col>
       <Wrapper>

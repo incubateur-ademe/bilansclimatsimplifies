@@ -10,7 +10,7 @@ export default function Bilans() {
   const { data: bilans } = useBilans()
   return (
     <>
-      <h1>Bilans</h1>
+      <h1>Mes bilans</h1>
       {bilans && bilans.length ? (
         <>
           {bilans.map((bilan) => (

@@ -4,7 +4,6 @@ import axios from 'axios'
 import apiUrl, { baseUrl } from 'utils/apiUrl'
 
 export function useLoginUser(setToken) {
-  console.log(setToken)
   const { data: csrfToken } = useCsrfToken()
   return useMutation(
     (user) =>
