@@ -1,8 +1,7 @@
-import React, { useContext } from 'react'
+import React from 'react'
 import styled from 'styled-components'
-import { Button, Container } from '@dataesr/react-dsfr'
+import { Container } from '@dataesr/react-dsfr'
 
-import AuthContext from 'utils/AuthContext'
 import Header from './Header'
 import Footer from './Footer'
 
@@ -13,8 +12,6 @@ const StyledContainer = styled(Container)`
   padding-bottom: 3rem;
 `
 export default function Web(props) {
-  const { token, setToken } = useContext(AuthContext)
-
   return (
     <>
       <Header />
@@ -24,7 +21,6 @@ export default function Web(props) {
         <br />
         <br />
         <br />
-        {token && <Button onClick={() => setToken(null)}>Logout</Button>}
       </StyledContainer>
       <Footer />
     </>
