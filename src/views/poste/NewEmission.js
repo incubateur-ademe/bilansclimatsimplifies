@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
 import styled from 'styled-components'
 
 import { Button, ButtonGroup, TextInput } from '@dataesr/react-dsfr'
@@ -28,6 +28,18 @@ export default function NewEmission(props) {
   const [valeur, setValeur] = useState('')
   const [unite, setUnite] = useState('')
   const [note, setNote] = useState('')
+
+  useEffect(() => {
+    setType('')
+    setValeur('')
+    setUnite('')
+    setNote('')
+  }, [open])
+
+  const poste = props.poste
+  useEffect(() => {
+    setOpen(false)
+  }, [poste])
 
   const mutation = useEmissionsCreation()
 
