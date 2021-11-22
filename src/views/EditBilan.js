@@ -90,7 +90,13 @@ export default function EditBilan() {
       />
 
       <ButtonGroup align='right' isInlineFrom='md'>
-        <Button onClick={() => deletion.mutate()} secondary>
+        <Button
+          onClick={() =>
+            window.confirm('Souhaitez-vous vraiment supprimer ce bilan ?') &&
+            deletion.mutate()
+          }
+          secondary
+        >
           Supprimer ce bilan
         </Button>
         <Button submit>Faire ce bilan</Button>

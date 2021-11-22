@@ -92,7 +92,14 @@ export default function Emission(props) {
                 <strong>{props.emission.resultat} kgCO2e</strong>
               </div>
               <ButtonGroup isInlineFrom='md' align='right'>
-                <Button secondary onClick={() => deletion.mutate()}>
+                <Button
+                  secondary
+                  onClick={() =>
+                    window.confirm(
+                      "Souhaitez-vous vraiment supprimer cette source d'émission ?"
+                    ) && deletion.mutate()
+                  }
+                >
                   Supprimer
                 </Button>
                 <Button onClick={() => setEdit(true)}>Éditer</Button>

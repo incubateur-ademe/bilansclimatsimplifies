@@ -1,21 +1,37 @@
 import React from 'react'
-import { useParams } from 'react-router-dom'
+import { useParams, useHistory } from 'react-router-dom'
+import { Button, ButtonGroup } from '@dataesr/react-dsfr'
 
+import { useBilansMutation } from 'hooks/useBilans'
 import MagicLink from 'components/base/MagicLink'
 
 export default function TypeBilan() {
+  const history = useHistory()
+
   const { id } = useParams()
 
+  const mutation = useBilansMutation(id)
+
   return (
-    <div>
-      <MagicLink to={`/bilans/${id}/totaux`}>
+    <ButtonGroup isInlineFrom='md' align='center' isEquisized>
+      <Button
+        secondary
+        onClick={() =>
+          mutation.mutate(
+            { mode: 'manuel' },
+            {
+              onSuccess: () => {
+                history.push(`/bilans/${id}`)
+              },
+            }
+          )
+        }
+      >
         J'ai déja fait mon bilan
-      </MagicLink>
-      <br />
-      <br />
+      </Button>
       <MagicLink to={`/bilans/${id}/poste1`}>
-        Je n'ai pas déjà fait mon bilan
+        <Button>Je n'ai pas déjà fait mon bilan</Button>
       </MagicLink>
-    </div>
+    </ButtonGroup>
   )
 }
