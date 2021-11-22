@@ -21,7 +21,11 @@ export default function Poste() {
 
   return (
     <div>
-      <MagicLink to={`/bilans`}>Retour à la liste de mes bilans</MagicLink>
+      <MagicLink to={`/bilans`}>
+        <Button icon='fr-fi-arrow-left-s-line-double' secondary>
+          Retour à la liste de mes bilans
+        </Button>
+      </MagicLink>
       <h1>
         {bilan?.raisonSociale} - {bilan?.annee} - Poste {poste}
       </h1>

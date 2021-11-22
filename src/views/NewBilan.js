@@ -2,7 +2,7 @@ import React, { useState } from 'react'
 import { useHistory } from 'react-router-dom'
 
 import { useBilansCreation } from 'hooks/useBilans'
-import { Alert, Button, TextInput } from '@dataesr/react-dsfr'
+import { Alert, ButtonGroup, Button, TextInput } from '@dataesr/react-dsfr'
 import MagicLink from 'components/base/MagicLink'
 
 export default function AddBilan() {
@@ -74,8 +74,12 @@ export default function AddBilan() {
         onChange={(e) => setAnnee(e.target.value)}
         required
       />
-      <MagicLink to='/bilans'>Annuler</MagicLink>
-      <Button submit>Commencer mon bilan</Button>
+      <ButtonGroup isInlineFrom='md' align='right'>
+        <MagicLink to='/bilans'>
+          <Button secondary>Annuler</Button>
+        </MagicLink>
+        <Button submit>Commencer mon bilan</Button>
+      </ButtonGroup>
       {mutation.isError && (
         <Alert type='error' title='Une erreur est survenue' />
       )}

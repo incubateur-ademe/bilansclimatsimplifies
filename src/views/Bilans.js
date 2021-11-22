@@ -1,5 +1,5 @@
 import React from 'react'
-import { Row, Col } from '@dataesr/react-dsfr'
+import { Row, Col, ButtonGroup, Button } from '@dataesr/react-dsfr'
 
 import { useBilans } from 'hooks/useBilans'
 import MagicLink from 'components/base/MagicLink'
@@ -18,7 +18,11 @@ export default function Bilans() {
           ))}
           <Row gutters>
             <Col>
-              <MagicLink to={'/bilans/nouveau'}>Ajouter un bilan</MagicLink>
+              <ButtonGroup isInlineFrom='md' align='right'>
+                <MagicLink to={'/bilans/nouveau'}>
+                  <Button>Ajouter un bilan</Button>
+                </MagicLink>
+              </ButtonGroup>
             </Col>
           </Row>
         </>

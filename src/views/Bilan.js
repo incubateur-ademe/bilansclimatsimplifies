@@ -1,6 +1,13 @@
 import React from 'react'
 import { useParams, useHistory } from 'react-router-dom'
-import { Row, Col, Tile, TileBody, Button } from '@dataesr/react-dsfr'
+import {
+  Row,
+  Col,
+  Tile,
+  TileBody,
+  ButtonGroup,
+  Button,
+} from '@dataesr/react-dsfr'
 
 import { useBilan, useBilansDeletion } from 'hooks/useBilans'
 import MagicLink from 'components/base/MagicLink'
@@ -16,7 +23,11 @@ export default function Bilan() {
 
   return (
     <div>
-      <MagicLink to={`/bilans`}>Retour à la liste des bilans</MagicLink>
+      <MagicLink to={`/bilans`}>
+        <Button icon='fr-fi-arrow-left-s-line-double' secondary>
+          Retour à la liste de mes bilans
+        </Button>
+      </MagicLink>
       <h1>
         {bilan?.raisonSociale} - {bilan?.annee} - {bilan?.statut}
       </h1>
@@ -29,56 +40,58 @@ export default function Bilan() {
         <br />
         NAF : {bilan?.naf}
         <br />
-        <br />
-        <MagicLink to={`/bilans/${id}/infos`}>
-          Éditer les informations de ce bilan
-        </MagicLink>
       </p>
       <Row gutters>
         <Col>
           <Tile>
-            <TileBody
-              title={`Poste 1`}
-              linkHref={`/bilans/${bilan?.id}/poste1`}
-            >
+            <TileBody title={`Poste 1`}>
               {bilan?.poste1 || bilan?.poste1 === 0 ? (
-                <>Total : {bilan?.poste1}</>
+                <h3>{bilan?.poste1} kgCO2e</h3>
               ) : (
-                <Button onClick={() => ''}>
-                  Calculer les émissions du poste 1
-                </Button>
+                <>Calculer les émissions du poste 2</>
               )}
+              <MagicLink to={`/bilans/${bilan?.id}/poste1`}>
+                <Button>Éditer le poste 1</Button>
+              </MagicLink>
             </TileBody>
           </Tile>
         </Col>
         <Col>
           <Tile>
-            <TileBody
-              title={`Poste 2`}
-              linkHref={`/bilans/${bilan?.id}/poste2`}
-            >
+            <TileBody title={`Poste 2`}>
               {bilan?.poste2 || bilan?.poste2 === 0 ? (
-                <>Total : {bilan?.poste2}</>
+                <h3>{bilan?.poste2} kgCO2e</h3>
               ) : (
                 <>Calculer les émissions du poste 2</>
               )}
+              <MagicLink to={`/bilans/${bilan?.id}/poste2`}>
+                <Button>Éditer le poste 2</Button>
+              </MagicLink>
             </TileBody>
           </Tile>
         </Col>
       </Row>
+      <br />
+      <br />
       <Row gutters>
         <Col>
-          <Button
-            onClick={() =>
-              deletion.mutate(null, {
-                onSuccess: (data) => {
-                  history.push(`/bilans`)
-                },
-              })
-            }
-          >
-            Supprimer ce bilan
-          </Button>
+          <ButtonGroup isInlineFrom='md' align='right'>
+            <Button
+              secondary
+              onClick={() =>
+                deletion.mutate(null, {
+                  onSuccess: (data) => {
+                    history.push(`/bilans`)
+                  },
+                })
+              }
+            >
+              Supprimer ce bilan
+            </Button>
+            <MagicLink to={`/bilans/${id}/infos`}>
+              <Button>Éditer les informations de ce bilan</Button>
+            </MagicLink>
+          </ButtonGroup>
         </Col>
       </Row>
     </div>
