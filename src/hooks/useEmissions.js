@@ -15,6 +15,7 @@ export function useEmissionsCreation() {
     {
       onSettled: () => {
         queryClient.invalidateQueries(['emissions'])
+        queryClient.invalidateQueries(['bilan'])
       },
     }
   )
@@ -26,6 +27,7 @@ export function useEmissionsMutation(id) {
     {
       onSettled: () => {
         queryClient.invalidateQueries(['emissions'])
+        queryClient.invalidateQueries(['bilan'])
       },
     }
   )
@@ -35,6 +37,7 @@ export function useEmissionsDeletion(id) {
   return useMutation(() => axios.delete(`${apiUrl}/emissions/${id}`), {
     onSettled: () => {
       queryClient.invalidateQueries(['emissions'])
+      queryClient.invalidateQueries(['bilan'])
     },
   })
 }
