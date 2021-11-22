@@ -8,6 +8,7 @@ import Web from 'components/layout/Web'
 import Home from 'views/Home'
 import NewBilan from 'views/NewBilan'
 import EditBilan from 'views/EditBilan'
+import TypeBilan from 'views/TypeBilan'
 import Poste from 'views/Poste'
 import Bilans from 'views/Bilans'
 import Bilan from 'views/Bilan'
@@ -24,8 +25,11 @@ function App() {
               <PrivateRoute path='/bilans/nouveau'>
                 <NewBilan />
               </PrivateRoute>
-              <PrivateRoute path='/bilans/:id/editer'>
+              <PrivateRoute path='/bilans/:id/infos'>
                 <EditBilan />
+              </PrivateRoute>
+              <PrivateRoute path='/bilans/:id/type'>
+                <TypeBilan />
               </PrivateRoute>
               <PrivateRoute path='/bilans/:id/:poste'>
                 <Poste />

@@ -1,6 +1,6 @@
 import React from 'react'
 import { useParams, useHistory } from 'react-router-dom'
-import { Button } from '@dataesr/react-dsfr'
+import { Button, ButtonGroup, Title } from '@dataesr/react-dsfr'
 
 import { useBilan, useBilansMutation } from 'hooks/useBilans'
 import { useEmissions } from 'hooks/useEmissions'
@@ -21,9 +21,9 @@ export default function Poste() {
 
   return (
     <div>
-      <MagicLink to={`/bilans`}>Retour à la liste des bilans</MagicLink>
+      <MagicLink to={`/bilans`}>Retour à la liste de mes bilans</MagicLink>
       <h1>
-        {bilan && bilan.raisonSociale} - {bilan && bilan.annee} - Poste {poste}
+        {bilan?.raisonSociale} - {bilan?.annee} - Poste {poste}
       </h1>
       {emissions &&
       emissions.filter((emission) => emission.poste === poste).length ? (
@@ -40,21 +40,41 @@ export default function Poste() {
       <NewEmission bilan={id} poste={poste} />
       <div>
         <hr />
-        <div>
+        <Title as='h2'>
+          {' '}
           Total :{' '}
           {emissions &&
             emissions
               .filter((emission) => emission.poste === poste)
-              .reduce((acc, cur) => acc + cur.resultat, 0)}
-        </div>
+              .reduce((acc, cur) => acc + cur.resultat, 0)}{' '}
+          kgCO2e
+        </Title>
         {poste === 1 ? (
-          <MagicLink to={`/bilans/${id}/poste2`}>Passer au poste 2</MagicLink>
+          <ButtonGroup isInlineFrom='md' align='right'>
+            <MagicLink to={`/bilans/${id}/`}>
+              <Button secondary icon='fr-fi-arrow-left-s-line-double'>
+                Revenir aux informations du bilan
+              </Button>
+            </MagicLink>
+            <MagicLink to={`/bilans/${id}/poste2`}>
+              <Button
+                icon='fr-fi-arrow-right-s-line-double'
+                iconPosition='right'
+              >
+                Passer au poste 2
+              </Button>
+            </MagicLink>
+          </ButtonGroup>
         ) : (
-          <>
+          <ButtonGroup isInlineFrom='md' align='right'>
             <MagicLink to={`/bilans/${id}/poste1`}>
-              Revenir au poste 1
-            </MagicLink>{' '}
+              <Button icon='fr-fi-arrow-left-s-line-double'>
+                Revenir au poste 1
+              </Button>
+            </MagicLink>
             <Button
+              icon='fr-fi-check-line'
+              iconPosition='right'
               onClick={() =>
                 mutation.mutate(
                   {
@@ -70,7 +90,7 @@ export default function Poste() {
             >
               Valider mon bilan
             </Button>
-          </>
+          </ButtonGroup>
         )}
       </div>
     </div>

@@ -5,12 +5,7 @@ import apiUrl from 'utils/apiUrl'
 
 export function useEmissions(bilan) {
   return useQuery(['emissions', bilan], () =>
-    axios.get(`${apiUrl}/bilans/${bilan}/emissions`).then((res) =>
-      res.data.map((emission) => ({
-        ...emission,
-        resultat: emission.valeur * 2,
-      }))
-    )
+    axios.get(`${apiUrl}/bilans/${bilan}/emissions`).then((res) => res.data)
   )
 }
 export function useEmissionsCreation() {

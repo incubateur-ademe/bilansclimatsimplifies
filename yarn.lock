@@ -1267,10 +1267,10 @@
   resolved "https://registry.yarnpkg.com/@csstools/normalize.css/-/normalize.css-10.1.0.tgz#f0950bba18819512d42f7197e56c518aa491cf18"
   integrity sha512-ij4wRiunFfaJxjB0BdrYHIH8FxBJpOwNPhhAcunlmPdXudL1WQV1qoP9un6JsEBAgQH+7UXyyjh0g7jTxXK6tg==
 
-"@dataesr/react-dsfr@^0.7.5":
-  version "0.7.5"
-  resolved "https://registry.yarnpkg.com/@dataesr/react-dsfr/-/react-dsfr-0.7.5.tgz#46eff5fa38ec0cff87202740ef9ef7bd0fd3871a"
-  integrity sha512-84D2HpsMy6rCiqm9O6etmMF/x/vL+/0Pk0WG1khXrWZWdXQn8Ibj3dZzgVpfi+3jro8GHTi8CWP7DwfnvVV7YQ==
+"@dataesr/react-dsfr@^0.7.7":
+  version "0.7.7"
+  resolved "https://registry.yarnpkg.com/@dataesr/react-dsfr/-/react-dsfr-0.7.7.tgz#9231ef1552ac37be09275173a5379633e9bac631"
+  integrity sha512-HFyJyMHqnHt/sva7G+xO4KxgltAP9I6871G4vX8Vr6fH6xPBxt5MVKrki6dt0torZjYbfEbBg3wFizUegB3b9A==
   dependencies:
     "@babel/runtime" "^7.15.3"
     "@gouvfr/dsfr" "^1.1.0"
@@ -9427,10 +9427,10 @@ react-property@2.0.0:
   resolved "https://registry.yarnpkg.com/react-property/-/react-property-2.0.0.tgz#2156ba9d85fa4741faf1918b38efc1eae3c6a136"
   integrity sha512-kzmNjIgU32mO4mmH5+iUyrqlpFQhF8K2k7eZ4fdLSOPFrD1XgEuSBv9LDEgxRXTMBqMd8ppT0x6TIzqE5pdGdw==
 
-react-query@^3.26.0:
-  version "3.29.0"
-  resolved "https://registry.yarnpkg.com/react-query/-/react-query-3.29.0.tgz#242adcb91fdcbc3ea82c11c97328badb03f1b795"
-  integrity sha512-RD5F8VMlIzYYU0rGM71rtGShut+RVwRSTQamUU+4cpWaIaRsUa0nIfXyzAgo6ssVrzGFCrAMEm4LPSazR4FkeA==
+react-query@^3.32.1:
+  version "3.32.1"
+  resolved "https://registry.yarnpkg.com/react-query/-/react-query-3.32.1.tgz#829a87d039ece85660d8911ac59b1c92d1879064"
+  integrity sha512-7UN8BYBaZb911iJUyJ/T+CjlBGBf5W8rcm3jRQ5wW4f+mt/onvRxJlB0U2r2fsT204poJt6VO0jPlm5dwu3PrQ==
   dependencies:
     "@babel/runtime" "^7.5.5"
     broadcast-channel "^3.4.1"

@@ -20,8 +20,11 @@ export default function Web(props) {
       <Header />
 
       <StyledContainer role='main'>
-        {token && <Button onClick={() => setToken(null)}>Logout</Button>}
         {props.children}
+        <br />
+        <br />
+        <br />
+        {token && <Button onClick={() => setToken(null)}>Logout</Button>}
       </StyledContainer>
       <Footer />
     </>

@@ -31,8 +31,8 @@ export default function AddBilan() {
             annee,
           },
           {
-            onSuccess: () => {
-              history.push('/bilans')
+            onSuccess: (data) => {
+              history.push(`/bilans/${data.data.id}/type`)
             },
           }
         )
@@ -75,7 +75,7 @@ export default function AddBilan() {
         required
       />
       <MagicLink to='/bilans'>Annuler</MagicLink>
-      <Button submit>Ajouter un bilan</Button>
+      <Button submit>Commencer mon bilan</Button>
       {mutation.isError && (
         <Alert type='error' title='Une erreur est survenue' />
       )}

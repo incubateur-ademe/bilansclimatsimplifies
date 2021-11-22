@@ -1,7 +1,25 @@
 import React, { useState } from 'react'
-import { Button, TextInput } from '@dataesr/react-dsfr'
+import styled from 'styled-components'
+
+import { Button, ButtonGroup, TextInput } from '@dataesr/react-dsfr'
 
 import { useEmissionsCreation } from 'hooks/useEmissions'
+import TypeSelector from './emission/TypeSelector'
+import UnitSelector from './emission/UnitSelector'
+
+const Wrapper = styled.form`
+  border: 1px solid;
+  margin-bottom: 1rem;
+  padding: 1rem 1rem 0;
+`
+const Values = styled.div`
+  display: flex;
+  justify-content: space-between;
+
+  & > * {
+    flex: 1;
+  }
+`
 
 export default function NewEmission(props) {
   const [open, setOpen] = useState(false)
@@ -14,7 +32,7 @@ export default function NewEmission(props) {
   const mutation = useEmissionsCreation()
 
   return open ? (
-    <form
+    <Wrapper
       onSubmit={(e) => {
         e.preventDefault()
         mutation.mutate(
@@ -30,36 +48,34 @@ export default function NewEmission(props) {
         )
       }}
     >
-      <TextInput
-        label={`Type`}
-        value={type}
-        onChange={(e) => setType(e.target.value)}
-        required
-      />
-      <TextInput
-        label={`Valeur`}
-        value={valeur}
-        onChange={(e) => setValeur(e.target.value)}
-        required
-      />
-      <TextInput
-        label={`Unité`}
-        value={unite}
-        onChange={(e) => setUnite(e.target.value)}
-        required
-      />
+      <TypeSelector value={type} onChange={setType} poste={props.poste} />
+      <Values>
+        <TextInput
+          label={`Valeur`}
+          value={valeur}
+          onChange={(e) => setValeur(e.target.value)}
+          required
+        />
+        <UnitSelector value={unite} onChange={setUnite} type={type} />
+      </Values>
       <TextInput
         label={`Note`}
         value={note}
         onChange={(e) => setNote(e.target.value)}
       />
 
-      <Button submit>Ajouter une source d'émission</Button>
-      <br />
-      <br />
-      <Button onClick={() => setOpen(false)}>Annuler</Button>
-    </form>
+      <ButtonGroup isInlineFrom='md' align='right'>
+        <Button secondary onClick={() => setOpen(false)}>
+          Annuler
+        </Button>
+        <Button submit>Ajouter une source d'émission</Button>
+      </ButtonGroup>
+    </Wrapper>
   ) : (
-    <Button onClick={() => setOpen(true)}>Ajouter une source d'émission</Button>
+    <ButtonGroup isInlineFrom='md' align='right'>
+      <Button onClick={() => setOpen(true)}>
+        Ajouter une source d'émission
+      </Button>
+    </ButtonGroup>
   )
 }

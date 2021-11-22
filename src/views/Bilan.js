@@ -1,42 +1,86 @@
-import React, { useEffect } from 'react'
+import React from 'react'
 import { useParams, useHistory } from 'react-router-dom'
+import { Row, Col, Tile, TileBody, Button } from '@dataesr/react-dsfr'
 
-import { useBilan } from 'hooks/useBilans'
-import { useEmissions } from 'hooks/useEmissions'
+import { useBilan, useBilansDeletion } from 'hooks/useBilans'
 import MagicLink from 'components/base/MagicLink'
 
 export default function Bilan() {
-  const history = useHistory()
-
   const { id } = useParams()
 
-  const { data: bilan } = useBilan(id)
-  const { data: emissions } = useEmissions(id)
+  const history = useHistory()
 
-  useEffect(() => {
-    bilan && !bilan.total && history.push(`/bilans/${id}/poste1`)
-  }, [bilan, history, id])
+  const { data: bilan } = useBilan(id)
+
+  const deletion = useBilansDeletion(id)
 
   return (
     <div>
       <MagicLink to={`/bilans`}>Retour à la liste des bilans</MagicLink>
       <h1>
-        {bilan && bilan.raisonSociale} - {bilan && bilan.annee} - Bilan terminé
+        {bilan?.raisonSociale} - {bilan?.annee} - {bilan?.statut}
       </h1>
-      <div>
-        Poste 1 :{' '}
-        {emissions &&
-          emissions
-            .filter((emission) => emission.poste === 1)
-            .reduce((acc, cur) => acc + cur.resultat, 0)}
-      </div>
-      <div>
-        Poste 2 :{' '}
-        {emissions &&
-          emissions
-            .filter((emission) => emission.poste === 2)
-            .reduce((acc, cur) => acc + cur.resultat, 0)}
-      </div>
+      <p>
+        Siren : {bilan?.siren}
+        <br />
+        Nombre de salariés : {bilan?.nombreSalaries}
+        <br />
+        Région : {bilan?.region}
+        <br />
+        NAF : {bilan?.naf}
+        <br />
+        <br />
+        <MagicLink to={`/bilans/${id}/infos`}>
+          Éditer les informations de ce bilan
+        </MagicLink>
+      </p>
+      <Row gutters>
+        <Col>
+          <Tile>
+            <TileBody
+              title={`Poste 1`}
+              linkHref={`/bilans/${bilan?.id}/poste1`}
+            >
+              {bilan?.poste1 || bilan?.poste1 === 0 ? (
+                <>Total : {bilan?.poste1}</>
+              ) : (
+                <Button onClick={() => ''}>
+                  Calculer les émissions du poste 1
+                </Button>
+              )}
+            </TileBody>
+          </Tile>
+        </Col>
+        <Col>
+          <Tile>
+            <TileBody
+              title={`Poste 2`}
+              linkHref={`/bilans/${bilan?.id}/poste2`}
+            >
+              {bilan?.poste2 || bilan?.poste2 === 0 ? (
+                <>Total : {bilan?.poste2}</>
+              ) : (
+                <>Calculer les émissions du poste 2</>
+              )}
+            </TileBody>
+          </Tile>
+        </Col>
+      </Row>
+      <Row gutters>
+        <Col>
+          <Button
+            onClick={() =>
+              deletion.mutate(null, {
+                onSuccess: (data) => {
+                  history.push(`/bilans`)
+                },
+              })
+            }
+          >
+            Supprimer ce bilan
+          </Button>
+        </Col>
+      </Row>
     </div>
   )
 }
