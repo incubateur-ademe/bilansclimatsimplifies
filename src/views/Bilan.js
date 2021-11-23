@@ -68,6 +68,7 @@ export default function Bilan() {
             NAF : {bilan?.naf}
             <br />
           </Highlight>
+          <br />
         </Col>
       </Row>
       {location.search.includes('done=1') && (
