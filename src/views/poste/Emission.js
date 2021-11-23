@@ -11,14 +11,6 @@ const Wrapper = styled.div`
   margin-bottom: 1rem;
   padding: 1rem 1rem 0;
 `
-const Values = styled.div`
-  display: flex;
-  justify-content: space-between;
-
-  & > * {
-    flex: 1;
-  }
-`
 export default function Emission(props) {
   const [edit, setEdit] = useState(false)
 
