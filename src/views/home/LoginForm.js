@@ -27,7 +27,8 @@ export default function ContactForm() {
   const [username, setUsername] = useState('')
   const [password, setPassword] = useState('')
 
-  const mutation = useLoginUser(setToken)
+  const mutation = useLoginUser()
+
   return token ? (
     <ButtonGroup isInlineFrom='md' align='center'>
       <Button secondary onClick={() => setToken(null)}>

@@ -1,10 +1,16 @@
+import { useContext } from 'react'
+
 import { useQuery, useMutation } from 'react-query'
 import axios from 'axios'
 
 import apiUrl, { baseUrl } from 'utils/apiUrl'
+import AuthContext from 'utils/AuthContext'
 
-export function useLoginUser(setToken) {
+export function useLoginUser() {
   const { data: csrfToken } = useCsrfToken()
+
+  const { setToken } = useContext(AuthContext)
+
   return useMutation(
     (user) =>
       axios.post(`${apiUrl}/auth/`, user, {

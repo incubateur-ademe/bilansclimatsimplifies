@@ -12,6 +12,7 @@ import TypeBilan from 'views/TypeBilan'
 import Poste from 'views/Poste'
 import Bilans from 'views/Bilans'
 import Bilan from 'views/Bilan'
+import Login from 'views/Login'
 
 const queryClient = new QueryClient()
 
@@ -40,6 +41,9 @@ function App() {
               <PrivateRoute path='/bilans'>
                 <Bilans />
               </PrivateRoute>
+              <Route path='/login'>
+                <Login />
+              </Route>
               <Route path='/'>
                 <Home />
               </Route>
