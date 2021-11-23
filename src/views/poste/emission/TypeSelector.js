@@ -1,8 +1,12 @@
 import React from 'react'
+import styled from 'styled-components'
 import { Select } from '@dataesr/react-dsfr'
 
 import { useFacteursEmission } from 'hooks/useFacteursEmission'
 
+const StyledSelect = styled(Select)`
+  max-width: 23.4375rem;
+`
 export default function TypeSelector(props) {
   const { data: facteurEmission } = useFacteursEmission()
 
@@ -18,6 +22,7 @@ export default function TypeSelector(props) {
           .sort((a, b) => (a[0].toLowerCase() > b[0].toLowerCase() ? 1 : -1))
           .map((entry) => ({ value: entry[0], label: entry[0] })),
       ]}
+      required
     />
   ) : null
 }

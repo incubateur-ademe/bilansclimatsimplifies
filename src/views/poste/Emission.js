@@ -7,7 +7,7 @@ import TypeSelector from './emission/TypeSelector'
 import UnitSelector from './emission/UnitSelector'
 
 const Wrapper = styled.div`
-  border: 1px solid;
+  border: 1px solid rgb(232, 232, 232);
   margin-bottom: 1rem;
   padding: 1rem 1rem 0;
 `
@@ -55,31 +55,47 @@ export default function Emission(props) {
                 )
               }}
             >
-              <TypeSelector
-                value={type}
-                onChange={setType}
-                poste={props.emission.poste}
-              />
-              <Values>
-                <TextInput
-                  label={`Valeur`}
-                  value={valeur}
-                  onChange={(e) => setValeur(e.target.value)}
-                  required
-                />
-                <UnitSelector value={unite} onChange={setUnite} type={type} />
-              </Values>
-              <TextInput
-                label={`Note`}
-                value={note}
-                onChange={(e) => setNote(e.target.value)}
-              />
-              <ButtonGroup isInlineFrom='md' align='right'>
-                <Button secondary onClick={() => setEdit(false)}>
-                  Annuler
-                </Button>
-                <Button submit>Valider</Button>
-              </ButtonGroup>
+              <Row gutters>
+                <Col n='6'>
+                  <TypeSelector
+                    value={type}
+                    onChange={setType}
+                    poste={props.emission.poste}
+                  />
+                </Col>
+              </Row>
+              <Row gutters>
+                <Col>
+                  <TextInput
+                    label={`Valeur`}
+                    value={valeur}
+                    onChange={(e) => setValeur(e.target.value)}
+                    required
+                  />
+                </Col>
+                <Col>
+                  <UnitSelector value={unite} onChange={setUnite} type={type} />
+                </Col>
+              </Row>
+              <Row gutters>
+                <Col>
+                  <TextInput
+                    label={`Note`}
+                    value={note}
+                    onChange={(e) => setNote(e.target.value)}
+                  />
+                </Col>
+              </Row>
+              <Row gutters>
+                <Col>
+                  <ButtonGroup isInlineFrom='md' align='right'>
+                    <Button secondary onClick={() => setEdit(false)}>
+                      Annuler
+                    </Button>
+                    <Button submit>Valider</Button>
+                  </ButtonGroup>
+                </Col>
+              </Row>
             </form>
           ) : (
             <>

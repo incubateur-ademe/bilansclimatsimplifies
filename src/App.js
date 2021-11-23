@@ -34,7 +34,6 @@ function App() {
               <PrivateRoute path='/bilans/:id/:poste'>
                 <Poste />
               </PrivateRoute>
-
               <PrivateRoute path='/bilans/:id'>
                 <Bilan />
               </PrivateRoute>

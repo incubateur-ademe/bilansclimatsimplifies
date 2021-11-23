@@ -34,6 +34,7 @@ export default function TypeSelector(props) {
             }))
           : []),
       ]}
+      required
     />
   ) : null
 }

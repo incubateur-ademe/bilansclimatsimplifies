@@ -1,7 +1,14 @@
 import React from 'react'
 import styled from 'styled-components'
 import { useParams, useHistory } from 'react-router-dom'
-import { Button, ButtonGroup, Callout, CalloutTitle } from '@dataesr/react-dsfr'
+import {
+  Row,
+  Col,
+  Button,
+  ButtonGroup,
+  Callout,
+  CalloutTitle,
+} from '@dataesr/react-dsfr'
 
 import { useBilan, useBilansMutation } from 'hooks/useBilans'
 import { useEmissions } from 'hooks/useEmissions'
@@ -24,17 +31,25 @@ export default function Poste() {
   const mutation = useBilansMutation(id)
 
   return (
-    <div>
-      <ButtonGroup align='left' isInlineFrom='md'>
-        <MagicLink to={`/bilans`}>
-          <Button icon='fr-fi-arrow-left-s-line-double' secondary>
-            Retour à la liste de mes bilans
-          </Button>
-        </MagicLink>
-      </ButtonGroup>
-      <h1>
-        {bilan?.raisonSociale} - {bilan?.annee} - Poste {poste}
-      </h1>
+    <>
+      <Row gutters>
+        <Col>
+          <ButtonGroup align='left' isInlineFrom='md'>
+            <MagicLink to={`/bilans`}>
+              <Button icon='fr-fi-arrow-left-s-line-double' secondary>
+                Retour à la liste de mes bilans
+              </Button>
+            </MagicLink>
+          </ButtonGroup>
+        </Col>
+      </Row>
+      <Row gutters>
+        <Col>
+          <h1>
+            {bilan?.raisonSociale} - {bilan?.annee} - Poste {poste}
+          </h1>
+        </Col>
+      </Row>
       {emissions &&
       emissions.filter((emission) => emission.poste === poste).length ? (
         <>
@@ -52,7 +67,6 @@ export default function Poste() {
       <br />
       <Callout hasInfoIcon={false}>
         <StyledCalloutTitle as='h3'>
-          {' '}
           Total : {bilan && bilan[`poste${poste}`]} kgCO2e
         </StyledCalloutTitle>
         {poste === 1 ? (
@@ -88,7 +102,7 @@ export default function Poste() {
                   },
                   {
                     onSuccess: () => {
-                      history.push(`/bilans/${id}`)
+                      history.push(`/bilans/${id}?done=1`)
                     },
                   }
                 )
@@ -99,6 +113,6 @@ export default function Poste() {
           </ButtonGroup>
         )}
       </Callout>
-    </div>
+    </>
   )
 }

@@ -16,12 +16,7 @@ export default function Web(props) {
     <>
       <Header />
 
-      <StyledContainer role='main'>
-        {props.children}
-        <br />
-        <br />
-        <br />
-      </StyledContainer>
+      <StyledContainer role='main'>{props.children}</StyledContainer>
       <Footer />
     </>
   )

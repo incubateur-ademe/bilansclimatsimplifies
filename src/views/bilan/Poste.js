@@ -6,7 +6,7 @@ import { useBilansMutation } from 'hooks/useBilans'
 import MagicLink from 'components/base/MagicLink'
 
 const Wrapper = styled.div`
-  border: 1px solid;
+  border: 1px solid rgb(232, 232, 232);
   margin-bottom: 1rem;
   padding: 1rem 1rem 0;
 `
