@@ -13,8 +13,11 @@ import {
 import AuthContext from 'utils/AuthContext'
 import Ademe from 'components/base/Ademe'
 
+import { useKeycloak } from '@react-keycloak/web'
+
 export default function Header() {
   const { token, setToken } = useContext(AuthContext)
+  const { keycloak, initialized } = useKeycloak()
 
   return (
     <Wrapper>
@@ -29,7 +32,8 @@ export default function Header() {
         />
         <Tool>
           <ToolItemGroup>
-            {token && <Button onClick={() => setToken(null)}>Logout</Button>}
+            {initialized && token && !keycloak.authenticated && <Button onClick={() => setToken(null)}>Logout</Button>}
+            {initialized && !token && keycloak.authenticated && <Button onClick={() => keycloak.logout()}>Logout</Button>}
           </ToolItemGroup>
         </Tool>
       </HeaderBody>

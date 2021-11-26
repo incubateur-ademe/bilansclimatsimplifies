@@ -2,6 +2,9 @@ import React from 'react'
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom'
 import { QueryClient, QueryClientProvider } from 'react-query'
 
+import { ReactKeycloakProvider } from '@react-keycloak/web'
+import keycloak from './keycloak'
+
 import AuthProvider from 'components/providers/AuthProvider'
 import PrivateRoute from 'components/base/PrivateRoute'
 import Web from 'components/layout/Web'
@@ -17,41 +20,51 @@ import Login from 'views/Login'
 const queryClient = new QueryClient()
 
 function App() {
+  const initOptions = {
+    flow: 'standard',
+    pkceMethod: 'S256',
+  }
+  const onKeycloakEvent = (event, error) => {
+    // temporary logging to have visibility of keycloak events
+    console.log('onKeycloakEvent', event, error)
+  }
   return (
-    <Router>
-      <QueryClientProvider client={queryClient}>
-        <AuthProvider>
-          <Web>
-            <Switch>
-              <PrivateRoute path='/bilans/nouveau'>
-                <NewBilan />
-              </PrivateRoute>
-              <PrivateRoute path='/bilans/:id/infos'>
-                <EditBilan />
-              </PrivateRoute>
-              <PrivateRoute path='/bilans/:id/type'>
-                <TypeBilan />
-              </PrivateRoute>
-              <PrivateRoute path='/bilans/:id/:poste'>
-                <Poste />
-              </PrivateRoute>
-              <PrivateRoute path='/bilans/:id'>
-                <Bilan />
-              </PrivateRoute>
-              <PrivateRoute path='/bilans'>
-                <Bilans />
-              </PrivateRoute>
-              <Route path='/login'>
-                <Login />
-              </Route>
-              <Route path='/'>
-                <Home />
-              </Route>
-            </Switch>
-          </Web>
-        </AuthProvider>
-      </QueryClientProvider>
-    </Router>
+    <ReactKeycloakProvider authClient={keycloak} initOptions={initOptions} onEvent={onKeycloakEvent}>
+      <Router>
+        <QueryClientProvider client={queryClient}>
+          <AuthProvider>
+            <Web>
+              <Switch>
+                <PrivateRoute path='/bilans/nouveau'>
+                  <NewBilan />
+                </PrivateRoute>
+                <PrivateRoute path='/bilans/:id/infos'>
+                  <EditBilan />
+                </PrivateRoute>
+                <PrivateRoute path='/bilans/:id/type'>
+                  <TypeBilan />
+                </PrivateRoute>
+                <PrivateRoute path='/bilans/:id/:poste'>
+                  <Poste />
+                </PrivateRoute>
+                <PrivateRoute path='/bilans/:id'>
+                  <Bilan />
+                </PrivateRoute>
+                <PrivateRoute path='/bilans'>
+                  <Bilans />
+                </PrivateRoute>
+                <Route path='/login'>
+                  <Login />
+                </Route>
+                <Route path='/'>
+                  <Home />
+                </Route>
+              </Switch>
+            </Web>
+          </AuthProvider>
+        </QueryClientProvider>
+      </Router>
+    </ReactKeycloakProvider>
   )
 }
 
