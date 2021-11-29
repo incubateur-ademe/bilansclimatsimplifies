@@ -39,9 +39,6 @@ export default function Login() {
         <div>
             <p>Redirecting...</p>
             {(endpointStatus === 'success') && <Redirect to="/bilans" />}
-            <a className="btn-link" onClick={() => keycloak.logout()}>Logout ({
-                keycloak.tokenParsed.preferred_username
-            })</a>
         </div>
     }
   </div>
