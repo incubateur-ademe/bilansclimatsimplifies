@@ -33,7 +33,7 @@ export default function Header() {
         <Tool>
           <ToolItemGroup>
             {initialized && token && !keycloak.authenticated && <Button onClick={() => setToken(null)}>Logout</Button>}
-            {initialized && !token && keycloak.authenticated && <Button onClick={() => keycloak.logout()}>Logout</Button>}
+            {initialized && keycloak.authenticated && <Button onClick={() => keycloak.logout()}>Logout</Button>}
           </ToolItemGroup>
         </Tool>
       </HeaderBody>

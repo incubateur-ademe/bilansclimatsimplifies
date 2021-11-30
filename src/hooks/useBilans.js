@@ -5,7 +5,7 @@ import apiUrl from 'utils/apiUrl'
 
 export function useBilans() {
   return useQuery('bilans', () =>
-    axios.get(`${apiUrl}/bilans`).then((res) => res.data)
+    axios.get(`${apiUrl}/bilans/`).then((res) => res.data)
   )
 }
 export function useBilan(id) {

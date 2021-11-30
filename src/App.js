@@ -4,6 +4,7 @@ import { QueryClient, QueryClientProvider } from 'react-query'
 
 import { ReactKeycloakProvider } from '@react-keycloak/web'
 import keycloak from './keycloak'
+import axios from 'axios'
 
 import AuthProvider from 'components/providers/AuthProvider'
 import PrivateRoute from 'components/base/PrivateRoute'
@@ -28,8 +29,19 @@ function App() {
     // temporary logging to have visibility of keycloak events
     console.log('onKeycloakEvent', event, error)
   }
+  const onTokens = (tokens) => {
+    const token = tokens.token
+    console.log("onTokens token", token) // temporary for debugging
+    if(token) {
+      sessionStorage.setItem('token', token)
+      axios.defaults.headers.common['Authorization'] = `Token ${token}`
+    } else {
+      sessionStorage.removeItem('token')
+      delete axios.defaults.headers.common['Authorization']
+    }
+  }
   return (
-    <ReactKeycloakProvider authClient={keycloak} initOptions={initOptions} onEvent={onKeycloakEvent}>
+    <ReactKeycloakProvider authClient={keycloak} initOptions={initOptions} onEvent={onKeycloakEvent} onTokens={onTokens}>
       <Router>
         <QueryClientProvider client={queryClient}>
           <AuthProvider>

@@ -20,7 +20,10 @@ export default function Login() {
     axios.post(`${apiUrl}/ademeUser/`, {token: keycloak.token}, {
       'Content-Type': 'application/json',
       'X-CSRFToken': csrfToken,
+      // faut que le header auth soit vide car l'utilisateur peut ne pas être déjà créé
+      headers: { 'Authorization': '' }
     }).then(() => {
+      // n'utilise pas setToken - c'est fait par onTokens
       setEndpointStatus('success')
     })
     .catch(() => {
