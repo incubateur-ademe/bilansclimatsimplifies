@@ -10,6 +10,7 @@
       }
     },
     "frontière": "",
+    "groupe": "",
     "nom": "Agglomérés de houille",
     "poste": "1"
   },
@@ -24,6 +25,7 @@
       }
     },
     "frontière": "",
+    "groupe": "",
     "nom": "Anthracite",
     "poste": "1"
   },
@@ -35,8 +37,9 @@
       }
     },
     "frontière": "Diesel routier, incorporation 7 % de biodiesel",
+    "groupe": "Routier",
     "nom": "Articulé",
-    "poste": null
+    "poste": "2"
   },
   "Articulé, 34 à 40 tonnes, GNC": {
     "attribut": "34 à 40 tonnes",
@@ -46,8 +49,9 @@
       }
     },
     "frontière": "GNC",
+    "groupe": "Routier",
     "nom": "Articulé",
-    "poste": null
+    "poste": "2"
   },
   "Articulé, 34 à 40 tonnes, GNL": {
     "attribut": "34 à 40 tonnes",
@@ -57,8 +61,9 @@
       }
     },
     "frontière": "GNL",
+    "groupe": "Routier",
     "nom": "Articulé",
-    "poste": null
+    "poste": "2"
   },
   "Articulé, 34 à 40 tonnes, GNL, incorporation bio 20%": {
     "attribut": "34 à 40 tonnes",
@@ -68,8 +73,9 @@
       }
     },
     "frontière": "GNL, incorporation bio 20%",
+    "groupe": "Routier",
     "nom": "Articulé",
-    "poste": null
+    "poste": "2"
   },
   "Articulé, 40 à 44 tonnes, Diesel routier, incorporation 7 % de biodiesel": {
     "attribut": "40 à 44 tonnes",
@@ -79,8 +85,9 @@
       }
     },
     "frontière": "Diesel routier, incorporation 7 % de biodiesel",
+    "groupe": "Routier",
     "nom": "Articulé",
-    "poste": null
+    "poste": "2"
   },
   "Articulé, 44 à 60 tonnes, Diesel routier, incorporation 7 % de biodiesel": {
     "attribut": "44 à 60 tonnes",
@@ -90,8 +97,9 @@
       }
     },
     "frontière": "Diesel routier, incorporation 7 % de biodiesel",
+    "groupe": "Routier",
     "nom": "Articulé",
-    "poste": null
+    "poste": "2"
   },
   "Articulé, 60 à 72 tonnes, Diesel routier, incorporation 7 % de biodiesel": {
     "attribut": "60 à 72 tonnes",
@@ -101,8 +109,9 @@
       }
     },
     "frontière": "Diesel routier, incorporation 7 % de biodiesel",
+    "groupe": "Routier",
     "nom": "Articulé",
-    "poste": null
+    "poste": "2"
   },
   "Articulé, 90 m3": {
     "attribut": "90 m3",
@@ -112,8 +121,9 @@
       }
     },
     "frontière": "",
+    "groupe": "Routier",
     "nom": "Articulé",
-    "poste": null
+    "poste": "2"
   },
   "Articulé, < 34 tonnes, Diesel routier, incorporation 7 % de biodiesel": {
     "attribut": "< 34 tonnes",
@@ -123,8 +133,9 @@
       }
     },
     "frontière": "Diesel routier, incorporation 7 % de biodiesel",
+    "groupe": "Routier",
     "nom": "Articulé",
-    "poste": null
+    "poste": "2"
   },
   "Autobus, Electrique": {
     "attribut": "Electrique",
@@ -134,8 +145,9 @@
       }
     },
     "frontière": "",
+    "groupe": "Routier",
     "nom": "Autobus",
-    "poste": null
+    "poste": "2"
   },
   "Autobus, GNV": {
     "attribut": "GNV",
@@ -145,8 +157,9 @@
       }
     },
     "frontière": "",
+    "groupe": "Routier",
     "nom": "Autobus",
-    "poste": null
+    "poste": "2"
   },
   "Autobus, Gazole": {
     "attribut": "Gazole",
@@ -156,8 +169,9 @@
       }
     },
     "frontière": "",
+    "groupe": "Routier",
     "nom": "Autobus",
-    "poste": null
+    "poste": "2"
   },
   "Autobus, Hybride parallèle": {
     "attribut": "Hybride parallèle",
@@ -167,8 +181,9 @@
       }
     },
     "frontière": "",
+    "groupe": "Routier",
     "nom": "Autobus",
-    "poste": null
+    "poste": "2"
   },
   "Autobus, Hybride série": {
     "attribut": "Hybride série",
@@ -178,8 +193,9 @@
       }
     },
     "frontière": "",
+    "groupe": "Routier",
     "nom": "Autobus",
-    "poste": null
+    "poste": "2"
   },
   "Autocar, Gazole": {
     "attribut": "Gazole",
@@ -189,8 +205,9 @@
       }
     },
     "frontière": "",
+    "groupe": "Routier",
     "nom": "Autocar",
-    "poste": null
+    "poste": "2"
   },
   "Autres produits pétroliers": {
     "attribut": "",
@@ -202,6 +219,7 @@
       }
     },
     "frontière": "",
+    "groupe": "",
     "nom": "Autres produits pétroliers",
     "poste": "1"
   },
@@ -213,8 +231,9 @@
       }
     },
     "frontière": "AVEC trainées",
+    "groupe": "Non routier",
     "nom": "Avion cargo",
-    "poste": null
+    "poste": "2"
   },
   "Avion cargo, 10 à 25 tonnes, <500 kms, 2018, AVEC trainées": {
     "attribut": "10 à 25 tonnes, <500 kms, 2018",
@@ -224,8 +243,9 @@
       }
     },
     "frontière": "AVEC trainées",
+    "groupe": "Non routier",
     "nom": "Avion cargo",
-    "poste": null
+    "poste": "2"
   },
   "Avion cargo, 26 à 100 tonnes, 500 - 1000 kms, 2018, AVEC trainées": {
     "attribut": "26 à 100 tonnes, 500 - 1000 kms, 2018",
@@ -235,8 +255,9 @@
       }
     },
     "frontière": "AVEC trainées",
+    "groupe": "Non routier",
     "nom": "Avion cargo",
-    "poste": null
+    "poste": "2"
   },
   "Avion cargo, 26 à 100 tonnes, <500 kms, 2018, AVEC trainées": {
     "attribut": "26 à 100 tonnes, <500 kms, 2018",
@@ -246,8 +267,9 @@
       }
     },
     "frontière": "AVEC trainées",
+    "groupe": "Non routier",
     "nom": "Avion cargo",
-    "poste": null
+    "poste": "2"
   },
   "Avion cargo, Plus de 100 tonnes, 1000 - 3500 kms, 2018, AVEC trainées": {
     "attribut": "Plus de 100 tonnes, 1000 - 3500 kms, 2018",
@@ -257,8 +279,9 @@
       }
     },
     "frontière": "AVEC trainées",
+    "groupe": "Non routier",
     "nom": "Avion cargo",
-    "poste": null
+    "poste": "2"
   },
   "Avion cargo, Plus de 100 tonnes, 500 - 1000 kms, 2018, AVEC trainées": {
     "attribut": "Plus de 100 tonnes, 500 - 1000 kms, 2018",
@@ -268,8 +291,9 @@
       }
     },
     "frontière": "AVEC trainées",
+    "groupe": "Non routier",
     "nom": "Avion cargo",
-    "poste": null
+    "poste": "2"
   },
   "Avion cargo, Plus de 100 tonnes, <500 kms, 2018, AVEC trainées": {
     "attribut": "Plus de 100 tonnes, <500 kms, 2018",
@@ -279,8 +303,9 @@
       }
     },
     "frontière": "AVEC trainées",
+    "groupe": "Non routier",
     "nom": "Avion cargo",
-    "poste": null
+    "poste": "2"
   },
   "Avion cargo, Plus de 100 tonnes, >3500 kms, 2018, AVEC trainées": {
     "attribut": "Plus de 100 tonnes, >3500 kms, 2018",
@@ -290,8 +315,9 @@
       }
     },
     "frontière": "AVEC trainées",
+    "groupe": "Non routier",
     "nom": "Avion cargo",
-    "poste": null
+    "poste": "2"
   },
   "Avion passagers, 101-220 sièges, 1000-3500 kms, 2018, AVEC trainées": {
     "attribut": "101-220 sièges, 1000-3500 kms, 2018",
@@ -302,8 +328,9 @@
       }
     },
     "frontière": "AVEC trainées",
+    "groupe": "Non routier",
     "nom": "Avion passagers",
-    "poste": null
+    "poste": "2"
   },
   "Avion passagers, 101-220 sièges, 500-1000 kms, 2018, AVEC trainées": {
     "attribut": "101-220 sièges, 500-1000 kms, 2018",
@@ -314,8 +341,9 @@
       }
     },
     "frontière": "AVEC trainées",
+    "groupe": "Non routier",
     "nom": "Avion passagers",
-    "poste": null
+    "poste": "2"
   },
   "Avion passagers, 101-220 sièges, <500 kms jet, 2018, AVEC trainées": {
     "attribut": "101-220 sièges, <500 kms jet, 2018",
@@ -326,8 +354,9 @@
       }
     },
     "frontière": "AVEC trainées",
+    "groupe": "Non routier",
     "nom": "Avion passagers",
-    "poste": null
+    "poste": "2"
   },
   "Avion passagers, 101-220 sièges, >3500 kms, 2018, AVEC trainées": {
     "attribut": "101-220 sièges, >3500 kms, 2018",
@@ -338,8 +367,9 @@
       }
     },
     "frontière": "AVEC trainées",
+    "groupe": "Non routier",
     "nom": "Avion passagers",
-    "poste": null
+    "poste": "2"
   },
   "Avion passagers, 20-50 sièges, 1000-3500 kms, 2018, AVEC trainées": {
     "attribut": "20-50 sièges, 1000-3500 kms, 2018",
@@ -350,8 +380,9 @@
       }
     },
     "frontière": "AVEC trainées",
+    "groupe": "Non routier",
     "nom": "Avion passagers",
-    "poste": null
+    "poste": "2"
   },
   "Avion passagers, 20-50 sièges, 500-1000 kms, 2018, AVEC trainées": {
     "attribut": "20-50 sièges, 500-1000 kms, 2018",
@@ -362,8 +393,9 @@
       }
     },
     "frontière": "AVEC trainées",
+    "groupe": "Non routier",
     "nom": "Avion passagers",
-    "poste": null
+    "poste": "2"
   },
   "Avion passagers, 20-50 sièges, <500 kms jet, 2018, AVEC trainées": {
     "attribut": "20-50 sièges, <500 kms jet, 2018",
@@ -374,8 +406,9 @@
       }
     },
     "frontière": "AVEC trainées",
+    "groupe": "Non routier",
     "nom": "Avion passagers",
-    "poste": null
+    "poste": "2"
   },
   "Avion passagers, 20-50 sièges, <500 kms turboprop, 2018, AVEC trainées": {
     "attribut": "20-50 sièges, <500 kms turboprop, 2018",
@@ -386,8 +419,9 @@
       }
     },
     "frontière": "AVEC trainées",
+    "groupe": "Non routier",
     "nom": "Avion passagers",
-    "poste": null
+    "poste": "2"
   },
   "Avion passagers, 51-100 sièges, 1000-3500 kms, 2018, AVEC trainées": {
     "attribut": "51-100 sièges, 1000-3500 kms, 2018",
@@ -398,8 +432,9 @@
       }
     },
     "frontière": "AVEC trainées",
+    "groupe": "Non routier",
     "nom": "Avion passagers",
-    "poste": null
+    "poste": "2"
   },
   "Avion passagers, 51-100 sièges, 500-1000 kms, 2018, AVEC trainées": {
     "attribut": "51-100 sièges, 500-1000 kms, 2018",
@@ -410,8 +445,9 @@
       }
     },
     "frontière": "AVEC trainées",
+    "groupe": "Non routier",
     "nom": "Avion passagers",
-    "poste": null
+    "poste": "2"
   },
   "Avion passagers, 51-100 sièges, <500 kms  jet, 2018, AVEC trainées": {
     "attribut": "51-100 sièges, <500 kms  jet, 2018",
@@ -422,8 +458,9 @@
       }
     },
     "frontière": "AVEC trainées",
+    "groupe": "Non routier",
     "nom": "Avion passagers",
-    "poste": null
+    "poste": "2"
   },
   "Avion passagers, 51-100 sièges, <500 kms  turboprop, 2018, AVEC trainées": {
     "attribut": "51-100 sièges, <500 kms  turboprop, 2018",
@@ -434,8 +471,9 @@
       }
     },
     "frontière": "AVEC trainées",
+    "groupe": "Non routier",
     "nom": "Avion passagers",
-    "poste": null
+    "poste": "2"
   },
   "Avion passagers, >220 sièges, 1000-3500 kms, 2018, AVEC trainées": {
     "attribut": ">220 sièges, 1000-3500 kms, 2018",
@@ -446,8 +484,9 @@
       }
     },
     "frontière": "AVEC trainées",
+    "groupe": "Non routier",
     "nom": "Avion passagers",
-    "poste": null
+    "poste": "2"
   },
   "Avion passagers, >220 sièges, >3500 kms, 2018, AVEC trainées": {
     "attribut": ">220 sièges, >3500 kms, 2018",
@@ -458,8 +497,9 @@
       }
     },
     "frontière": "AVEC trainées",
+    "groupe": "Non routier",
     "nom": "Avion passagers",
-    "poste": null
+    "poste": "2"
   },
   "Avion passagers, Court courrier, 2018, AVEC trainées": {
     "attribut": "Court courrier, 2018",
@@ -470,8 +510,9 @@
       }
     },
     "frontière": "AVEC trainées",
+    "groupe": "Non routier",
     "nom": "Avion passagers",
-    "poste": null
+    "poste": "2"
   },
   "Avion passagers, Long courrier, 2018, AVEC trainées": {
     "attribut": "Long courrier, 2018",
@@ -482,8 +523,9 @@
       }
     },
     "frontière": "AVEC trainées",
+    "groupe": "Non routier",
     "nom": "Avion passagers",
-    "poste": null
+    "poste": "2"
   },
   "Avion passagers, Moyen courrier, 2018, AVEC trainées": {
     "attribut": "Moyen courrier, 2018",
@@ -494,8 +536,9 @@
       }
     },
     "frontière": "AVEC trainées",
+    "groupe": "Non routier",
     "nom": "Avion passagers",
-    "poste": null
+    "poste": "2"
   },
   "Bateau automoteur, 1 000 à 1499 TPL": {
     "attribut": "1 000 à 1499 TPL",
@@ -505,8 +548,9 @@
       }
     },
     "frontière": "",
+    "groupe": "Non routier",
     "nom": "Bateau automoteur",
-    "poste": null
+    "poste": "2"
   },
   "Bateau automoteur, 1 500 à 2 999 TPL": {
     "attribut": "1 500 à 2 999 TPL",
@@ -516,8 +560,9 @@
       }
     },
     "frontière": "",
+    "groupe": "Non routier",
     "nom": "Bateau automoteur",
-    "poste": null
+    "poste": "2"
   },
   "Bateau automoteur, 400 à 649 TPL": {
     "attribut": "400 à 649 TPL",
@@ -527,8 +572,9 @@
       }
     },
     "frontière": "",
+    "groupe": "Non routier",
     "nom": "Bateau automoteur",
-    "poste": null
+    "poste": "2"
   },
   "Bateau automoteur, 650 à 999 TPL": {
     "attribut": "650 à 999 TPL",
@@ -538,8 +584,9 @@
       }
     },
     "frontière": "",
+    "groupe": "Non routier",
     "nom": "Bateau automoteur",
-    "poste": null
+    "poste": "2"
   },
   "Bateau automoteur, < 400 TPL": {
     "attribut": "< 400 TPL",
@@ -549,8 +596,9 @@
       }
     },
     "frontière": "",
+    "groupe": "Non routier",
     "nom": "Bateau automoteur",
-    "poste": null
+    "poste": "2"
   },
   "Bateau automoteur, > 3 000 TPL": {
     "attribut": "> 3 000 TPL",
@@ -560,8 +608,9 @@
       }
     },
     "frontière": "",
+    "groupe": "Non routier",
     "nom": "Bateau automoteur",
-    "poste": null
+    "poste": "2"
   },
   "Bateau pousseur, < 880 kW": {
     "attribut": "< 880 kW",
@@ -571,8 +620,9 @@
       }
     },
     "frontière": "",
+    "groupe": "Non routier",
     "nom": "Bateau pousseur",
-    "poste": null
+    "poste": "2"
   },
   "Bateau pousseur, > 880 kW": {
     "attribut": "> 880 kW",
@@ -582,8 +632,9 @@
       }
     },
     "frontière": "",
+    "groupe": "Non routier",
     "nom": "Bateau pousseur",
-    "poste": null
+    "poste": "2"
   },
   "BioGNC -Biométhane comprimé, Pour véhicule routier, Mix Moyen": {
     "attribut": "Pour véhicule routier",
@@ -597,8 +648,9 @@
       }
     },
     "frontière": "Mix Moyen",
+    "groupe": "Routier",
     "nom": "BioGNC -Biométhane comprimé",
-    "poste": null
+    "poste": "2"
   },
   "BioGNL, Carburant, Issu d'épuration cryogénique de biogaz": {
     "attribut": "Carburant",
@@ -608,8 +660,36 @@
       }
     },
     "frontière": "Issu d'épuration cryogénique de biogaz",
+    "groupe": "Non routier",
     "nom": "BioGNL",
+    "poste": "2"
+  },
+  "Biodiesel, Mix moyen, sans changement d'affectation des sols": {
+    "attribut": "Mix moyen",
+    "facteurs": {
+      "France continentale": {
+        "kgCO2e/MJ PCI": "0"
+      }
+    },
+    "frontière": "sans changement d'affectation des sols",
+    "groupe": null,
+    "nom": "Biodiesel",
     "poste": null
+  },
+  "Biodiesel, sans changement d'affectation des sols": {
+    "attribut": "sans changement d'affectation des sols",
+    "facteurs": {
+      "France continentale": {
+        "kgCO2e/kWh PCI": "0",
+        "kgCO2e/litre": "0",
+        "kgCO2e/tep PCI": "0",
+        "kgCO2e/tonne": "0"
+      }
+    },
+    "frontière": "",
+    "groupe": "",
+    "nom": "Biodiesel",
+    "poste": "1"
   },
   "Biométhane, Injecté dans les réseaux, Mix moyen": {
     "attribut": "Injecté dans les réseaux",
@@ -625,6 +705,7 @@
       }
     },
     "frontière": "Mix moyen",
+    "groupe": "",
     "nom": "Biométhane",
     "poste": "1"
   },
@@ -640,8 +721,25 @@
       }
     },
     "frontière": "",
+    "groupe": "",
     "nom": "Biopropane",
-    "poste": "2"
+    "poste": "1"
+  },
+  "Bioéthanol, sans changement d'affectation des sols": {
+    "attribut": "sans changement d'affectation des sols",
+    "facteurs": {
+      "France continentale": {
+        "kgCO2e/MJ PCI": "0",
+        "kgCO2e/kWh PCI": "0",
+        "kgCO2e/litre": "0",
+        "kgCO2e/tep PCI": "0",
+        "kgCO2e/tonne": "0"
+      }
+    },
+    "frontière": "",
+    "groupe": "",
+    "nom": "Bioéthanol",
+    "poste": "1"
   },
   "Bitumes": {
     "attribut": "",
@@ -653,6 +751,7 @@
       }
     },
     "frontière": "",
+    "groupe": "",
     "nom": "Bitumes",
     "poste": "1"
   },
@@ -665,6 +764,7 @@
       }
     },
     "frontière": "",
+    "groupe": "",
     "nom": "Bois bûche",
     "poste": "1"
   },
@@ -679,6 +779,7 @@
       }
     },
     "frontière": "",
+    "groupe": "",
     "nom": "Briquette de lignite",
     "poste": "1"
   },
@@ -691,6 +792,7 @@
       }
     },
     "frontière": "",
+    "groupe": "",
     "nom": "Broyats de cagettes et de pallettes",
     "poste": "1"
   },
@@ -706,6 +808,7 @@
       }
     },
     "frontière": "",
+    "groupe": "",
     "nom": "Butane",
     "poste": "1"
   },
@@ -717,8 +820,9 @@
       }
     },
     "frontière": "",
+    "groupe": "Routier",
     "nom": "Camion porteur",
-    "poste": null
+    "poste": "2"
   },
   "Cargo inter-îles, Mayotte-Anjouan, Donnée 2009": {
     "attribut": "Mayotte-Anjouan",
@@ -728,8 +832,9 @@
       }
     },
     "frontière": "Donnée 2009",
+    "groupe": "Non routier",
     "nom": "Cargo inter-îles",
-    "poste": null
+    "poste": "2"
   },
   "Cargo inter-îles, Petit Terre-Grande Terre, Donnée 2009": {
     "attribut": "Petit Terre-Grande Terre",
@@ -739,8 +844,9 @@
       }
     },
     "frontière": "Donnée 2009",
+    "groupe": "Non routier",
     "nom": "Cargo inter-îles",
-    "poste": null
+    "poste": "2"
   },
   "Cargo inter-îles, Polynésie, Donnée 2009": {
     "attribut": "Polynésie",
@@ -750,8 +856,9 @@
       }
     },
     "frontière": "Donnée 2009",
+    "groupe": "Non routier",
     "nom": "Cargo inter-îles",
-    "poste": null
+    "poste": "2"
   },
   "Cargo, 10 000 à 20 000 tonnes, HFO-MGO": {
     "attribut": "10 000 à 20 000 tonnes",
@@ -761,8 +868,9 @@
       }
     },
     "frontière": "HFO-MGO",
+    "groupe": "Non routier",
     "nom": "Cargo",
-    "poste": null
+    "poste": "2"
   },
   "Cargo, < 10 000 tonnes, HFO-MGO": {
     "attribut": "< 10 000 tonnes",
@@ -772,8 +880,9 @@
       }
     },
     "frontière": "HFO-MGO",
+    "groupe": "Non routier",
     "nom": "Cargo",
-    "poste": null
+    "poste": "2"
   },
   "Charbon sous-bitumineux, PCS entre 17 435 et 23 865 kJ/kg": {
     "attribut": "PCS entre 17 435 et 23 865 kJ/kg",
@@ -786,6 +895,7 @@
       }
     },
     "frontière": "",
+    "groupe": "",
     "nom": "Charbon sous-bitumineux",
     "poste": "1"
   },
@@ -800,6 +910,7 @@
       }
     },
     "frontière": "",
+    "groupe": "",
     "nom": "Charbon à coke",
     "poste": "1"
   },
@@ -814,6 +925,7 @@
       }
     },
     "frontière": "",
+    "groupe": "",
     "nom": "Charbon à vapeur",
     "poste": "1"
   },
@@ -828,6 +940,7 @@
       }
     },
     "frontière": "",
+    "groupe": "",
     "nom": "Coke de houille",
     "poste": "1"
   },
@@ -842,6 +955,7 @@
       }
     },
     "frontière": "",
+    "groupe": "",
     "nom": "Coke de lignite",
     "poste": "1"
   },
@@ -854,6 +968,7 @@
       }
     },
     "frontière": "",
+    "groupe": "",
     "nom": "Coke de pétrole",
     "poste": "1"
   },
@@ -868,6 +983,7 @@
       }
     },
     "frontière": "",
+    "groupe": "",
     "nom": "Combustible haute viscosité (CHV)",
     "poste": "1"
   },
@@ -879,8 +995,9 @@
       }
     },
     "frontière": "2018",
+    "groupe": "Routier",
     "nom": "Cyclomoteur",
-    "poste": null
+    "poste": "2"
   },
   "Cyclomoteur, Rural, 2018": {
     "attribut": "Rural",
@@ -890,8 +1007,9 @@
       }
     },
     "frontière": "2018",
+    "groupe": "Routier",
     "nom": "Cyclomoteur",
-    "poste": null
+    "poste": "2"
   },
   "Cyclomoteur, Urbain, 2018": {
     "attribut": "Urbain",
@@ -901,8 +1019,9 @@
       }
     },
     "frontière": "2018",
+    "groupe": "Routier",
     "nom": "Cyclomoteur",
-    "poste": null
+    "poste": "2"
   },
   "Essence aviation (AvGas)": {
     "attribut": "",
@@ -922,6 +1041,7 @@
       }
     },
     "frontière": "",
+    "groupe": "Routier",
     "nom": "Essence aviation (AvGas)",
     "poste": "2"
   },
@@ -937,6 +1057,7 @@
       }
     },
     "frontière": "",
+    "groupe": "Routier",
     "nom": "Essence",
     "poste": "2"
   },
@@ -952,6 +1073,7 @@
       }
     },
     "frontière": "",
+    "groupe": "Routier",
     "nom": "Essence",
     "poste": "2"
   },
@@ -991,6 +1113,7 @@
       }
     },
     "frontière": "",
+    "groupe": "Routier",
     "nom": "Essence",
     "poste": "2"
   },
@@ -1030,6 +1153,7 @@
       }
     },
     "frontière": "",
+    "groupe": "Les plus utilisés",
     "nom": "Fioul Lourd",
     "poste": "1"
   },
@@ -1063,6 +1187,7 @@
       }
     },
     "frontière": "",
+    "groupe": "Les plus utilisés",
     "nom": "Fioul domestique",
     "poste": "1"
   },
@@ -1076,6 +1201,7 @@
       }
     },
     "frontière": "Basse teneur en soufre",
+    "groupe": "",
     "nom": "Fioul à base de carbone recyclé",
     "poste": "1"
   },
@@ -1087,8 +1213,9 @@
       }
     },
     "frontière": "",
+    "groupe": "Routier",
     "nom": "Fourgon",
-    "poste": null
+    "poste": "2"
   },
   "GNC, Gaz Naturel Comprimé pour véhicule routier": {
     "attribut": "",
@@ -1102,6 +1229,7 @@
       }
     },
     "frontière": "",
+    "groupe": "Routier",
     "nom": "GNC, Gaz Naturel Comprimé pour véhicule routier",
     "poste": "2"
   },
@@ -1117,6 +1245,7 @@
       }
     },
     "frontière": "",
+    "groupe": "Routier",
     "nom": "GNL, Gaz Naturel Liquéfié",
     "poste": "2"
   },
@@ -1150,6 +1279,7 @@
       }
     },
     "frontière": "",
+    "groupe": "Routier",
     "nom": "GPL pour véhicule routier",
     "poste": "2"
   },
@@ -1161,6 +1291,7 @@
       }
     },
     "frontière": "",
+    "groupe": "",
     "nom": "Gaz d'aciérie",
     "poste": "1"
   },
@@ -1172,6 +1303,7 @@
       }
     },
     "frontière": "",
+    "groupe": "",
     "nom": "Gaz de cokerie",
     "poste": "1"
   },
@@ -1183,6 +1315,7 @@
       }
     },
     "frontière": "",
+    "groupe": "",
     "nom": "Gaz de haut fourneau",
     "poste": "1"
   },
@@ -1197,6 +1330,7 @@
       }
     },
     "frontière": "",
+    "groupe": "Les plus utilisés",
     "nom": "Gaz naturel",
     "poste": "1"
   },
@@ -1214,6 +1348,7 @@
       }
     },
     "frontière": "consommation",
+    "groupe": "",
     "nom": "Gaz naturel - 2015",
     "poste": "1"
   },
@@ -1225,8 +1360,9 @@
       }
     },
     "frontière": "Donnée 2009",
+    "groupe": "Non routier",
     "nom": "Gazier",
-    "poste": null
+    "poste": "2"
   },
   "Gazier, VLGC (Very Large Gas Carrier), Donnée 2009": {
     "attribut": "VLGC (Very Large Gas Carrier)",
@@ -1236,8 +1372,9 @@
       }
     },
     "frontière": "Donnée 2009",
+    "groupe": "Non routier",
     "nom": "Gazier",
-    "poste": null
+    "poste": "2"
   },
   "Gazole non routier": {
     "attribut": "",
@@ -1251,6 +1388,7 @@
       }
     },
     "frontière": "",
+    "groupe": "Routier",
     "nom": "Gazole non routier",
     "poste": "2"
   },
@@ -1283,6 +1421,7 @@
       }
     },
     "frontière": "",
+    "groupe": "Routier",
     "nom": "Gazole routier",
     "poste": "2"
   },
@@ -1297,6 +1436,7 @@
       }
     },
     "frontière": "",
+    "groupe": "Routier",
     "nom": "Gazole routier",
     "poste": "2"
   },
@@ -1311,6 +1451,7 @@
       }
     },
     "frontière": "",
+    "groupe": "Routier",
     "nom": "Gazole routier",
     "poste": "2"
   },
@@ -1326,6 +1467,7 @@
       }
     },
     "frontière": "",
+    "groupe": "Routier",
     "nom": "Gazole routier",
     "poste": "2"
   },
@@ -1341,6 +1483,7 @@
       }
     },
     "frontière": "",
+    "groupe": "Routier",
     "nom": "Gazole",
     "poste": "2"
   },
@@ -1353,6 +1496,7 @@
       }
     },
     "frontière": "",
+    "groupe": "Les plus utilisés",
     "nom": "Granulés bois",
     "poste": "1"
   },
@@ -1368,6 +1512,7 @@
       }
     },
     "frontière": "",
+    "groupe": "Routier",
     "nom": "HFO (Heavy Fuel Oil)",
     "poste": "2"
   },
@@ -1382,6 +1527,7 @@
       }
     },
     "frontière": "",
+    "groupe": "",
     "nom": "Houille",
     "poste": "1"
   },
@@ -1393,6 +1539,7 @@
       }
     },
     "frontière": "",
+    "groupe": null,
     "nom": "Hoverboard",
     "poste": null
   },
@@ -1406,6 +1553,7 @@
       }
     },
     "frontière": "",
+    "groupe": "",
     "nom": "Huiles de schistes",
     "poste": "1"
   },
@@ -1427,6 +1575,7 @@
       }
     },
     "frontière": "",
+    "groupe": "Non routier",
     "nom": "Kérosène",
     "poste": "2"
   },
@@ -1442,6 +1591,7 @@
       }
     },
     "frontière": "",
+    "groupe": "Routier",
     "nom": "LFO (Light Fuel Oil)",
     "poste": "2"
   },
@@ -1456,6 +1606,7 @@
       }
     },
     "frontière": "",
+    "groupe": "",
     "nom": "Lignite",
     "poste": "1"
   },
@@ -1471,6 +1622,7 @@
       }
     },
     "frontière": "",
+    "groupe": "Routier",
     "nom": "MDO (Marine Diesel Oil)",
     "poste": "2"
   },
@@ -1482,8 +1634,9 @@
       }
     },
     "frontière": "2018",
+    "groupe": "Routier",
     "nom": "Moto =< 250 cm3",
-    "poste": null
+    "poste": "2"
   },
   "Moto =< 250 cm3, Rural, 2018": {
     "attribut": "Rural",
@@ -1493,8 +1646,9 @@
       }
     },
     "frontière": "2018",
+    "groupe": "Routier",
     "nom": "Moto =< 250 cm3",
-    "poste": null
+    "poste": "2"
   },
   "Moto =< 250 cm3, Urbain, 2018": {
     "attribut": "Urbain",
@@ -1504,8 +1658,9 @@
       }
     },
     "frontière": "2018",
+    "groupe": "Routier",
     "nom": "Moto =< 250 cm3",
-    "poste": null
+    "poste": "2"
   },
   "Moto > 250 cm3, Mixte, 2018": {
     "attribut": "Mixte",
@@ -1515,8 +1670,9 @@
       }
     },
     "frontière": "2018",
+    "groupe": "Routier",
     "nom": "Moto > 250 cm3",
-    "poste": null
+    "poste": "2"
   },
   "Moto > 250 cm3, Rural, 2018": {
     "attribut": "Rural",
@@ -1526,8 +1682,9 @@
       }
     },
     "frontière": "2018",
+    "groupe": "Routier",
     "nom": "Moto > 250 cm3",
-    "poste": null
+    "poste": "2"
   },
   "Moto > 250 cm3, Urbain, 2018": {
     "attribut": "Urbain",
@@ -1537,8 +1694,9 @@
       }
     },
     "frontière": "2018",
+    "groupe": "Routier",
     "nom": "Moto > 250 cm3",
-    "poste": null
+    "poste": "2"
   },
   "Métro, 2019, Ile de France": {
     "attribut": "2019",
@@ -1548,8 +1706,9 @@
       }
     },
     "frontière": "Ile de France",
+    "groupe": "Non routier",
     "nom": "Métro",
-    "poste": null
+    "poste": "2"
   },
   "Naphta": {
     "attribut": "",
@@ -1561,6 +1720,7 @@
       }
     },
     "frontière": "",
+    "groupe": "",
     "nom": "Naphta",
     "poste": "1"
   },
@@ -1572,8 +1732,9 @@
       }
     },
     "frontière": "",
+    "groupe": "Non routier",
     "nom": "Navette fluviale",
-    "poste": null
+    "poste": "2"
   },
   "Navette inter-îles, Mayotte-Anjouan": {
     "attribut": "Mayotte-Anjouan",
@@ -1583,8 +1744,9 @@
       }
     },
     "frontière": "",
+    "groupe": "Non routier",
     "nom": "Navette inter-îles",
-    "poste": null
+    "poste": "2"
   },
   "Navette inter-îles, Petit Terre-Grande Terre": {
     "attribut": "Petit Terre-Grande Terre",
@@ -1594,8 +1756,9 @@
       }
     },
     "frontière": "",
+    "groupe": "Non routier",
     "nom": "Navette inter-îles",
-    "poste": null
+    "poste": "2"
   },
   "Navette inter-îles, Polynésie": {
     "attribut": "Polynésie",
@@ -1605,8 +1768,9 @@
       }
     },
     "frontière": "",
+    "groupe": "Non routier",
     "nom": "Navette inter-îles",
-    "poste": null
+    "poste": "2"
   },
   "Paille, 10% d'humidité": {
     "attribut": "10% d'humidité",
@@ -1617,6 +1781,7 @@
       }
     },
     "frontière": "",
+    "groupe": "",
     "nom": "Paille",
     "poste": "1"
   },
@@ -1629,6 +1794,7 @@
       }
     },
     "frontière": "",
+    "groupe": "Les plus utilisés",
     "nom": "Plaquettes forestières",
     "poste": "1"
   },
@@ -1640,6 +1806,7 @@
       }
     },
     "frontière": "",
+    "groupe": "",
     "nom": "Pneumatiques usagés non réutilisables",
     "poste": "1"
   },
@@ -1651,6 +1818,7 @@
       }
     },
     "frontière": "",
+    "groupe": "",
     "nom": "Pneumatiques usagés non réutilisables",
     "poste": "1"
   },
@@ -1662,6 +1830,7 @@
       }
     },
     "frontière": "",
+    "groupe": "",
     "nom": "Pneumatiques usagés non réutilisables",
     "poste": "1"
   },
@@ -1673,8 +1842,9 @@
       }
     },
     "frontière": "Asie - Europe du Nord",
+    "groupe": "Non routier",
     "nom": "Porte-conteneur",
-    "poste": null
+    "poste": "2"
   },
   "Porte-conteneur, Dry, Asie - Méditerranée": {
     "attribut": "Dry",
@@ -1684,8 +1854,9 @@
       }
     },
     "frontière": "Asie - Méditerranée",
+    "groupe": "Non routier",
     "nom": "Porte-conteneur",
-    "poste": null
+    "poste": "2"
   },
   "Porte-conteneur, Dry, Autres liaisons détaillées": {
     "attribut": "Dry",
@@ -1695,8 +1866,9 @@
       }
     },
     "frontière": "Autres liaisons détaillées",
+    "groupe": "Non routier",
     "nom": "Porte-conteneur",
-    "poste": null
+    "poste": "2"
   },
   "Porte-conteneur, Dry, Autres liaisons majeures": {
     "attribut": "Dry",
@@ -1706,8 +1878,9 @@
       }
     },
     "frontière": "Autres liaisons majeures",
+    "groupe": "Non routier",
     "nom": "Porte-conteneur",
-    "poste": null
+    "poste": "2"
   },
   "Porte-conteneur, Dry, Europe - Afrique": {
     "attribut": "Dry",
@@ -1717,8 +1890,9 @@
       }
     },
     "frontière": "Europe - Afrique",
+    "groupe": "Non routier",
     "nom": "Porte-conteneur",
-    "poste": null
+    "poste": "2"
   },
   "Porte-conteneur, Dry, Europe - Amérique du Sud et Centrale": {
     "attribut": "Dry",
@@ -1728,8 +1902,9 @@
       }
     },
     "frontière": "Europe - Amérique du Sud et Centrale",
+    "groupe": "Non routier",
     "nom": "Porte-conteneur",
-    "poste": null
+    "poste": "2"
   },
   "Porte-conteneur, Dry, Europe - Moyen-Orient et Inde": {
     "attribut": "Dry",
@@ -1739,8 +1914,9 @@
       }
     },
     "frontière": "Europe - Moyen-Orient et Inde",
+    "groupe": "Non routier",
     "nom": "Porte-conteneur",
-    "poste": null
+    "poste": "2"
   },
   "Porte-conteneur, Dry, Europe - Océanie": {
     "attribut": "Dry",
@@ -1750,8 +1926,9 @@
       }
     },
     "frontière": "Europe - Océanie",
+    "groupe": "Non routier",
     "nom": "Porte-conteneur",
-    "poste": null
+    "poste": "2"
   },
   "Porte-conteneur, Dry, Europe du Nord - Amérique du Nord, façade atlantique": {
     "attribut": "Dry",
@@ -1761,8 +1938,9 @@
       }
     },
     "frontière": "Europe du Nord - Amérique du Nord, façade atlantique",
+    "groupe": "Non routier",
     "nom": "Porte-conteneur",
-    "poste": null
+    "poste": "2"
   },
   "Porte-conteneur, Dry, Europe du Nord - Amérique du Nord, façade pacifique": {
     "attribut": "Dry",
@@ -1772,8 +1950,9 @@
       }
     },
     "frontière": "Europe du Nord - Amérique du Nord, façade pacifique",
+    "groupe": "Non routier",
     "nom": "Porte-conteneur",
-    "poste": null
+    "poste": "2"
   },
   "Porte-conteneur, Dry, Europe du Nord - Médtierranée": {
     "attribut": "Dry",
@@ -1783,8 +1962,9 @@
       }
     },
     "frontière": "Europe du Nord - Médtierranée",
+    "groupe": "Non routier",
     "nom": "Porte-conteneur",
-    "poste": null
+    "poste": "2"
   },
   "Porte-conteneur, Dry, Intra Europe du Nord": {
     "attribut": "Dry",
@@ -1794,8 +1974,9 @@
       }
     },
     "frontière": "Intra Europe du Nord",
+    "groupe": "Non routier",
     "nom": "Porte-conteneur",
-    "poste": null
+    "poste": "2"
   },
   "Porte-conteneur, Dry, Intra Méditerranée": {
     "attribut": "Dry",
@@ -1805,8 +1986,9 @@
       }
     },
     "frontière": "Intra Méditerranée",
+    "groupe": "Non routier",
     "nom": "Porte-conteneur",
-    "poste": null
+    "poste": "2"
   },
   "Porte-conteneur, Dry, Méditerranée - Amérique du Nord, façade atlantique": {
     "attribut": "Dry",
@@ -1816,8 +1998,9 @@
       }
     },
     "frontière": "Méditerranée - Amérique du Nord, façade atlantique",
+    "groupe": "Non routier",
     "nom": "Porte-conteneur",
-    "poste": null
+    "poste": "2"
   },
   "Porte-conteneur, Dry, Méditerranée - Amérique du Nord, façade pacifique": {
     "attribut": "Dry",
@@ -1827,8 +2010,9 @@
       }
     },
     "frontière": "Méditerranée - Amérique du Nord, façade pacifique",
+    "groupe": "Non routier",
     "nom": "Porte-conteneur",
-    "poste": null
+    "poste": "2"
   },
   "Porte-conteneur, Dry, Trans-Atlantique": {
     "attribut": "Dry",
@@ -1838,8 +2022,9 @@
       }
     },
     "frontière": "Trans-Atlantique",
+    "groupe": "Non routier",
     "nom": "Porte-conteneur",
-    "poste": null
+    "poste": "2"
   },
   "Porte-conteneur, Dry, Trans-Suez": {
     "attribut": "Dry",
@@ -1849,8 +2034,9 @@
       }
     },
     "frontière": "Trans-Suez",
+    "groupe": "Non routier",
     "nom": "Porte-conteneur",
-    "poste": null
+    "poste": "2"
   },
   "Porte-conteneur, Dry, Valeur moyenne": {
     "attribut": "Dry",
@@ -1860,8 +2046,9 @@
       }
     },
     "frontière": "Valeur moyenne",
+    "groupe": "Non routier",
     "nom": "Porte-conteneur",
-    "poste": null
+    "poste": "2"
   },
   "Porte-conteneur, Reefer, Asie - Europe du Nord": {
     "attribut": "Reefer",
@@ -1871,8 +2058,9 @@
       }
     },
     "frontière": "Asie - Europe du Nord",
+    "groupe": "Non routier",
     "nom": "Porte-conteneur",
-    "poste": null
+    "poste": "2"
   },
   "Porte-conteneur, Reefer, Asie - Méditerranée": {
     "attribut": "Reefer",
@@ -1882,8 +2070,9 @@
       }
     },
     "frontière": "Asie - Méditerranée",
+    "groupe": "Non routier",
     "nom": "Porte-conteneur",
-    "poste": null
+    "poste": "2"
   },
   "Porte-conteneur, Reefer, Autres liaisons détaillées": {
     "attribut": "Reefer",
@@ -1893,8 +2082,9 @@
       }
     },
     "frontière": "Autres liaisons détaillées",
+    "groupe": "Non routier",
     "nom": "Porte-conteneur",
-    "poste": null
+    "poste": "2"
   },
   "Porte-conteneur, Reefer, Autres liaisons majeures": {
     "attribut": "Reefer",
@@ -1904,8 +2094,9 @@
       }
     },
     "frontière": "Autres liaisons majeures",
+    "groupe": "Non routier",
     "nom": "Porte-conteneur",
-    "poste": null
+    "poste": "2"
   },
   "Porte-conteneur, Reefer, Europe - Afrique": {
     "attribut": "Reefer",
@@ -1915,8 +2106,9 @@
       }
     },
     "frontière": "Europe - Afrique",
+    "groupe": "Non routier",
     "nom": "Porte-conteneur",
-    "poste": null
+    "poste": "2"
   },
   "Porte-conteneur, Reefer, Europe - Amérique du Sud et Centrale": {
     "attribut": "Reefer",
@@ -1926,8 +2118,9 @@
       }
     },
     "frontière": "Europe - Amérique du Sud et Centrale",
+    "groupe": "Non routier",
     "nom": "Porte-conteneur",
-    "poste": null
+    "poste": "2"
   },
   "Porte-conteneur, Reefer, Europe - Moyen-Orient et Inde": {
     "attribut": "Reefer",
@@ -1937,8 +2130,9 @@
       }
     },
     "frontière": "Europe - Moyen-Orient et Inde",
+    "groupe": "Non routier",
     "nom": "Porte-conteneur",
-    "poste": null
+    "poste": "2"
   },
   "Porte-conteneur, Reefer, Europe - Océanie": {
     "attribut": "Reefer",
@@ -1948,8 +2142,9 @@
       }
     },
     "frontière": "Europe - Océanie",
+    "groupe": "Non routier",
     "nom": "Porte-conteneur",
-    "poste": null
+    "poste": "2"
   },
   "Porte-conteneur, Reefer, Europe du Nord - Amérique du Nord, façade atlantique": {
     "attribut": "Reefer",
@@ -1959,8 +2154,9 @@
       }
     },
     "frontière": "Europe du Nord - Amérique du Nord, façade atlantique",
+    "groupe": "Non routier",
     "nom": "Porte-conteneur",
-    "poste": null
+    "poste": "2"
   },
   "Porte-conteneur, Reefer, Europe du Nord - Amérique du Nord, façade pacifique": {
     "attribut": "Reefer",
@@ -1970,8 +2166,9 @@
       }
     },
     "frontière": "Europe du Nord - Amérique du Nord, façade pacifique",
+    "groupe": "Non routier",
     "nom": "Porte-conteneur",
-    "poste": null
+    "poste": "2"
   },
   "Porte-conteneur, Reefer, Europe du Nord - Médtierranée": {
     "attribut": "Reefer",
@@ -1981,8 +2178,9 @@
       }
     },
     "frontière": "Europe du Nord - Médtierranée",
+    "groupe": "Non routier",
     "nom": "Porte-conteneur",
-    "poste": null
+    "poste": "2"
   },
   "Porte-conteneur, Reefer, Intra Europe du Nord": {
     "attribut": "Reefer",
@@ -1992,8 +2190,9 @@
       }
     },
     "frontière": "Intra Europe du Nord",
+    "groupe": "Non routier",
     "nom": "Porte-conteneur",
-    "poste": null
+    "poste": "2"
   },
   "Porte-conteneur, Reefer, Intra Méditerranée": {
     "attribut": "Reefer",
@@ -2003,8 +2202,9 @@
       }
     },
     "frontière": "Intra Méditerranée",
+    "groupe": "Non routier",
     "nom": "Porte-conteneur",
-    "poste": null
+    "poste": "2"
   },
   "Porte-conteneur, Reefer, Méditerranée - Amérique du Nord, façade atlantique": {
     "attribut": "Reefer",
@@ -2014,8 +2214,9 @@
       }
     },
     "frontière": "Méditerranée - Amérique du Nord, façade atlantique",
+    "groupe": "Non routier",
     "nom": "Porte-conteneur",
-    "poste": null
+    "poste": "2"
   },
   "Porte-conteneur, Reefer, Méditerranée - Amérique du Nord, façade pacifique": {
     "attribut": "Reefer",
@@ -2025,8 +2226,9 @@
       }
     },
     "frontière": "Méditerranée - Amérique du Nord, façade pacifique",
+    "groupe": "Non routier",
     "nom": "Porte-conteneur",
-    "poste": null
+    "poste": "2"
   },
   "Porte-conteneur, Reefer, Trans-Atlantique": {
     "attribut": "Reefer",
@@ -2036,8 +2238,9 @@
       }
     },
     "frontière": "Trans-Atlantique",
+    "groupe": "Non routier",
     "nom": "Porte-conteneur",
-    "poste": null
+    "poste": "2"
   },
   "Porte-conteneur, Reefer, Trans-Suez": {
     "attribut": "Reefer",
@@ -2047,8 +2250,9 @@
       }
     },
     "frontière": "Trans-Suez",
+    "groupe": "Non routier",
     "nom": "Porte-conteneur",
-    "poste": null
+    "poste": "2"
   },
   "Porte-conteneur, Reefer, Valeur moyenne": {
     "attribut": "Reefer",
@@ -2058,8 +2262,9 @@
       }
     },
     "frontière": "Valeur moyenne",
+    "groupe": "Non routier",
     "nom": "Porte-conteneur",
-    "poste": null
+    "poste": "2"
   },
   "Propane, inclus maritime": {
     "attribut": "inclus maritime",
@@ -2073,6 +2278,7 @@
       }
     },
     "frontière": "",
+    "groupe": "",
     "nom": "Propane",
     "poste": "1"
   },
@@ -2085,6 +2291,7 @@
       }
     },
     "frontière": "",
+    "groupe": "",
     "nom": "Pétrole Brut",
     "poste": "1"
   },
@@ -2096,8 +2303,9 @@
       }
     },
     "frontière": "HFO-MGO",
+    "groupe": "Non routier",
     "nom": "Pétrolier",
-    "poste": null
+    "poste": "2"
   },
   "Pétrolier, 60 000 à 200 000 tonnes, HFO-MGO": {
     "attribut": "60 000 à 200 000 tonnes",
@@ -2107,8 +2315,9 @@
       }
     },
     "frontière": "HFO-MGO",
+    "groupe": "Non routier",
     "nom": "Pétrolier",
-    "poste": null
+    "poste": "2"
   },
   "Pétrolier, < 5 000 tonnes, HFO-MGO": {
     "attribut": "< 5 000 tonnes",
@@ -2118,8 +2327,9 @@
       }
     },
     "frontière": "HFO-MGO",
+    "groupe": "Non routier",
     "nom": "Pétrolier",
-    "poste": null
+    "poste": "2"
   },
   "Pétrolier, > 200 000 tonnes, GNL": {
     "attribut": "> 200 000 tonnes",
@@ -2129,8 +2339,9 @@
       }
     },
     "frontière": "GNL",
+    "groupe": "Non routier",
     "nom": "Pétrolier",
-    "poste": null
+    "poste": "2"
   },
   "Pétrolier, > 200 000 tonnes, HFO-MGO": {
     "attribut": "> 200 000 tonnes",
@@ -2140,8 +2351,9 @@
       }
     },
     "frontière": "HFO-MGO",
+    "groupe": "Non routier",
     "nom": "Pétrolier",
-    "poste": null
+    "poste": "2"
   },
   "Rigide, 12 à 20 tonnes, Diesel routier, incorporation 7 % de biodiesel": {
     "attribut": "12 à 20 tonnes",
@@ -2151,8 +2363,9 @@
       }
     },
     "frontière": "Diesel routier, incorporation 7 % de biodiesel",
+    "groupe": "Non routier",
     "nom": "Rigide",
-    "poste": null
+    "poste": "2"
   },
   "Rigide, 12 à 20 tonnes, GNC": {
     "attribut": "12 à 20 tonnes",
@@ -2162,8 +2375,9 @@
       }
     },
     "frontière": "GNC",
+    "groupe": "Non routier",
     "nom": "Rigide",
-    "poste": null
+    "poste": "2"
   },
   "Rigide, 12 à 20 tonnes, GNL": {
     "attribut": "12 à 20 tonnes",
@@ -2173,8 +2387,9 @@
       }
     },
     "frontière": "GNL",
+    "groupe": "Non routier",
     "nom": "Rigide",
-    "poste": null
+    "poste": "2"
   },
   "Rigide, 20 à 26 tonnes, Diesel routier, incorporation 7 % de biodiesel": {
     "attribut": "20 à 26 tonnes",
@@ -2184,8 +2399,9 @@
       }
     },
     "frontière": "Diesel routier, incorporation 7 % de biodiesel",
+    "groupe": "Non routier",
     "nom": "Rigide",
-    "poste": null
+    "poste": "2"
   },
   "Rigide, 20 à 26 tonnes, GNC": {
     "attribut": "20 à 26 tonnes",
@@ -2195,8 +2411,9 @@
       }
     },
     "frontière": "GNC",
+    "groupe": "Non routier",
     "nom": "Rigide",
-    "poste": null
+    "poste": "2"
   },
   "Rigide, 20 à 26 tonnes, GNL": {
     "attribut": "20 à 26 tonnes",
@@ -2206,8 +2423,9 @@
       }
     },
     "frontière": "GNL",
+    "groupe": "Non routier",
     "nom": "Rigide",
-    "poste": null
+    "poste": "2"
   },
   "Rigide, 26 à 32 tonnes, Diesel routier, incorporation 7 % de biodiesel": {
     "attribut": "26 à 32 tonnes",
@@ -2217,8 +2435,9 @@
       }
     },
     "frontière": "Diesel routier, incorporation 7 % de biodiesel",
+    "groupe": "Non routier",
     "nom": "Rigide",
-    "poste": null
+    "poste": "2"
   },
   "Rigide, 3,5 à 7,5 tonnes, Diesel routier, incorporation 7 % de biodiesel": {
     "attribut": "3,5 à 7,5 tonnes",
@@ -2228,8 +2447,9 @@
       }
     },
     "frontière": "Diesel routier, incorporation 7 % de biodiesel",
+    "groupe": "Non routier",
     "nom": "Rigide",
-    "poste": null
+    "poste": "2"
   },
   "Rigide, 3,5 à 7,5 tonnes, Electrique": {
     "attribut": "3,5 à 7,5 tonnes",
@@ -2239,8 +2459,9 @@
       }
     },
     "frontière": "Electrique",
+    "groupe": "Non routier",
     "nom": "Rigide",
-    "poste": null
+    "poste": "2"
   },
   "Rigide, 3,5 à 7,5 tonnes, GNC": {
     "attribut": "3,5 à 7,5 tonnes",
@@ -2250,8 +2471,9 @@
       }
     },
     "frontière": "GNC",
+    "groupe": "Non routier",
     "nom": "Rigide",
-    "poste": null
+    "poste": "2"
   },
   "Rigide, 3,5 à 7,5 tonnes, Hybride parallèle": {
     "attribut": "3,5 à 7,5 tonnes",
@@ -2261,8 +2483,9 @@
       }
     },
     "frontière": "Hybride parallèle",
+    "groupe": "Non routier",
     "nom": "Rigide",
-    "poste": null
+    "poste": "2"
   },
   "Rigide, 3,5 à 7,5 tonnes, Hybride série": {
     "attribut": "3,5 à 7,5 tonnes",
@@ -2272,8 +2495,9 @@
       }
     },
     "frontière": "Hybride série",
+    "groupe": "Non routier",
     "nom": "Rigide",
-    "poste": null
+    "poste": "2"
   },
   "Rigide, 7,5 à 12 tonnes, Diesel routier, incorporation 7 % de biodiesel": {
     "attribut": "7,5 à 12 tonnes",
@@ -2283,8 +2507,9 @@
       }
     },
     "frontière": "Diesel routier, incorporation 7 % de biodiesel",
+    "groupe": "Non routier",
     "nom": "Rigide",
-    "poste": null
+    "poste": "2"
   },
   "Rigide, 7,5 à 12 tonnes, GNC": {
     "attribut": "7,5 à 12 tonnes",
@@ -2294,8 +2519,9 @@
       }
     },
     "frontière": "GNC",
+    "groupe": "Non routier",
     "nom": "Rigide",
-    "poste": null
+    "poste": "2"
   },
   "Ro-Pax, HFO-MGO": {
     "attribut": "",
@@ -2305,8 +2531,9 @@
       }
     },
     "frontière": "HFO-MGO",
+    "groupe": "Non routier",
     "nom": "Ro-Pax",
-    "poste": null
+    "poste": "2"
   },
   "Ro-Ro, Camions et Remorques, HFO-MGO": {
     "attribut": "Camions et Remorques",
@@ -2316,8 +2543,9 @@
       }
     },
     "frontière": "HFO-MGO",
+    "groupe": "Non routier",
     "nom": "Ro-Ro",
-    "poste": null
+    "poste": "2"
   },
   "Ro-Ro, Chargement moyen, HFO-MGO": {
     "attribut": "Chargement moyen",
@@ -2327,8 +2555,9 @@
       }
     },
     "frontière": "HFO-MGO",
+    "groupe": "Non routier",
     "nom": "Ro-Ro",
-    "poste": null
+    "poste": "2"
   },
   "Ro-Ro, Remorques uniquement, HFO-MGO": {
     "attribut": "Remorques uniquement",
@@ -2338,8 +2567,9 @@
       }
     },
     "frontière": "HFO-MGO",
+    "groupe": "Non routier",
     "nom": "Ro-Ro",
-    "poste": null
+    "poste": "2"
   },
   "Sciures et chutes de scieries, 50% d'humidité": {
     "attribut": "50% d'humidité",
@@ -2350,6 +2580,7 @@
       }
     },
     "frontière": "",
+    "groupe": "",
     "nom": "Sciures et chutes de scieries",
     "poste": "1"
   },
@@ -2361,8 +2592,9 @@
       }
     },
     "frontière": "",
+    "groupe": "Routier",
     "nom": "Taxi brousse",
-    "poste": null
+    "poste": "2"
   },
   "Taxi brousse, véhicule plein": {
     "attribut": "véhicule plein",
@@ -2372,8 +2604,9 @@
       }
     },
     "frontière": "",
+    "groupe": "Routier",
     "nom": "Taxi brousse",
-    "poste": null
+    "poste": "2"
   },
   "Taxi brousse, véhicule vide": {
     "attribut": "véhicule vide",
@@ -2383,8 +2616,9 @@
       }
     },
     "frontière": "",
+    "groupe": "Routier",
     "nom": "Taxi brousse",
-    "poste": null
+    "poste": "2"
   },
   "Tourbe": {
     "attribut": "",
@@ -2397,6 +2631,7 @@
       }
     },
     "frontière": "",
+    "groupe": "",
     "nom": "Tourbe",
     "poste": "1"
   },
@@ -2408,8 +2643,9 @@
       }
     },
     "frontière": "Chargement dense",
+    "groupe": "Non routier",
     "nom": "Train",
-    "poste": null
+    "poste": "2"
   },
   "Train, Motorisation moyenne, Chargement léger": {
     "attribut": "Motorisation moyenne",
@@ -2419,8 +2655,9 @@
       }
     },
     "frontière": "Chargement léger",
+    "groupe": "Non routier",
     "nom": "Train",
-    "poste": null
+    "poste": "2"
   },
   "Train, Motorisation moyenne, Chargement moyen": {
     "attribut": "Motorisation moyenne",
@@ -2430,8 +2667,9 @@
       }
     },
     "frontière": "Chargement moyen",
+    "groupe": "Non routier",
     "nom": "Train",
-    "poste": null
+    "poste": "2"
   },
   "Train, Traction diesel, Chargement dense": {
     "attribut": "Traction diesel",
@@ -2441,8 +2679,9 @@
       }
     },
     "frontière": "Chargement dense",
+    "groupe": "Non routier",
     "nom": "Train",
-    "poste": null
+    "poste": "2"
   },
   "Train, Traction diesel, Chargement léger": {
     "attribut": "Traction diesel",
@@ -2452,8 +2691,9 @@
       }
     },
     "frontière": "Chargement léger",
+    "groupe": "Non routier",
     "nom": "Train",
-    "poste": null
+    "poste": "2"
   },
   "Train, Traction diesel, Chargement moyen": {
     "attribut": "Traction diesel",
@@ -2463,8 +2703,9 @@
       }
     },
     "frontière": "Chargement moyen",
+    "groupe": "Non routier",
     "nom": "Train",
-    "poste": null
+    "poste": "2"
   },
   "Train, Traction électrique, Chargement dense": {
     "attribut": "Traction électrique",
@@ -2474,8 +2715,9 @@
       }
     },
     "frontière": "Chargement dense",
+    "groupe": "Non routier",
     "nom": "Train",
-    "poste": null
+    "poste": "2"
   },
   "Train, Traction électrique, Chargement léger": {
     "attribut": "Traction électrique",
@@ -2485,8 +2727,9 @@
       }
     },
     "frontière": "Chargement léger",
+    "groupe": "Non routier",
     "nom": "Train",
-    "poste": null
+    "poste": "2"
   },
   "Train, Traction électrique, Chargement moyen": {
     "attribut": "Traction électrique",
@@ -2496,8 +2739,9 @@
       }
     },
     "frontière": "Chargement moyen",
+    "groupe": "Non routier",
     "nom": "Train",
-    "poste": null
+    "poste": "2"
   },
   "Tramway, 2019, Ile de France": {
     "attribut": "2019",
@@ -2507,8 +2751,9 @@
       }
     },
     "frontière": "Ile de France",
+    "groupe": "Non routier",
     "nom": "Tramway",
-    "poste": null
+    "poste": "2"
   },
   "Trotinnette, électrique": {
     "attribut": "électrique",
@@ -2518,8 +2763,9 @@
       }
     },
     "frontière": "",
+    "groupe": "Routier",
     "nom": "Trotinnette",
-    "poste": null
+    "poste": "2"
   },
   "Utilitaire <3,5t, Hydrogène SMR biométhane centralisé": {
     "attribut": "",
@@ -2529,8 +2775,9 @@
       }
     },
     "frontière": "Hydrogène SMR biométhane centralisé",
+    "groupe": "Routier",
     "nom": "Utilitaire <3,5t",
-    "poste": null
+    "poste": "2"
   },
   "Utilitaire <3,5t, Hydrogène SMR gaz naturel centralisé": {
     "attribut": "",
@@ -2540,8 +2787,9 @@
       }
     },
     "frontière": "Hydrogène SMR gaz naturel centralisé",
+    "groupe": "Routier",
     "nom": "Utilitaire <3,5t",
-    "poste": null
+    "poste": "2"
   },
   "Utilitaire <3,5t, Hydrogène électrolyse décentralisée mix EnR": {
     "attribut": "",
@@ -2551,8 +2799,9 @@
       }
     },
     "frontière": "Hydrogène électrolyse décentralisée mix EnR",
+    "groupe": "Routier",
     "nom": "Utilitaire <3,5t",
-    "poste": null
+    "poste": "2"
   },
   "Utilitaire <3,5t, Hydrogène électrolyse décentralisée mix France": {
     "attribut": "",
@@ -2562,8 +2811,9 @@
       }
     },
     "frontière": "Hydrogène électrolyse décentralisée mix France",
+    "groupe": "Routier",
     "nom": "Utilitaire <3,5t",
-    "poste": null
+    "poste": "2"
   },
   "VUL, < 3,5 tonnes, Diesel routier, incorporation 7 % de biodiesel": {
     "attribut": "< 3,5 tonnes",
@@ -2573,8 +2823,9 @@
       }
     },
     "frontière": "Diesel routier, incorporation 7 % de biodiesel",
+    "groupe": "Routier",
     "nom": "VUL",
-    "poste": null
+    "poste": "2"
   },
   "VUL, < 3,5 tonnes, Essence": {
     "attribut": "< 3,5 tonnes",
@@ -2584,8 +2835,9 @@
       }
     },
     "frontière": "Essence",
+    "groupe": "Routier",
     "nom": "VUL",
-    "poste": null
+    "poste": "2"
   },
   "VUL, < 3,5 tonnes, GNC": {
     "attribut": "< 3,5 tonnes",
@@ -2595,8 +2847,9 @@
       }
     },
     "frontière": "GNC",
+    "groupe": "Routier",
     "nom": "VUL",
-    "poste": null
+    "poste": "2"
   },
   "VUL, < 3,5 tonnes, GPL": {
     "attribut": "< 3,5 tonnes",
@@ -2606,8 +2859,9 @@
       }
     },
     "frontière": "GPL",
+    "groupe": "Routier",
     "nom": "VUL",
-    "poste": null
+    "poste": "2"
   },
   "Voiture E85, Courte distance, 2018": {
     "attribut": "Courte distance",
@@ -2617,8 +2871,9 @@
       }
     },
     "frontière": "2018",
+    "groupe": "Routier",
     "nom": "Voiture E85",
-    "poste": null
+    "poste": "2"
   },
   "Voiture E85, Longue distance, 2018": {
     "attribut": "Longue distance",
@@ -2628,8 +2883,9 @@
       }
     },
     "frontière": "2018",
+    "groupe": "Routier",
     "nom": "Voiture E85",
-    "poste": null
+    "poste": "2"
   },
   "Voiture E85, Mixte, 2018": {
     "attribut": "Mixte",
@@ -2639,8 +2895,9 @@
       }
     },
     "frontière": "2018",
+    "groupe": "Routier",
     "nom": "Voiture E85",
-    "poste": null
+    "poste": "2"
   },
   "Voiture GNV, Courte distance, 2018": {
     "attribut": "Courte distance",
@@ -2650,8 +2907,9 @@
       }
     },
     "frontière": "2018",
+    "groupe": "Routier",
     "nom": "Voiture GNV",
-    "poste": null
+    "poste": "2"
   },
   "Voiture GNV, Longue distance, 2018": {
     "attribut": "Longue distance",
@@ -2661,8 +2919,9 @@
       }
     },
     "frontière": "2018",
+    "groupe": "Routier",
     "nom": "Voiture GNV",
-    "poste": null
+    "poste": "2"
   },
   "Voiture GNV, Mixte, 2018": {
     "attribut": "Mixte",
@@ -2672,8 +2931,9 @@
       }
     },
     "frontière": "2018",
+    "groupe": "Routier",
     "nom": "Voiture GNV",
-    "poste": null
+    "poste": "2"
   },
   "Voiture GPL, Courte distance, 2018": {
     "attribut": "Courte distance",
@@ -2683,8 +2943,9 @@
       }
     },
     "frontière": "2018",
+    "groupe": "Routier",
     "nom": "Voiture GPL",
-    "poste": null
+    "poste": "2"
   },
   "Voiture GPL, Longue distance, 2018": {
     "attribut": "Longue distance",
@@ -2694,8 +2955,9 @@
       }
     },
     "frontière": "2018",
+    "groupe": "Routier",
     "nom": "Voiture GPL",
-    "poste": null
+    "poste": "2"
   },
   "Voiture GPL, Mixte, 2018": {
     "attribut": "Mixte",
@@ -2705,8 +2967,9 @@
       }
     },
     "frontière": "2018",
+    "groupe": "Routier",
     "nom": "Voiture GPL",
-    "poste": null
+    "poste": "2"
   },
   "Voiture essence, Courte distance, 2018": {
     "attribut": "Courte distance",
@@ -2716,8 +2979,9 @@
       }
     },
     "frontière": "2018",
+    "groupe": "Routier",
     "nom": "Voiture essence",
-    "poste": null
+    "poste": "2"
   },
   "Voiture essence, Longue distance, 2018": {
     "attribut": "Longue distance",
@@ -2727,8 +2991,9 @@
       }
     },
     "frontière": "2018",
+    "groupe": "Routier",
     "nom": "Voiture essence",
-    "poste": null
+    "poste": "2"
   },
   "Voiture essence, Mixte, 2018": {
     "attribut": "Mixte",
@@ -2738,8 +3003,9 @@
       }
     },
     "frontière": "2018",
+    "groupe": "Routier",
     "nom": "Voiture essence",
-    "poste": null
+    "poste": "2"
   },
   "Voiture gazole, Courte distance, 2018": {
     "attribut": "Courte distance",
@@ -2749,8 +3015,9 @@
       }
     },
     "frontière": "2018",
+    "groupe": "Routier",
     "nom": "Voiture gazole",
-    "poste": null
+    "poste": "2"
   },
   "Voiture gazole, Longue distance, 2018": {
     "attribut": "Longue distance",
@@ -2760,8 +3027,9 @@
       }
     },
     "frontière": "2018",
+    "groupe": "Routier",
     "nom": "Voiture gazole",
-    "poste": null
+    "poste": "2"
   },
   "Voiture gazole, Mixte, 2018": {
     "attribut": "Mixte",
@@ -2771,8 +3039,9 @@
       }
     },
     "frontière": "2018",
+    "groupe": "Routier",
     "nom": "Voiture gazole",
-    "poste": null
+    "poste": "2"
   },
   "Voiture particulière, Berline, Hydrogène SMR GN centralisé": {
     "attribut": "Berline",
@@ -2782,8 +3051,9 @@
       }
     },
     "frontière": "Hydrogène SMR GN centralisé",
+    "groupe": "Routier",
     "nom": "Voiture particulière",
-    "poste": null
+    "poste": "2"
   },
   "Voiture particulière, Berline, Hydrogène SMR biométhane centralisé": {
     "attribut": "Berline",
@@ -2793,8 +3063,9 @@
       }
     },
     "frontière": "Hydrogène SMR biométhane centralisé",
+    "groupe": "Routier",
     "nom": "Voiture particulière",
-    "poste": null
+    "poste": "2"
   },
   "Voiture particulière, Berline, Hydrogène électrolyse lix EnR décentralisée": {
     "attribut": "Berline",
@@ -2804,8 +3075,9 @@
       }
     },
     "frontière": "Hydrogène électrolyse lix EnR décentralisée",
+    "groupe": "Routier",
     "nom": "Voiture particulière",
-    "poste": null
+    "poste": "2"
   },
   "Voiture particulière, Berline, Hydrogène électrolyse mix France décentralisée": {
     "attribut": "Berline",
@@ -2815,8 +3087,9 @@
       }
     },
     "frontière": "Hydrogène électrolyse mix France décentralisée",
+    "groupe": "Routier",
     "nom": "Voiture particulière",
-    "poste": null
+    "poste": "2"
   },
   "Voiture particulière, Coeur de gamme - Véhicule compact, Electrique": {
     "attribut": "Coeur de gamme - Véhicule compact",
@@ -2826,8 +3099,9 @@
       }
     },
     "frontière": "Electrique",
+    "groupe": "Routier",
     "nom": "Voiture particulière",
-    "poste": null
+    "poste": "2"
   },
   "Voiture particulière, Coeur de gamme - Véhicule compact, Hybride rechargeable, plug in-hybrid, P2/prius": {
     "attribut": "Coeur de gamme - Véhicule compact",
@@ -2837,8 +3111,9 @@
       }
     },
     "frontière": "Hybride rechargeable, plug in-hybrid, P2/prius",
+    "groupe": "Routier",
     "nom": "Voiture particulière",
-    "poste": null
+    "poste": "2"
   },
   "Voiture particulière, Coeur de gamme - Véhicule compact, Hybride, full, P2": {
     "attribut": "Coeur de gamme - Véhicule compact",
@@ -2848,8 +3123,9 @@
       }
     },
     "frontière": "Hybride, full, P2",
+    "groupe": "Routier",
     "nom": "Voiture particulière",
-    "poste": null
+    "poste": "2"
   },
   "Voiture particulière, Coeur de gamme - Véhicule compact, Hybride, full, Prius": {
     "attribut": "Coeur de gamme - Véhicule compact",
@@ -2859,8 +3135,9 @@
       }
     },
     "frontière": "Hybride, full, Prius",
+    "groupe": "Routier",
     "nom": "Voiture particulière",
-    "poste": null
+    "poste": "2"
   },
   "Voiture particulière, Coeur de gamme - Véhicule compact, Hybride, mild, diesel": {
     "attribut": "Coeur de gamme - Véhicule compact",
@@ -2870,8 +3147,9 @@
       }
     },
     "frontière": "Hybride, mild, diesel",
+    "groupe": "Routier",
     "nom": "Voiture particulière",
-    "poste": null
+    "poste": "2"
   },
   "Voiture particulière, Coeur de gamme - Véhicule compact, Hybride, mild, essence": {
     "attribut": "Coeur de gamme - Véhicule compact",
@@ -2881,8 +3159,9 @@
       }
     },
     "frontière": "Hybride, mild, essence",
+    "groupe": "Routier",
     "nom": "Voiture particulière",
-    "poste": null
+    "poste": "2"
   },
   "Voiture particulière, Entrée de gamme - Véhicule léger, Electrique": {
     "attribut": "Entrée de gamme - Véhicule léger",
@@ -2892,8 +3171,9 @@
       }
     },
     "frontière": "Electrique",
+    "groupe": "Routier",
     "nom": "Voiture particulière",
-    "poste": null
+    "poste": "2"
   },
   "Voiture particulière, Entrée de gamme - Véhicule léger, Hybride rechargeable avec alimentation auxilliaire de puissance": {
     "attribut": "Entrée de gamme - Véhicule léger",
@@ -2903,8 +3183,9 @@
       }
     },
     "frontière": "Hybride rechargeable avec alimentation auxilliaire de puissance",
+    "groupe": "Routier",
     "nom": "Voiture particulière",
-    "poste": null
+    "poste": "2"
   },
   "Voiture particulière, Entrée de gamme - Véhicule léger, Hybride, mild essence": {
     "attribut": "Entrée de gamme - Véhicule léger",
@@ -2914,8 +3195,9 @@
       }
     },
     "frontière": "Hybride, mild essence",
+    "groupe": "Routier",
     "nom": "Voiture particulière",
-    "poste": null
+    "poste": "2"
   },
   "Voiture particulière, Haut de gamme - Berline, Electrique": {
     "attribut": "Haut de gamme - Berline",
@@ -2925,8 +3207,9 @@
       }
     },
     "frontière": "Electrique",
+    "groupe": "Routier",
     "nom": "Voiture particulière",
-    "poste": null
+    "poste": "2"
   },
   "Voiture particulière, Haut de gamme - Berline, Hybride rechargeable, plug in-hybrid, P2 / Prius": {
     "attribut": "Haut de gamme - Berline",
@@ -2936,8 +3219,9 @@
       }
     },
     "frontière": "Hybride rechargeable, plug in-hybrid, P2 / Prius",
+    "groupe": "Routier",
     "nom": "Voiture particulière",
-    "poste": null
+    "poste": "2"
   },
   "Voiture particulière, Haut de gamme - Berline, Hybride, full P2": {
     "attribut": "Haut de gamme - Berline",
@@ -2947,8 +3231,9 @@
       }
     },
     "frontière": "Hybride, full P2",
+    "groupe": "Routier",
     "nom": "Voiture particulière",
-    "poste": null
+    "poste": "2"
   },
   "Voiture particulière, Haut de gamme - Berline, Hybride, full Prius": {
     "attribut": "Haut de gamme - Berline",
@@ -2958,8 +3243,9 @@
       }
     },
     "frontière": "Hybride, full Prius",
+    "groupe": "Routier",
     "nom": "Voiture particulière",
-    "poste": null
+    "poste": "2"
   },
   "Voiture particulière, Haut de gamme - Berline, Hybride, mild diesel": {
     "attribut": "Haut de gamme - Berline",
@@ -2969,8 +3255,9 @@
       }
     },
     "frontière": "Hybride, mild diesel",
+    "groupe": "Routier",
     "nom": "Voiture particulière",
-    "poste": null
+    "poste": "2"
   },
   "Voiture particulière, Haut de gamme - Berline, Hybride, mild essence": {
     "attribut": "Haut de gamme - Berline",
@@ -2980,8 +3267,9 @@
       }
     },
     "frontière": "Hybride, mild essence",
+    "groupe": "Routier",
     "nom": "Voiture particulière",
-    "poste": null
+    "poste": "2"
   },
   "Voiture, Motorisation E85, 2018": {
     "attribut": "Motorisation E85",
@@ -2991,8 +3279,9 @@
       }
     },
     "frontière": "2018",
+    "groupe": "Routier",
     "nom": "Voiture",
-    "poste": null
+    "poste": "2"
   },
   "Voiture, Motorisation GNV, 2018": {
     "attribut": "Motorisation GNV",
@@ -3002,8 +3291,9 @@
       }
     },
     "frontière": "2018",
+    "groupe": "Routier",
     "nom": "Voiture",
-    "poste": null
+    "poste": "2"
   },
   "Voiture, Motorisation GPL, 2018": {
     "attribut": "Motorisation GPL",
@@ -3013,8 +3303,9 @@
       }
     },
     "frontière": "2018",
+    "groupe": "Routier",
     "nom": "Voiture",
-    "poste": null
+    "poste": "2"
   },
   "Voiture, Motorisation essence, 2018": {
     "attribut": "Motorisation essence",
@@ -3024,8 +3315,9 @@
       }
     },
     "frontière": "2018",
+    "groupe": "Routier",
     "nom": "Voiture",
-    "poste": null
+    "poste": "2"
   },
   "Voiture, Motorisation gazole, 2018": {
     "attribut": "Motorisation gazole",
@@ -3035,8 +3327,9 @@
       }
     },
     "frontière": "2018",
+    "groupe": "Routier",
     "nom": "Voiture",
-    "poste": null
+    "poste": "2"
   },
   "Vraquier, 10 000 à 100 000 tonnes, HFO - MGO": {
     "attribut": "10 000 à 100 000 tonnes",
@@ -3046,8 +3339,9 @@
       }
     },
     "frontière": "HFO - MGO",
+    "groupe": "Non routier",
     "nom": "Vraquier",
-    "poste": null
+    "poste": "2"
   },
   "Vraquier, < 10 000 tonnes, GNL": {
     "attribut": "< 10 000 tonnes",
@@ -3057,8 +3351,9 @@
       }
     },
     "frontière": "GNL",
+    "groupe": "Non routier",
     "nom": "Vraquier",
-    "poste": null
+    "poste": "2"
   },
   "Vraquier, < 10 000 tonnes, HFO - MGO": {
     "attribut": "< 10 000 tonnes",
@@ -3068,8 +3363,9 @@
       }
     },
     "frontière": "HFO - MGO",
+    "groupe": "Non routier",
     "nom": "Vraquier",
-    "poste": null
+    "poste": "2"
   },
   "Vraquier, > 100 000 tonnes, HFO - MGO": {
     "attribut": "> 100 000 tonnes",
@@ -3079,8 +3375,9 @@
       }
     },
     "frontière": "HFO - MGO",
+    "groupe": "Non routier",
     "nom": "Vraquier",
-    "poste": null
+    "poste": "2"
   },
   "Vélo, à assistance électrique": {
     "attribut": "à assistance électrique",
@@ -3090,8 +3387,9 @@
       }
     },
     "frontière": "",
+    "groupe": "Routier",
     "nom": "Vélo",
-    "poste": null
+    "poste": "2"
   },
   "coke de pétrole": {
     "attribut": "",
@@ -3102,6 +3400,7 @@
       }
     },
     "frontière": "",
+    "groupe": "",
     "nom": "coke de pétrole",
     "poste": "1"
   }
