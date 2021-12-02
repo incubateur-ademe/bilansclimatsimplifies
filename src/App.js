@@ -16,7 +16,6 @@ import TypeBilan from 'views/TypeBilan'
 import Poste from 'views/Poste'
 import Bilans from 'views/Bilans'
 import Bilan from 'views/Bilan'
-import Login from 'views/Login'
 
 const queryClient = new QueryClient()
 
@@ -25,13 +24,8 @@ function App() {
     flow: 'standard',
     pkceMethod: 'S256',
   }
-  const onKeycloakEvent = (event, error) => {
-    // temporary logging to have visibility of keycloak events
-    console.log('onKeycloakEvent', event, error)
-  }
   const onTokens = (tokens) => {
     const token = tokens.token
-    console.log("onTokens token", token) // temporary for debugging
     if(token) {
       sessionStorage.setItem('token', token)
       axios.defaults.headers.common['Authorization'] = `Token ${token}`
@@ -41,7 +35,7 @@ function App() {
     }
   }
   return (
-    <ReactKeycloakProvider authClient={keycloak} initOptions={initOptions} onEvent={onKeycloakEvent} onTokens={onTokens}>
+    <ReactKeycloakProvider authClient={keycloak} initOptions={initOptions} onTokens={onTokens}>
       <Router>
         <QueryClientProvider client={queryClient}>
           <AuthProvider>
@@ -65,9 +59,6 @@ function App() {
                 <PrivateRoute path='/bilans'>
                   <Bilans />
                 </PrivateRoute>
-                <Route path='/login'>
-                  <Login />
-                </Route>
                 <Route path='/'>
                   <Home />
                 </Route>

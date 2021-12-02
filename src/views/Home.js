@@ -2,7 +2,7 @@ import React from 'react'
 import styled from 'styled-components'
 import { Row, Col, Text, Title } from '@dataesr/react-dsfr'
 
-import LoginForm from './home/LoginForm'
+import AdemeLoginButton from './home/AdemeLoginButton'
 
 const StyledText = styled(Text)`
   margin-bottom: 0.75rem;
@@ -22,7 +22,7 @@ export default function Home() {
       </Row>
       <Row gutters alignItems='middle'>
         <Col>
-          <LoginForm />
+          <AdemeLoginButton />
         </Col>
       </Row>
       <Row gutters alignItems='middle'>

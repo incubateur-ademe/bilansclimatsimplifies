@@ -1,4 +1,4 @@
-import React, { useContext } from 'react'
+import React from 'react'
 import {
   Header as Wrapper,
   HeaderOperator,
@@ -10,14 +10,12 @@ import {
   Button,
 } from '@dataesr/react-dsfr'
 
-import AuthContext from 'utils/AuthContext'
 import Ademe from 'components/base/Ademe'
 
 import { useKeycloak } from '@react-keycloak/web'
 
 export default function Header() {
-  const { token, setToken } = useContext(AuthContext)
-  const { keycloak, initialized } = useKeycloak()
+  const { keycloak } = useKeycloak()
 
   return (
     <Wrapper>
@@ -32,8 +30,7 @@ export default function Header() {
         />
         <Tool>
           <ToolItemGroup>
-            {initialized && token && !keycloak.authenticated && <Button onClick={() => setToken(null)}>Logout</Button>}
-            {initialized && keycloak.authenticated && <Button onClick={() => keycloak.logout()}>Logout</Button>}
+            {keycloak.authenticated && <Button secondary onClick={() => keycloak.logout()}>Logout</Button>}
           </ToolItemGroup>
         </Tool>
       </HeaderBody>
