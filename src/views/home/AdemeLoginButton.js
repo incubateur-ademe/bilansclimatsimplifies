@@ -4,7 +4,7 @@ import MagicLink from 'components/base/MagicLink'
 import { useKeycloak } from '@react-keycloak/web'
 
 import axios from 'axios'
-import { useCsrfToken, useUserMutation } from 'hooks/useUser'
+import { useCsrfToken } from 'hooks/useUser'
 import apiUrl from 'utils/apiUrl'
 import AuthContext from 'utils/AuthContext'
 
