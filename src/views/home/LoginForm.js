@@ -19,7 +19,7 @@ const StyledHighlight = styled(Highlight)`
 const StyledButton = styled(Button)`
   margin-bottom: 1rem;
 `
-export default function ContactForm() {
+export default function LoginForm() {
   const { token, setToken } = useContext(AuthContext)
 
   const history = useHistory()

@@ -30,7 +30,11 @@ export default function Header() {
         />
         <Tool>
           <ToolItemGroup>
-            {keycloak.authenticated && <Button secondary onClick={() => keycloak.logout()}>Logout</Button>}
+            {keycloak.authenticated && (
+              <Button secondary onClick={() => keycloak.logout()}>
+                Logout
+              </Button>
+            )}
           </ToolItemGroup>
         </Tool>
       </HeaderBody>

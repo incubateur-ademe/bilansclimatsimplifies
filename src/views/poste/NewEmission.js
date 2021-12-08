@@ -52,7 +52,7 @@ export default function NewEmission(props) {
             bilan: props.bilan,
             poste: props.poste,
             type,
-            valeur,
+            valeur: valeur.replace(',', '.'),
             unite,
             note,
           },

@@ -39,7 +39,7 @@ export default function Emission(props) {
                 mutation.mutate(
                   {
                     type,
-                    valeur,
+                    valeur: valeur.replace(',', '.'),
                     unite,
                     note,
                   },

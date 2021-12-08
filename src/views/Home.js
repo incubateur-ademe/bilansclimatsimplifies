@@ -2,6 +2,7 @@ import React from 'react'
 import styled from 'styled-components'
 import { Row, Col, Text, Title } from '@dataesr/react-dsfr'
 
+import ContactForm from './home/ContactForm'
 import AdemeLoginButton from './home/AdemeLoginButton'
 
 const StyledText = styled(Text)`
@@ -58,6 +59,11 @@ export default function Home() {
             façon cohérente avec la méthodologie réglementaire relative à
             l’article R. 229-49 du code de l’environnement.
           </StyledText>
+        </Col>
+      </Row>
+      <Row gutters alignItems='middle'>
+        <Col>
+          <ContactForm />
         </Col>
       </Row>
     </>

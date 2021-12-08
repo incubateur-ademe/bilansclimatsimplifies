@@ -20,22 +20,24 @@ import Bilan from 'views/Bilan'
 const queryClient = new QueryClient()
 
 function App() {
-  const initOptions = {
-    flow: 'standard',
-    pkceMethod: 'S256',
-  }
-  const onTokens = (tokens) => {
-    const token = tokens.token
-    if(token) {
-      sessionStorage.setItem('token', token)
-      axios.defaults.headers.common['Authorization'] = `Token ${token}`
-    } else {
-      sessionStorage.removeItem('token')
-      delete axios.defaults.headers.common['Authorization']
-    }
-  }
   return (
-    <ReactKeycloakProvider authClient={keycloak} initOptions={initOptions} onTokens={onTokens}>
+    <ReactKeycloakProvider
+      authClient={keycloak}
+      initOptions={{
+        flow: 'standard',
+        pkceMethod: 'S256',
+      }}
+      onTokens={(tokens) => {
+        const token = tokens.token
+        if (token) {
+          sessionStorage.setItem('token', token)
+          axios.defaults.headers.common['Authorization'] = `Token ${token}`
+        } else {
+          sessionStorage.removeItem('token')
+          delete axios.defaults.headers.common['Authorization']
+        }
+      }}
+    >
       <Router>
         <QueryClientProvider client={queryClient}>
           <AuthProvider>

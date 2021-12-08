@@ -3,7 +3,7 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
-    "@dataesr/react-dsfr": "^0.7.7",
+    "@dataesr/react-dsfr": "^0.9.2",
     "@react-keycloak/web": "^3.4.0",
     "@testing-library/jest-dom": "^5.11.4",
     "@testing-library/react": "^11.1.0",
@@ -18,7 +18,7 @@
     "react-scripts": "4.0.3",
     "sib-api-v3-sdk": "^8.2.1",
     "styled-components": "^5.3.1",
-    "web-vitals": "^1.0.1"
+    "web-vitals": "^2.1.2"
   },
   "scripts": {
     "start": "react-scripts start",
