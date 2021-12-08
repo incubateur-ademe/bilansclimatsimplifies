@@ -1,10 +1,16 @@
 import React from 'react'
+import styled from 'styled-components'
 import { useParams, useHistory } from 'react-router-dom'
-import { Button, ButtonGroup } from '@dataesr/react-dsfr'
+import { Button, ButtonGroup, Row, Col, Title, Text } from '@dataesr/react-dsfr'
 
 import { useBilansMutation } from 'hooks/useBilans'
 import MagicLink from 'components/base/MagicLink'
 
+const Wrapper = styled.div`
+  border: 1px solid rgb(232, 232, 232);
+  margin-bottom: 1rem;
+  padding: 1rem 1rem 0;
+`
 export default function TypeBilan() {
   const history = useHistory()
 
@@ -13,25 +19,60 @@ export default function TypeBilan() {
   const mutation = useBilansMutation(id)
 
   return (
-    <ButtonGroup isInlineFrom='md' align='center' isEquisized>
-      <Button
-        secondary
-        onClick={() =>
-          mutation.mutate(
-            { mode: 'manuel' },
-            {
-              onSuccess: () => {
-                history.push(`/bilans/${id}`)
-              },
-            }
-          )
-        }
-      >
-        J'ai déja fait mon bilan
-      </Button>
-      <MagicLink to={`/bilans/${id}/poste1`}>
-        <Button>Je n'ai pas déjà fait mon bilan</Button>
-      </MagicLink>
-    </ButtonGroup>
+    <Row gutters>
+      <Col>
+        <Wrapper>
+          <Title as='h2' look='h4'>
+            J'ai déjà fait mon bilan
+          </Title>
+          <Text>
+            Si vous connaissez déjà le total des emissions de chaque poste.
+          </Text>
+          <ButtonGroup align='right' isInlineFrom='md'>
+            <Button
+              onClick={() =>
+                mutation.mutate(
+                  { mode: 'manuel' },
+                  {
+                    onSuccess: () => {
+                      history.push(`/bilans/${id}/totaux`)
+                    },
+                  }
+                )
+              }
+            >
+              J'ai déja fait mon bilan
+            </Button>
+          </ButtonGroup>
+        </Wrapper>
+      </Col>
+      <Col>
+        <Wrapper>
+          <Title as='h2' look='h4'>
+            Je n'ai pas déjà fait mon bilan
+          </Title>
+          <Text>
+            Si vous avez besoin de rentrer chaque source d'emission
+            individuellement.
+          </Text>
+          <ButtonGroup align='right' isInlineFrom='md'>
+            <Button
+              onClick={() =>
+                mutation.mutate(
+                  { mode: 'auto' },
+                  {
+                    onSuccess: () => {
+                      history.push(`/bilans/${id}/poste1`)
+                    },
+                  }
+                )
+              }
+            >
+              Je n'ai pas déjà fait mon bilan
+            </Button>
+          </ButtonGroup>
+        </Wrapper>
+      </Col>
+    </Row>
   )
 }

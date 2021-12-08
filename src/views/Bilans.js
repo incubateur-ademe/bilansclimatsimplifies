@@ -10,11 +10,14 @@ export default function Bilans() {
   const { data: bilans } = useBilans()
   return (
     <>
+      <Title as='h1'>Mes bilans</Title>
       {bilans && bilans.length ? (
         <>
           {bilans.filter((bilan) => bilan.statut === 'brouillon').length ? (
             <>
-              <Title as='h2'>Mes brouillons</Title>
+              <Title as='h2' look='h2'>
+                Brouillons
+              </Title>
               {bilans
                 .filter((bilan) => bilan.statut === 'brouillon')
                 .map((bilan) => (
@@ -24,7 +27,9 @@ export default function Bilans() {
           ) : null}
           {bilans.filter((bilan) => bilan.statut !== 'brouillon').length ? (
             <>
-              <Title as='h2'>Mes bilans</Title>
+              <Title as='h2' look='h2'>
+                Bilans publiés
+              </Title>
               {bilans
                 .filter((bilan) => bilan.statut !== 'brouillon')
                 .map((bilan) => (

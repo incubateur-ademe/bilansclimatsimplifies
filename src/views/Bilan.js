@@ -1,20 +1,12 @@
 import React from 'react'
 import styled from 'styled-components'
 import { useLocation, useParams, useHistory } from 'react-router-dom'
-import {
-  Row,
-  Col,
-  Checkbox,
-  ButtonGroup,
-  Button,
-  Alert,
-  Highlight,
-  Tag,
-} from '@dataesr/react-dsfr'
+import { Row, Col, ButtonGroup, Button, Alert, Tag } from '@dataesr/react-dsfr'
 
 import { useBilan, useBilansMutation, useBilansDeletion } from 'hooks/useBilans'
 import MagicLink from 'components/base/MagicLink'
 import Poste from './bilan/Poste'
+import Details from './bilan/Details'
 
 const StyledTag = styled(Tag)`
   font-size: 2.5rem;
@@ -25,15 +17,15 @@ const StyledTag = styled(Tag)`
 export default function Bilan() {
   const { id } = useParams()
 
-  const location = useLocation()
-
   const history = useHistory()
+
+  const deletion = useBilansDeletion(id)
+
+  const location = useLocation()
 
   const { data: bilan } = useBilan(id)
 
   const mutation = useBilansMutation(id)
-
-  const deletion = useBilansDeletion(id)
 
   return (
     <>
@@ -56,25 +48,11 @@ export default function Bilan() {
           </h1>
         </Col>
       </Row>
-      <Row gutters>
-        <Col>
-          <Highlight>
-            Siren : {bilan?.siren}
-            <br />
-            Nombre de salariés : {bilan?.nombreSalaries}
-            <br />
-            Région : {bilan?.region}
-            <br />
-            NAF : {bilan?.naf}
-            <br />
-          </Highlight>
-          <br />
-        </Col>
-      </Row>
       {location.search.includes('done=1') && (
         <Row gutters>
           <Col>
             <Alert title={`Votre bilan est publié`} type='success' />
+            <br />
           </Col>
         </Row>
       )}
@@ -86,39 +64,24 @@ export default function Bilan() {
       </Row>
       <Row gutters>
         <Col>
-          <Checkbox
-            checked={bilan?.mode === 'manuel'}
-            onChange={() =>
-              mutation.mutate({
-                mode: bilan?.mode === 'manuel' ? 'auto' : 'manuel',
-              })
-            }
-            label={`J'ai déja fait mon bilan`}
-          />
+          <Details bilan={bilan} />
         </Col>
       </Row>
       <Row gutters>
         <Col>
-          <ButtonGroup isInlineFrom='md' align='right'>
-            <Button
-              secondary
-              onClick={() =>
-                window.confirm(
-                  'Souhaitez-vous vraiment supprimer ce bilan ?'
-                ) &&
-                deletion.mutate(null, {
-                  onSuccess: (data) => {
-                    history.push(`/bilans`)
-                  },
-                })
-              }
-            >
-              Supprimer ce bilan
-            </Button>
-            <MagicLink to={`/bilans/${id}/infos`}>
-              <Button>Éditer les informations de ce bilan</Button>
-            </MagicLink>
-          </ButtonGroup>
+          <Button
+            secondary
+            onClick={() =>
+              window.confirm('Souhaitez-vous vraiment supprimer ce bilan ?') &&
+              deletion.mutate(null, {
+                onSuccess: (data) => {
+                  history.push(`/bilans`)
+                },
+              })
+            }
+          >
+            Supprimer ce bilan
+          </Button>
         </Col>
       </Row>
     </>

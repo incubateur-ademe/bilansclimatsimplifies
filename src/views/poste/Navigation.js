@@ -69,7 +69,7 @@ export default function Navigation(props) {
               )
             }
           >
-            Valider mon bilan
+            Publier mon bilan
           </Button>
         </ButtonGroup>
       )}

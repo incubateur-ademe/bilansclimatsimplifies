@@ -11,7 +11,7 @@ const Wrapper = styled.div`
   padding: 1rem 1rem 0;
 `
 export default function Poste(props) {
-  const [edit, setEdit] = useState(false)
+  const [edit, setEdit] = useState(props.edit)
 
   const mutation = useBilansMutation(props.bilan.id)
 
@@ -31,7 +31,9 @@ export default function Poste(props) {
             onSubmit={(e) => {
               e.preventDefault()
               mutation.mutate({
-                [`manuelPoste${props.index}`]: localValue,
+                [`manuelPoste${props.index}`]: String(localValue)
+                  .split(',')[0]
+                  .split('.')[0],
               })
               setEdit(false)
             }}

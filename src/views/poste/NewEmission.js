@@ -2,7 +2,14 @@ import React, { useState, useEffect } from 'react'
 import styled from 'styled-components'
 import { toast } from 'react-toastify'
 
-import { Button, ButtonGroup, TextInput } from '@dataesr/react-dsfr'
+import {
+  Row,
+  Col,
+  Button,
+  ButtonGroup,
+  TextInput,
+  Alert,
+} from '@dataesr/react-dsfr'
 
 import { useEmissionsCreation } from 'hooks/useEmissions'
 import TypeSelector from './emission/TypeSelector'
@@ -98,10 +105,21 @@ export default function NewEmission(props) {
       </ButtonGroup>
     </Wrapper>
   ) : (
-    <ButtonGroup isInlineFrom='md' align='right'>
-      <Button onClick={() => setOpen(true)}>
-        Ajouter une source d'émission
-      </Button>
-    </ButtonGroup>
+    <>
+      {props.empty && (
+        <>
+          <Alert
+            title={`Vous n'avez pas encore ajouté de source d'émission pour ce poste`}
+          />
+          <br />
+        </>
+      )}
+
+      <ButtonGroup isInlineFrom='md' align='right'>
+        <Button onClick={() => setOpen(true)}>
+          Ajouter une source d'émission
+        </Button>
+      </ButtonGroup>
+    </>
   )
 }

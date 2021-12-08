@@ -13,6 +13,7 @@ import Home from 'views/Home'
 import NewBilan from 'views/NewBilan'
 import EditBilan from 'views/EditBilan'
 import TypeBilan from 'views/TypeBilan'
+import TotauxBilan from 'views/TotauxBilan'
 import Poste from 'views/Poste'
 import Bilans from 'views/Bilans'
 import Bilan from 'views/Bilan'
@@ -51,6 +52,9 @@ function App() {
                 </PrivateRoute>
                 <PrivateRoute path='/bilans/:id/type'>
                   <TypeBilan />
+                </PrivateRoute>
+                <PrivateRoute path='/bilans/:id/totaux'>
+                  <TotauxBilan />
                 </PrivateRoute>
                 <PrivateRoute path='/bilans/:id/:poste'>
                   <Poste />

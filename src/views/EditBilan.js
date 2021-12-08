@@ -2,7 +2,8 @@ import React, { useState, useEffect } from 'react'
 import { useParams, useHistory } from 'react-router-dom'
 import { Alert, Button, ButtonGroup, TextInput } from '@dataesr/react-dsfr'
 
-import { useBilan, useBilansMutation, useBilansDeletion } from 'hooks/useBilans'
+import { useBilan, useBilansMutation } from 'hooks/useBilans'
+import MagicLink from 'components/base/MagicLink'
 
 export default function EditBilan() {
   const history = useHistory()
@@ -11,7 +12,6 @@ export default function EditBilan() {
 
   const { data: bilan } = useBilan(id)
   const mutation = useBilansMutation(id)
-  const deletion = useBilansDeletion(id)
 
   const [raisonSociale, setRaisonSociale] = useState('')
   const [nombreSalaries, setNombreSalaries] = useState('')
@@ -46,7 +46,7 @@ export default function EditBilan() {
           },
           {
             onSuccess: () => {
-              history.push('/bilans')
+              history.push(`/bilans/${id}`)
             },
           }
         )
@@ -90,16 +90,10 @@ export default function EditBilan() {
       />
 
       <ButtonGroup align='right' isInlineFrom='md'>
-        <Button
-          onClick={() =>
-            window.confirm('Souhaitez-vous vraiment supprimer ce bilan ?') &&
-            deletion.mutate()
-          }
-          secondary
-        >
-          Supprimer ce bilan
-        </Button>
-        <Button submit>Faire ce bilan</Button>
+        <MagicLink to={`/bilans/${id}`}>
+          <Button secondary>Annuler</Button>
+        </MagicLink>
+        <Button submit>Valider</Button>
       </ButtonGroup>
       {mutation.isError && (
         <Alert type='error' title='Une erreur est survenue' />

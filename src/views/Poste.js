@@ -6,7 +6,6 @@ import { useBilan } from 'hooks/useBilans'
 import { useEmissions } from 'hooks/useEmissions'
 import MagicLink from 'components/base/MagicLink'
 import Emission from './poste/Emission'
-import Empty from './poste/Empty'
 import NewEmission from './poste/NewEmission'
 import Navigation from './poste/Navigation'
 
@@ -37,19 +36,20 @@ export default function Poste() {
           </h1>
         </Col>
       </Row>
-      {emissions &&
-      emissions.filter((emission) => emission.poste === poste).length ? (
-        <>
-          {emissions
-            .filter((emission) => emission.poste === poste)
-            .map((emission) => (
-              <Emission key={emission.id} emission={emission} />
-            ))}
-        </>
-      ) : (
-        <Empty />
-      )}
-      <NewEmission bilan={id} poste={poste} />
+      {emissions
+        ?.filter((emission) => emission.poste === poste)
+        ?.map((emission) => (
+          <Emission key={emission.id} emission={emission} />
+        ))}
+      <NewEmission
+        bilan={id}
+        poste={poste}
+        empty={
+          emissions?.filter((emission) => emission.poste === poste).length
+            ? false
+            : true
+        }
+      />
       <br />
       <br />
       <Navigation bilan={bilan} poste={poste} id={id} />
