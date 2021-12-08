@@ -31,7 +31,7 @@ export default function Navigation(props) {
       <Text align='center'>
         {isFetching
           ? 'Sauvegarde en cours...'
-          : `Votre bilan est sauvegardé. Vous pouvez fermer cette page et finir de l'éditer plus tard`}
+          : `Votre bilan est sauvegardé. Vous pouvez fermer cette page et revenir l'éditer plus tard`}
       </Text>
       {props.poste === 1 ? (
         <ButtonGroup isInlineFrom='md' align='center' isEquisized>
