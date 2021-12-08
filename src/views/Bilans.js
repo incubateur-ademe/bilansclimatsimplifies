@@ -15,9 +15,14 @@ export default function Bilans() {
         <>
           {bilans.filter((bilan) => bilan.statut === 'brouillon').length ? (
             <>
-              <Title as='h2' look='h2'>
-                Brouillons
-              </Title>
+              <br />
+              <Row gutters>
+                <Col>
+                  <Title as='h2' look='h4'>
+                    Brouillons
+                  </Title>
+                </Col>
+              </Row>
               {bilans
                 .filter((bilan) => bilan.statut === 'brouillon')
                 .map((bilan) => (
@@ -27,14 +32,22 @@ export default function Bilans() {
           ) : null}
           {bilans.filter((bilan) => bilan.statut !== 'brouillon').length ? (
             <>
-              <Title as='h2' look='h2'>
-                Bilans publiés
-              </Title>
+              <br />
+              <br />
+              <Row gutters>
+                <Col>
+                  <Title as='h2' look='h4'>
+                    Bilans publiés
+                  </Title>
+                </Col>
+              </Row>
               {bilans
                 .filter((bilan) => bilan.statut !== 'brouillon')
                 .map((bilan) => (
                   <Bilan key={bilan.id} bilan={bilan} />
                 ))}
+              <br />
+              <br />
             </>
           ) : null}
           <Row gutters>

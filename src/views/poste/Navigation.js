@@ -57,6 +57,9 @@ export default function Navigation(props) {
             icon='fr-fi-check-line'
             iconPosition='right'
             onClick={() =>
+              window.confirm(
+                `Souhaitez-vous vraiment publier ce bilan ?\r(Vous pourrez toujours l'éditer par la suite)`
+              ) &&
               mutation.mutate(
                 {
                   statut: 'publié',

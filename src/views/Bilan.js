@@ -67,19 +67,28 @@ export default function Bilan() {
       </Row>
       <Row gutters>
         <Col>
-          <Button
-            secondary
-            onClick={() =>
-              window.confirm('Souhaitez-vous vraiment supprimer ce bilan ?') &&
-              deletion.mutate(null, {
-                onSuccess: (data) => {
-                  history.push(`/bilans`)
-                },
-              })
-            }
-          >
-            Supprimer ce bilan
-          </Button>
+          <ButtonGroup isInlineFrom='md' align='center'>
+            <Button
+              secondary
+              onClick={() =>
+                window.confirm(
+                  'Souhaitez-vous vraiment supprimer ce bilan ?'
+                ) &&
+                deletion.mutate(null, {
+                  onSuccess: (data) => {
+                    history.push(`/bilans`)
+                  },
+                })
+              }
+            >
+              Supprimer ce bilan
+            </Button>
+            {bilan?.statut === 'publié' && (
+              <Button onClick={() => window.alert('Pas encore disponible')}>
+                Télécharger mon bilan au format csv
+              </Button>
+            )}
+          </ButtonGroup>
         </Col>
       </Row>
     </>
