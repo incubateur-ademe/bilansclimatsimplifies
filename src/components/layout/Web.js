@@ -1,6 +1,8 @@
 import React from 'react'
 import styled from 'styled-components'
 import { Container } from '@dataesr/react-dsfr'
+import { ToastContainer, Slide } from 'react-toastify'
+import 'react-toastify/dist/ReactToastify.css'
 
 import Header from './Header'
 import Footer from './Footer'
@@ -18,6 +20,15 @@ export default function Web(props) {
 
       <StyledContainer role='main'>{props.children}</StyledContainer>
       <Footer />
+      <ToastContainer
+        position='bottom-left'
+        transition={Slide}
+        autoClose={3000}
+        hideProgressBar={false}
+        newestOnTop={true}
+        closeOnClick
+        limit={2}
+      />
     </>
   )
 }

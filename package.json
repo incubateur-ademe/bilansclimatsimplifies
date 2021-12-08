@@ -16,6 +16,7 @@
     "react-query": "^3.32.1",
     "react-router-dom": "^5.3.0",
     "react-scripts": "4.0.3",
+    "react-toastify": "^8.1.0",
     "sib-api-v3-sdk": "^8.2.1",
     "styled-components": "^5.3.1",
     "web-vitals": "^2.1.2"

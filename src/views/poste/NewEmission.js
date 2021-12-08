@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react'
 import styled from 'styled-components'
+import { toast } from 'react-toastify'
 
 import { Button, ButtonGroup, TextInput } from '@dataesr/react-dsfr'
 
@@ -43,6 +44,19 @@ export default function NewEmission(props) {
 
   const mutation = useEmissionsCreation()
 
+  useEffect(() => {
+    if (mutation.isSuccess) {
+      toast.dismiss()
+      toast.success('Bilan sauvegardé.')
+    }
+  }, [mutation.isSuccess])
+  useEffect(() => {
+    if (mutation.isError) {
+      toast.dismiss()
+      toast.error(`Vos modifications n'ont pas été sauvegardées.`)
+    }
+  }, [mutation.isError])
+
   return open ? (
     <Wrapper
       onSubmit={(e) => {
@@ -52,7 +66,7 @@ export default function NewEmission(props) {
             bilan: props.bilan,
             poste: props.poste,
             type,
-            valeur: valeur.replace(',', '.'),
+            valeur: String(valeur).replace(',', '.'),
             unite,
             note,
           },

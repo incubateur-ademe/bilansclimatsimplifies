@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react'
 import styled from 'styled-components'
 import { Row, Col, Button, ButtonGroup, TextInput } from '@dataesr/react-dsfr'
+import { toast } from 'react-toastify'
 
 import { useEmissionsMutation, useEmissionsDeletion } from 'hooks/useEmissions'
 import TypeSelector from './emission/TypeSelector'
@@ -28,6 +29,20 @@ export default function Emission(props) {
   const mutation = useEmissionsMutation(props.emission.id)
   const deletion = useEmissionsDeletion(props.emission.id)
 
+  useEffect(() => {
+    console.log('is success')
+    if (mutation.isSuccess) {
+      toast.dismiss()
+      toast.success('Bilan sauvegardé.')
+    }
+  }, [mutation.isSuccess])
+  useEffect(() => {
+    if (mutation.isError) {
+      toast.dismiss()
+      toast.error(`Vos modifications n'ont pas été sauvegardées.`)
+    }
+  }, [mutation.isError])
+
   return (
     <Row gutters>
       <Col>
@@ -39,7 +54,7 @@ export default function Emission(props) {
                 mutation.mutate(
                   {
                     type,
-                    valeur: valeur.replace(',', '.'),
+                    valeur: String(valeur).replace(',', '.'),
                     unite,
                     note,
                   },
