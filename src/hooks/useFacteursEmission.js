@@ -3,10 +3,6 @@ import axios from 'axios'
 
 export function useFacteursEmission() {
   return useQuery(['facteuremission'], () =>
-    axios
-      .get(
-        `https://bilansclimatsimplifies-staging.cleverapps.io/static/emission-factors.json`
-      )
-      .then((res) => res.data)
+    axios.get(`/data/emission-factors.json`).then((res) => res.data)
   )
 }
