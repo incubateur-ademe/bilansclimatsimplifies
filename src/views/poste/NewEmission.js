@@ -2,14 +2,7 @@ import React, { useState, useEffect } from 'react'
 import styled from 'styled-components'
 import { toast } from 'react-toastify'
 
-import {
-  Row,
-  Col,
-  Button,
-  ButtonGroup,
-  TextInput,
-  Alert,
-} from '@dataesr/react-dsfr'
+import { Button, ButtonGroup, TextInput, Alert } from '@dataesr/react-dsfr'
 
 import { useEmissionsCreation } from 'hooks/useEmissions'
 import TypeSelector from './emission/TypeSelector'

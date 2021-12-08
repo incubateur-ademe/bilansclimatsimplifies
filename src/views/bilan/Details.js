@@ -1,6 +1,6 @@
 import React from 'react'
 import styled from 'styled-components'
-import { useParams, useHistory } from 'react-router-dom'
+import { useParams } from 'react-router-dom'
 import { Text, ButtonGroup, Button } from '@dataesr/react-dsfr'
 
 import MagicLink from 'components/base/MagicLink'

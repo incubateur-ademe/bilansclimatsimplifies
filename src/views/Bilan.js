@@ -3,7 +3,7 @@ import styled from 'styled-components'
 import { useLocation, useParams, useHistory } from 'react-router-dom'
 import { Row, Col, ButtonGroup, Button, Alert, Tag } from '@dataesr/react-dsfr'
 
-import { useBilan, useBilansMutation, useBilansDeletion } from 'hooks/useBilans'
+import { useBilan, useBilansDeletion } from 'hooks/useBilans'
 import MagicLink from 'components/base/MagicLink'
 import Poste from './bilan/Poste'
 import Details from './bilan/Details'
@@ -24,8 +24,6 @@ export default function Bilan() {
   const location = useLocation()
 
   const { data: bilan } = useBilan(id)
-
-  const mutation = useBilansMutation(id)
 
   return (
     <>

@@ -4,7 +4,6 @@ import { useParams, useHistory } from 'react-router-dom'
 import { Button, ButtonGroup, Row, Col, Title, Text } from '@dataesr/react-dsfr'
 
 import { useBilansMutation } from 'hooks/useBilans'
-import MagicLink from 'components/base/MagicLink'
 
 const Wrapper = styled.div`
   border: 1px solid rgb(232, 232, 232);
