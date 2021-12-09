@@ -1,10 +1,18 @@
 import React from 'react'
 import styled from 'styled-components'
 import { useLocation, useParams, useHistory } from 'react-router-dom'
-import { Row, Col, ButtonGroup, Button, Alert, Tag } from '@dataesr/react-dsfr'
+import {
+  Row,
+  Col,
+  Breadcrumb,
+  BreadcrumbItem,
+  ButtonGroup,
+  Button,
+  Alert,
+  Tag,
+} from '@dataesr/react-dsfr'
 
 import { useBilan, useBilansDeletion } from 'hooks/useBilans'
-import MagicLink from 'components/base/MagicLink'
 import Poste from './bilan/Poste'
 import Details from './bilan/Details'
 
@@ -29,13 +37,12 @@ export default function Bilan() {
     <>
       <Row gutters>
         <Col>
-          <ButtonGroup align='left' isInlineFrom='md'>
-            <MagicLink to={`/bilans`}>
-              <Button icon='fr-fi-arrow-left-s-line-double' secondary>
-                Retour à la liste de mes bilans
-              </Button>
-            </MagicLink>
-          </ButtonGroup>
+          <Breadcrumb>
+            <BreadcrumbItem href='/bilans'>Mes bilans</BreadcrumbItem>
+            <BreadcrumbItem>
+              {bilan?.raisonSociale} - {bilan?.annee}
+            </BreadcrumbItem>
+          </Breadcrumb>
         </Col>
       </Row>
       <Row gutters>

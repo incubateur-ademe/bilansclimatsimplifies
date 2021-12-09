@@ -1,10 +1,9 @@
 import React from 'react'
 import { useParams } from 'react-router-dom'
-import { Row, Col, Button, ButtonGroup } from '@dataesr/react-dsfr'
+import { Row, Col, Breadcrumb, BreadcrumbItem } from '@dataesr/react-dsfr'
 
 import { useBilan } from 'hooks/useBilans'
 import { useEmissions } from 'hooks/useEmissions'
-import MagicLink from 'components/base/MagicLink'
 import Emission from './poste/Emission'
 import NewEmission from './poste/NewEmission'
 import Navigation from './poste/Navigation'
@@ -20,13 +19,13 @@ export default function Poste() {
     <>
       <Row gutters>
         <Col>
-          <ButtonGroup align='left' isInlineFrom='md'>
-            <MagicLink to={`/bilans`}>
-              <Button icon='fr-fi-arrow-left-s-line-double' secondary>
-                Retour à la liste de mes bilans
-              </Button>
-            </MagicLink>
-          </ButtonGroup>
+          <Breadcrumb>
+            <BreadcrumbItem href='/bilans'>Mes bilans</BreadcrumbItem>
+            <BreadcrumbItem href={`/bilans/${id}`}>
+              {bilan?.raisonSociale} - {bilan?.annee}
+            </BreadcrumbItem>
+            <BreadcrumbItem>Poste {poste}</BreadcrumbItem>
+          </Breadcrumb>
         </Col>
       </Row>
       <Row gutters>

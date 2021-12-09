@@ -2,7 +2,16 @@ import React, { useState } from 'react'
 import { useHistory } from 'react-router-dom'
 
 import { useBilansCreation } from 'hooks/useBilans'
-import { Alert, ButtonGroup, Button, TextInput } from '@dataesr/react-dsfr'
+import {
+  Row,
+  Col,
+  Breadcrumb,
+  BreadcrumbItem,
+  Alert,
+  ButtonGroup,
+  Button,
+  TextInput,
+} from '@dataesr/react-dsfr'
 import MagicLink from 'components/base/MagicLink'
 
 export default function AddBilan() {
@@ -18,71 +27,85 @@ export default function AddBilan() {
   const mutation = useBilansCreation()
 
   return (
-    <form
-      onSubmit={(e) => {
-        e.preventDefault()
-        mutation.mutate(
-          {
-            raisonSociale,
-            nombreSalaries,
-            siren,
-            naf,
-            region,
-            annee,
-          },
-          {
-            onSuccess: (data) => {
-              history.push(`/bilans/${data.data.id}/type`)
-            },
-          }
-        )
-      }}
-    >
-      <TextInput
-        label={`Raison sociale`}
-        value={raisonSociale}
-        onChange={(e) => setRaisonSociale(e.target.value)}
-        required
-      />
-      <TextInput
-        label={`Nombre de salariés`}
-        value={nombreSalaries}
-        onChange={(e) => setNombreSalaries(e.target.value)}
-        required
-      />
-      <TextInput
-        label={`SIREN`}
-        value={siren}
-        onChange={(e) => setSiren(e.target.value)}
-        required
-      />
-      <TextInput
-        label={`Section de nomenclature`}
-        value={naf}
-        onChange={(e) => setNaf(e.target.value)}
-        required
-      />
-      <TextInput
-        label={`Région du siege`}
-        value={region}
-        onChange={(e) => setRegion(e.target.value)}
-        required
-      />
-      <TextInput
-        label={`Année correspondant au bilan`}
-        value={annee}
-        onChange={(e) => setAnnee(e.target.value)}
-        required
-      />
-      <ButtonGroup isInlineFrom='md' align='right'>
-        <MagicLink to='/bilans'>
-          <Button secondary>Annuler</Button>
-        </MagicLink>
-        <Button submit>Commencer mon bilan</Button>
-      </ButtonGroup>
-      {mutation.isError && (
-        <Alert type='error' title='Une erreur est survenue' />
-      )}
-    </form>
+    <>
+      <Row gutters>
+        <Col>
+          <Breadcrumb>
+            <BreadcrumbItem href='/bilans'>Mes bilans</BreadcrumbItem>
+            <BreadcrumbItem>Nouveau</BreadcrumbItem>
+          </Breadcrumb>
+        </Col>
+      </Row>
+      <Row gutters>
+        <Col>
+          <form
+            onSubmit={(e) => {
+              e.preventDefault()
+              mutation.mutate(
+                {
+                  raisonSociale,
+                  nombreSalaries,
+                  siren,
+                  naf,
+                  region,
+                  annee,
+                },
+                {
+                  onSuccess: (data) => {
+                    history.push(`/bilans/${data.data.id}/type`)
+                  },
+                }
+              )
+            }}
+          >
+            <TextInput
+              label={`Raison sociale`}
+              value={raisonSociale}
+              onChange={(e) => setRaisonSociale(e.target.value)}
+              required
+            />
+            <TextInput
+              label={`Nombre de salariés`}
+              value={nombreSalaries}
+              onChange={(e) => setNombreSalaries(e.target.value)}
+              required
+            />
+            <TextInput
+              label={`SIREN`}
+              value={siren}
+              onChange={(e) => setSiren(e.target.value)}
+              required
+            />
+            <TextInput
+              label={`Section de nomenclature`}
+              value={naf}
+              onChange={(e) => setNaf(e.target.value)}
+              required
+            />
+            <TextInput
+              label={`Région du siege`}
+              value={region}
+              onChange={(e) => setRegion(e.target.value)}
+              required
+            />
+            <TextInput
+              label={`Année correspondant au bilan`}
+              value={annee}
+              onChange={(e) => setAnnee(e.target.value)}
+              required
+            />
+            <ButtonGroup isInlineFrom='md' align='right'>
+              <MagicLink to='/bilans'>
+                <Button secondary>Annuler</Button>
+              </MagicLink>
+              <Button submit>Commencer mon bilan</Button>
+            </ButtonGroup>
+            {mutation.isError && (
+              <Alert type='error' title='Une erreur est survenue' />
+            )}
+          </form>
+        </Col>
+      </Row>
+    </>
   )
 }

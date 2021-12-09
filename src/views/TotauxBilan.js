@@ -1,6 +1,13 @@
 import React from 'react'
 import { useParams, useHistory } from 'react-router-dom'
-import { Row, ButtonGroup, Button } from '@dataesr/react-dsfr'
+import {
+  Row,
+  Col,
+  Breadcrumb,
+  BreadcrumbItem,
+  ButtonGroup,
+  Button,
+} from '@dataesr/react-dsfr'
 
 import { useBilan, useBilansMutation } from 'hooks/useBilans'
 import Poste from './bilan/Poste'
@@ -16,6 +23,17 @@ export default function TotauxBilan() {
 
   return (
     <>
+      <Row gutters>
+        <Col>
+          <Breadcrumb>
+            <BreadcrumbItem href='/bilans'>Mes bilans</BreadcrumbItem>
+            <BreadcrumbItem href={`/bilans/${id}`}>
+              {bilan?.raisonSociale} - {bilan?.annee}
+            </BreadcrumbItem>
+            <BreadcrumbItem>Totaux</BreadcrumbItem>
+          </Breadcrumb>
+        </Col>
+      </Row>
       <Row gutters>
         {bilan &&
           [1, 2].map((index) => (
