@@ -40,7 +40,7 @@ export default function AdemeLoginButton() {
   ) : (
     <ButtonGroup isInlineFrom='md' align='center'>
       {initialized && !keycloak.authenticated && (
-        <Button onClick={keycloak.login}>S'inscrire ou se connecter</Button>
+        <Button onClick={keycloak.login}>M'inscrire ou me connecter</Button>
       )}
     </ButtonGroup>
   )
