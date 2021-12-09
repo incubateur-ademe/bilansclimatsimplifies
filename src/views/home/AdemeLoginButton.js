@@ -26,22 +26,21 @@ export default function AdemeLoginButton() {
     )
   }
 
-  return keycloak.authenticated ? (
+  return initialized ? (
     <ButtonGroup isInlineFrom='md' align='center'>
-      {initialized && keycloak.authenticated && (
-        <Button secondary onClick={keycloak.logout}>
-          Logout
-        </Button>
-      )}
-      <MagicLink to='/bilans'>
-        <Button>Voir mes bilans</Button>
-      </MagicLink>
-    </ButtonGroup>
-  ) : (
-    <ButtonGroup isInlineFrom='md' align='center'>
-      {initialized && !keycloak.authenticated && (
+      {keycloak.authenticated ? (
+        <>
+          <Button secondary onClick={keycloak.logout}>
+            Me deconnecter
+          </Button>
+
+          <MagicLink to='/bilans'>
+            <Button>Voir mes bilans</Button>
+          </MagicLink>
+        </>
+      ) : (
         <Button onClick={keycloak.login}>M'inscrire ou me connecter</Button>
       )}
     </ButtonGroup>
-  )
+  ) : null
 }
