@@ -11,7 +11,7 @@ export default function EmissionForm(props) {
   return (
     <>
       <Row gutters>
-        <Col n='6'>
+        <Col>
           <TypeSelector
             value={props.type}
             onChange={(type) => {
@@ -21,9 +21,10 @@ export default function EmissionForm(props) {
             poste={props.poste}
           />
         </Col>
+        <Col />
       </Row>
       <Row gutters>
-        <Col n='6'>
+        <Col>
           <LocationSelector
             value={props.localisation}
             onChange={props.setLocalisation}

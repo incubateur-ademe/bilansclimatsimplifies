@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import styled from 'styled-components'
 import { Button, ButtonGroup, Title } from '@dataesr/react-dsfr'
 import { useKeycloak } from '@react-keycloak/web'
@@ -20,10 +20,18 @@ export default function AdemeLoginButton() {
 
   const { data: user } = useUser(keycloak.authenticated)
 
-  const { data: csv } = useExport(user?.firstName.isStaff)
+  const { data: csv, refetch: fetchExport } = useExport(user?.firstName.isStaff)
 
   console.log(csv)
-
+  useEffect(() => {
+    if (csv) {
+      const hiddenElement = document.createElement('a')
+      hiddenElement.href = 'data:text/csv;charset=utf-8,' + encodeURI(csv)
+      hiddenElement.target = '_blank'
+      hiddenElement.download = 'people.csv'
+      hiddenElement.click()
+    }
+  }, [csv])
   return initialized ? (
     keycloak.authenticated ? (
       <Wrapper>
@@ -38,8 +46,8 @@ export default function AdemeLoginButton() {
           <MagicLink to='/bilans'>
             <Button>Voir mes bilans</Button>
           </MagicLink>
-          {user?.firstName.isStaff && (
-            <Button secondary onClick={keycloak.logout}>
+          {user?.isStaff && (
+            <Button secondary onClick={fetchExport}>
               Exporter les bilans
             </Button>
           )}

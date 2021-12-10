@@ -3,10 +3,10 @@ import axios from 'axios'
 
 import apiUrl from 'utils/apiUrl'
 
-export function useExport(isStaff) {
+export function useExport() {
   return useQuery(
-    ['export', isStaff],
+    ['export'],
     () => axios.get(`${apiUrl}/export/`).then((res) => res.data),
-    { enabled: isStaff ? true : false }
+    { enabled: false }
   )
 }
