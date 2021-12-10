@@ -15,9 +15,9 @@ import { useToast } from 'hooks/useToast'
 import EmissionForm from './emission/EmissionForm'
 
 const Wrapper = styled.form`
-  border: 1px solid rgb(232, 232, 232);
   margin-bottom: 1rem;
   padding: 1rem 1rem 0;
+  border: 1px solid rgb(232, 232, 232);
 `
 export default function NewEmission(props) {
   const [open, setOpen] = useState(false)

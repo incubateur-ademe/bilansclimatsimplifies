@@ -2,18 +2,20 @@ import React from 'react'
 import styled from 'styled-components'
 import { useHistory } from 'react-router-dom'
 import { useIsFetching } from 'react-query'
-import {
-  Button,
-  ButtonGroup,
-  Callout,
-  CalloutTitle,
-  Text,
-} from '@dataesr/react-dsfr'
+import { Button, ButtonGroup, Title, Text } from '@dataesr/react-dsfr'
 
 import { useBilansMutation } from 'hooks/useBilans'
 import MagicLink from 'components/base/MagicLink'
 
-const StyledCalloutTitle = styled(CalloutTitle)`
+const Wrapper = styled.div`
+  margin-bottom: 1rem;
+  padding: 1rem 1rem 0;
+  background-color: rgb(232, 232, 232);
+`
+const StyledTitle = styled(Title)`
+  text-align: center;
+`
+const StyledText = styled(Text)`
   text-align: center;
 `
 export default function Navigation(props) {
@@ -24,15 +26,15 @@ export default function Navigation(props) {
   const isFetching = useIsFetching()
 
   return (
-    <Callout hasInfoIcon={false}>
-      <StyledCalloutTitle as='h3'>
+    <Wrapper>
+      <StyledTitle as='h3'>
         Total : {props.bilan && props.bilan[`poste${props.poste}`]} kgCO2e
-      </StyledCalloutTitle>
-      <Text align='center'>
+      </StyledTitle>
+      <StyledText>
         {isFetching
           ? 'Sauvegarde en cours...'
           : `Votre bilan est sauvegardé. Vous pouvez fermer cette page et revenir l'éditer plus tard`}
-      </Text>
+      </StyledText>
       {props.poste === 1 ? (
         <ButtonGroup isInlineFrom='md' align='center' isEquisized>
           <MagicLink to={`/bilans/${props.id}/`}>
@@ -76,6 +78,6 @@ export default function Navigation(props) {
           </Button>
         </ButtonGroup>
       )}
-    </Callout>
+    </Wrapper>
   )
 }
