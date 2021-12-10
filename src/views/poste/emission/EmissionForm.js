@@ -1,4 +1,5 @@
 import React from 'react'
+import styled from 'styled-components'
 import { Row, Col } from '@dataesr/react-dsfr'
 
 import TypeSelector from './emissionForm/TypeSelector'
@@ -7,11 +8,18 @@ import UnitSelector from './emissionForm/UnitSelector'
 import ValueInput from './emissionForm/ValueInput'
 import NoteInput from './emissionForm/NoteInput'
 
+const StyledCol = styled(Col)`
+  @media only screen and (max-width: 48em) {
+    flex: 1;
+    width: 100%;
+    max-width: 100%;
+  }
+`
 export default function EmissionForm(props) {
   return (
     <>
       <Row gutters>
-        <Col>
+        <StyledCol n='6'>
           <TypeSelector
             value={props.type}
             onChange={(type) => {
@@ -20,34 +28,33 @@ export default function EmissionForm(props) {
             }}
             poste={props.poste}
           />
-        </Col>
-        <Col />
+        </StyledCol>
       </Row>
       <Row gutters>
-        <Col>
+        <StyledCol n='6'>
           <LocationSelector
             value={props.localisation}
             onChange={props.setLocalisation}
             type={props.type}
           />
-        </Col>
+        </StyledCol>
       </Row>
       <Row gutters>
-        <Col>
+        <StyledCol>
           <ValueInput
             value={props.valeur}
             onChange={props.setValeur}
             type={props.type}
           />
-        </Col>
-        <Col>
+        </StyledCol>
+        <StyledCol>
           <UnitSelector
             value={props.unite}
             onChange={props.setUnite}
             type={props.type}
             localisation={props.localisation}
           />
-        </Col>
+        </StyledCol>
       </Row>
       <Row gutters>
         <Col>
