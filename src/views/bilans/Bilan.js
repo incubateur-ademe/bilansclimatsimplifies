@@ -23,8 +23,8 @@ export default function Bilan(props) {
           <Title as='h3' look='h4'>
             {props.bilan.raisonSociale} - {props.bilan.annee}
           </Title>
-          <ButtonGroup isInlineFrom='md' align='right'>
-            <Button>Voir le bilan</Button>
+          <ButtonGroup isInlineFrom='md' align='left'>
+            <Button secondary>Voir le bilan</Button>
           </ButtonGroup>
         </Wrapper>
       </Col>
