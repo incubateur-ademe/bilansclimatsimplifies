@@ -1,37 +1,29 @@
 import React, { useState, useEffect } from 'react'
 import styled from 'styled-components'
-import { toast } from 'react-toastify'
 
 import {
+  Row,
+  Col,
   Button,
   ButtonGroup,
-  TextInput,
   Callout,
   CalloutText,
 } from '@dataesr/react-dsfr'
 
 import { useEmissionsCreation } from 'hooks/useEmissions'
-import TypeSelector from './emission/TypeSelector'
-import UnitSelector from './emission/UnitSelector'
+import { useToast } from 'hooks/useToast'
+import EmissionForm from './emission/EmissionForm'
 
 const Wrapper = styled.form`
   border: 1px solid rgb(232, 232, 232);
   margin-bottom: 1rem;
   padding: 1rem 1rem 0;
 `
-const Values = styled.div`
-  display: flex;
-  justify-content: space-between;
-
-  & > * {
-    flex: 1;
-  }
-`
-
 export default function NewEmission(props) {
   const [open, setOpen] = useState(false)
 
   const [type, setType] = useState('')
+  const [localisation, setLocalisation] = useState('')
   const [valeur, setValeur] = useState('')
   const [unite, setUnite] = useState('')
   const [note, setNote] = useState('')
@@ -50,18 +42,7 @@ export default function NewEmission(props) {
 
   const mutation = useEmissionsCreation()
 
-  useEffect(() => {
-    if (mutation.isSuccess) {
-      toast.dismiss()
-      toast.success('Bilan sauvegardé.')
-    }
-  }, [mutation.isSuccess])
-  useEffect(() => {
-    if (mutation.isError) {
-      toast.dismiss()
-      toast.error(`Vos modifications n'ont pas été sauvegardées.`)
-    }
-  }, [mutation.isError])
+  useToast(mutation)
 
   return open ? (
     <Wrapper
@@ -72,6 +53,7 @@ export default function NewEmission(props) {
             bilan: props.bilan,
             poste: props.poste,
             type,
+            localisation,
             valeur: String(valeur).replace(',', '.'),
             unite,
             note,
@@ -80,31 +62,29 @@ export default function NewEmission(props) {
         )
       }}
     >
-      <TypeSelector value={type} onChange={setType} poste={props.poste} />
-      <Values>
-        <TextInput
-          type='text'
-          inputmode='numeric'
-          pattern='[0-9]*'
-          label={`Valeur`}
-          value={valeur}
-          onChange={(e) => setValeur(e.target.value)}
-          required
-        />
-        <UnitSelector value={unite} onChange={setUnite} type={type} />
-      </Values>
-      <TextInput
-        label={`Note`}
-        value={note}
-        onChange={(e) => setNote(e.target.value)}
+      <EmissionForm
+        poste={props.poste}
+        type={type}
+        setType={setType}
+        localisation={localisation}
+        setLocalisation={setLocalisation}
+        valeur={valeur}
+        setValeur={setValeur}
+        unite={unite}
+        setUnite={setUnite}
+        note={note}
+        setNote={setNote}
       />
-
-      <ButtonGroup isInlineFrom='md' align='right'>
-        <Button secondary onClick={() => setOpen(false)}>
-          Annuler
-        </Button>
-        <Button submit>Ajouter une source d'émission</Button>
-      </ButtonGroup>
+      <Row gutters>
+        <Col>
+          <ButtonGroup isInlineFrom='md' align='right'>
+            <Button secondary onClick={() => setOpen(false)}>
+              Annuler
+            </Button>
+            <Button submit>Ajouter une source d'émission</Button>
+          </ButtonGroup>
+        </Col>
+      </Row>
     </Wrapper>
   ) : (
     <>

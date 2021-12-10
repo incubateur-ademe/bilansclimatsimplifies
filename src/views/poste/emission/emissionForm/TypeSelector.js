@@ -27,6 +27,8 @@ export default function TypeSelector(props) {
               { value: '', label: '-----', disabled: true },
               ...Object.entries(facteurEmission)
                 .filter((entry) => Number(entry[1].poste) === props.poste)
+                .filter((entry) => entry[1].groupe !== 'Les plus utilisés')
+
                 .sort((a, b) =>
                   a[0].toLowerCase() > b[0].toLowerCase() ? 1 : -1
                 )

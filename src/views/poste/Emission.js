@@ -1,11 +1,10 @@
 import React, { useState, useEffect } from 'react'
 import styled from 'styled-components'
-import { Row, Col, Button, ButtonGroup, TextInput } from '@dataesr/react-dsfr'
-import { toast } from 'react-toastify'
+import { Row, Col, Button, ButtonGroup } from '@dataesr/react-dsfr'
 
 import { useEmissionsMutation, useEmissionsDeletion } from 'hooks/useEmissions'
-import TypeSelector from './emission/TypeSelector'
-import UnitSelector from './emission/UnitSelector'
+import { useToast } from 'hooks/useToast'
+import EmissionForm from './emission/EmissionForm'
 
 const Wrapper = styled.div`
   border: 1px solid rgb(232, 232, 232);
@@ -16,6 +15,7 @@ export default function Emission(props) {
   const [edit, setEdit] = useState(false)
 
   const [type, setType] = useState('')
+  const [localisation, setLocalisation] = useState('')
   const [valeur, setValeur] = useState('')
   const [unite, setUnite] = useState('')
   const [note, setNote] = useState('')
@@ -29,19 +29,7 @@ export default function Emission(props) {
   const mutation = useEmissionsMutation(props.emission.id)
   const deletion = useEmissionsDeletion(props.emission.id)
 
-  useEffect(() => {
-    console.log('is success')
-    if (mutation.isSuccess) {
-      toast.dismiss()
-      toast.success('Bilan sauvegardé.')
-    }
-  }, [mutation.isSuccess])
-  useEffect(() => {
-    if (mutation.isError) {
-      toast.dismiss()
-      toast.error(`Vos modifications n'ont pas été sauvegardées.`)
-    }
-  }, [mutation.isError])
+  useToast(mutation)
 
   return (
     <Row gutters>
@@ -54,6 +42,7 @@ export default function Emission(props) {
                 mutation.mutate(
                   {
                     type,
+                    localisation,
                     valeur: String(valeur).replace(',', '.'),
                     unite,
                     note,
@@ -62,40 +51,19 @@ export default function Emission(props) {
                 )
               }}
             >
-              <Row gutters>
-                <Col n='6'>
-                  <TypeSelector
-                    value={type}
-                    onChange={setType}
-                    poste={props.emission.poste}
-                  />
-                </Col>
-              </Row>
-              <Row gutters>
-                <Col>
-                  <TextInput
-                    type='text'
-                    inputmode='numeric'
-                    pattern='[0-9]*'
-                    label={`Valeur`}
-                    value={valeur}
-                    onChange={(e) => setValeur(e.target.value)}
-                    required
-                  />
-                </Col>
-                <Col>
-                  <UnitSelector value={unite} onChange={setUnite} type={type} />
-                </Col>
-              </Row>
-              <Row gutters>
-                <Col>
-                  <TextInput
-                    label={`Note`}
-                    value={note}
-                    onChange={(e) => setNote(e.target.value)}
-                  />
-                </Col>
-              </Row>
+              <EmissionForm
+                poste={props.emission.poste}
+                type={type}
+                setType={setType}
+                localisation={localisation}
+                setLocalisation={setLocalisation}
+                valeur={valeur}
+                setValeur={setValeur}
+                unite={unite}
+                setUnite={setUnite}
+                note={note}
+                setNote={setNote}
+              />
               <Row gutters>
                 <Col>
                   <ButtonGroup isInlineFrom='md' align='right'>

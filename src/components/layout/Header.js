@@ -28,15 +28,15 @@ export default function Header() {
           title='Staging Bilans Climat Simplifiés'
           description='Plateforme de calcul et transmission des bilans simplifiés prévus par l’article 244 de la loi n° 2020-1721 du 29 décembre 2020'
         />
-        <Tool>
-          <ToolItemGroup>
-            {keycloak.authenticated && (
+        {keycloak.authenticated && (
+          <Tool>
+            <ToolItemGroup>
               <Button secondary onClick={() => keycloak.logout()}>
-                Logout
+                Me déconnecter
               </Button>
-            )}
-          </ToolItemGroup>
-        </Tool>
+            </ToolItemGroup>
+          </Tool>
+        )}
       </HeaderBody>
     </Wrapper>
   )

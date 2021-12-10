@@ -22,7 +22,7 @@ export default function AdemeLoginButton() {
   return initialized ? (
     keycloak.authenticated ? (
       <Wrapper>
-        <StyledTitle as='h4' look='h4' align='center'>
+        <StyledTitle as='h3' look='h3' align='center'>
           Bonjour {user?.firstName} {user?.lastName}
         </StyledTitle>
         <ButtonGroup isInlineFrom='md' align='center'>
