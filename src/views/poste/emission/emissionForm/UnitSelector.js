@@ -20,8 +20,6 @@ export default function TypeSelector(props) {
       )
   }, [type, localisation, onChange, facteurEmission])
 
-  console.log(props.localisation)
-
   return facteurEmission ? (
     <Select
       disabled={!props.type}

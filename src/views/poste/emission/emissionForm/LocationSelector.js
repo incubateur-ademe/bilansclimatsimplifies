@@ -9,7 +9,6 @@ export default function LocationSelector(props) {
   const type = props.type
   const onChange = props.onChange
   useEffect(() => {
-    console.log(facteurEmission, type)
     facteurEmission &&
       type &&
       onChange(Object.entries(facteurEmission[type].facteurs)[0][0])
