@@ -6,6 +6,7 @@ import 'react-toastify/dist/ReactToastify.css'
 
 import Header from './Header'
 import Footer from './Footer'
+import FetchIndicator from './web/FetchIndicator'
 
 const StyledContainer = styled(Container)`
   max-width: 52rem;
@@ -16,6 +17,7 @@ const StyledContainer = styled(Container)`
 export default function Web(props) {
   return (
     <>
+      <FetchIndicator />
       <Header />
 
       <StyledContainer role='main'>{props.children}</StyledContainer>
