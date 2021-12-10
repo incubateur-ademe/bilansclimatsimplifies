@@ -8,7 +8,6 @@ import {
   TextInput,
   Callout,
   CalloutText,
-  CalloutTitle,
 } from '@dataesr/react-dsfr'
 
 import { useEmissionsCreation } from 'hooks/useEmissions'
