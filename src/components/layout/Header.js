@@ -1,6 +1,7 @@
 import React from 'react'
+import styled from 'styled-components'
 import {
-  Header as Wrapper,
+  Header as HeaderComponent,
   HeaderOperator,
   HeaderBody,
   Logo,
@@ -14,6 +15,11 @@ import Ademe from 'components/base/Ademe'
 
 import { useKeycloak } from '@react-keycloak/web'
 
+const Wrapper = styled(HeaderComponent)`
+  .fr-header__navbar {
+    display: none;
+  }
+`
 export default function Header() {
   const { keycloak } = useKeycloak()
 
