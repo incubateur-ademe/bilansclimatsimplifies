@@ -74,6 +74,9 @@ export default function Emission(props) {
               <Row gutters>
                 <Col>
                   <TextInput
+                    type='text'
+                    inputmode='numeric'
+                    pattern='[0-9]*'
                     label={`Valeur`}
                     value={valeur}
                     onChange={(e) => setValeur(e.target.value)}

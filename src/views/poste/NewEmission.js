@@ -83,6 +83,9 @@ export default function NewEmission(props) {
       <TypeSelector value={type} onChange={setType} poste={props.poste} />
       <Values>
         <TextInput
+          type='text'
+          inputmode='numeric'
+          pattern='[0-9]*'
           label={`Valeur`}
           value={valeur}
           onChange={(e) => setValeur(e.target.value)}

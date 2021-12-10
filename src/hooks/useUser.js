@@ -3,6 +3,13 @@ import axios from 'axios'
 
 import apiUrl, { baseUrl } from 'utils/apiUrl'
 
+export function useUser(authenticated) {
+  return useQuery(
+    ['user'],
+    () => axios.get(`${apiUrl}/ademeUser`).then((res) => res.data),
+    { enabled: authenticated ? true : false }
+  )
+}
 export function useLoginUser() {
   const { data: csrfToken } = useCsrfToken()
 
