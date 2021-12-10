@@ -40,11 +40,7 @@ export default function Poste() {
           <Title as='h1'>
             {bilan?.raisonSociale} - {bilan?.annee} - Poste {poste}
           </Title>
-          <Text>
-            La scope 1 concerne tous les gaz à effet de serre émis directement
-            par l'entreprise : le chauffage dans les locaux, les émissions des
-            véhicules détenus par l'entreprise, etc.
-          </Text>
+          <Text></Text>
         </Col>
       </Row>
       {emissions

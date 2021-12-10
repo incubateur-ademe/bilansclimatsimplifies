@@ -1,27 +1,22 @@
-import { useContext } from 'react'
-
 import { useQuery, useMutation } from 'react-query'
 import axios from 'axios'
 
 import apiUrl, { baseUrl } from 'utils/apiUrl'
-import AuthContext from 'utils/AuthContext'
 
 export function useLoginUser() {
   const { data: csrfToken } = useCsrfToken()
 
-  const { setToken } = useContext(AuthContext)
-
-  return useMutation(
-    (user) =>
-      axios.post(`${apiUrl}/auth/`, user, {
+  return useMutation((token) =>
+    axios.post(
+      `${apiUrl}/ademeUser/`,
+      { token },
+      {
         'Content-Type': 'application/json',
         'X-CSRFToken': csrfToken,
-      }),
-    {
-      onSuccess: ({ data }) => {
-        setToken(data.token)
-      },
-    }
+        // faut que le header auth soit vide car l'utilisateur peut ne pas être déjà créé
+        headers: { Authorization: '' },
+      }
+    )
   )
 }
 

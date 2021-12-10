@@ -1,10 +1,14 @@
 import React, { useState, useEffect } from 'react'
 import axios from 'axios'
+import { ReactKeycloakProvider } from '@react-keycloak/web'
 
-import AuthContext from 'utils/AuthContext'
+import keycloak from 'utils/keycloak'
+import { useLoginUser } from 'hooks/useUser'
 
 export default function ModalProvider(props) {
   const [token, setToken] = useState(sessionStorage.getItem('token'))
+
+  const mutation = useLoginUser()
 
   useEffect(() => {
     if (token) {
@@ -17,13 +21,18 @@ export default function ModalProvider(props) {
   }, [token])
 
   return (
-    <AuthContext.Provider
-      value={{
-        token,
-        setToken,
+    <ReactKeycloakProvider
+      authClient={keycloak}
+      initOptions={{
+        flow: 'standard',
+        pkceMethod: 'S256',
+      }}
+      onTokens={(tokens) => {
+        setToken(tokens.token)
+        tokens.token && mutation.mutate(tokens.token)
       }}
     >
       {props.children}
-    </AuthContext.Provider>
+    </ReactKeycloakProvider>
   )
 }
