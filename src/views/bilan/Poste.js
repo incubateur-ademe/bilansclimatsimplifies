@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 import styled from 'styled-components'
-import { Col, ButtonGroup, Button, TextInput } from '@dataesr/react-dsfr'
+import { Col, Title, ButtonGroup, Button, TextInput } from '@dataesr/react-dsfr'
 
 import { useBilansMutation } from 'hooks/useBilans'
 import MagicLink from 'components/base/MagicLink'
@@ -9,6 +9,9 @@ const Wrapper = styled.div`
   border: 1px solid rgb(232, 232, 232);
   margin-bottom: 1rem;
   padding: 1rem 1rem 0;
+`
+const StyledTitle = styled(Title)`
+  text-align: center;
 `
 export default function Poste(props) {
   const [edit, setEdit] = useState(props.edit)
@@ -22,10 +25,14 @@ export default function Poste(props) {
   return (
     <Col>
       <Wrapper>
-        <h4>
-          Poste {props.index}{' '}
-          {!edit && <>: {props.bilan[`poste${props.index}`] || 0} kgCO2e</>}
-        </h4>
+        <StyledTitle as='h4' look='h4'>
+          Poste {props.index}
+        </StyledTitle>
+        {!edit && (
+          <StyledTitle as='h2'>
+            {props.bilan[`poste${props.index}`] || 0} kgCO2e
+          </StyledTitle>
+        )}
         {edit ? (
           <form
             onSubmit={(e) => {
@@ -51,13 +58,13 @@ export default function Poste(props) {
             </ButtonGroup>
           </form>
         ) : (
-          <ButtonGroup align='right' isInlineFrom='md'>
+          <ButtonGroup align='center' isInlineFrom='md'>
             {props.bilan.mode === 'auto' ? (
               <MagicLink to={`/bilans/${props.bilan.id}/poste${props.index}`}>
-                <Button>Éditer le poste {props.index}</Button>
+                <Button secondary>Éditer le poste {props.index}</Button>
               </MagicLink>
             ) : (
-              <Button onClick={() => setEdit(true)}>
+              <Button onClick={() => setEdit(true)} secondary>
                 Éditer le poste {props.index}
               </Button>
             )}

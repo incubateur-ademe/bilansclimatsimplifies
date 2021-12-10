@@ -27,7 +27,7 @@ export default function Details(props) {
       </Text>
       <ButtonGroup isInlineFrom='md' align='right'>
         <MagicLink to={`/bilans/${id}/infos`}>
-          <Button>Éditer les informations</Button>
+          <Button secondary>Éditer les informations</Button>
         </MagicLink>
       </ButtonGroup>
     </Wrapper>
