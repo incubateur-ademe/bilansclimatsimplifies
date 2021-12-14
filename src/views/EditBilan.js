@@ -83,30 +83,35 @@ export default function EditBilan() {
             />
             <TextInput
               label={`Nombre de salariés`}
+              hint='Inférieur à 500'
               value={nombreSalaries}
               onChange={(e) => setNombreSalaries(e.target.value)}
               required
             />
             <TextInput
               label={`SIREN`}
+              hint='SIREN réel nécessaire'
               value={siren}
               onChange={(e) => setSiren(e.target.value)}
               required
             />
             <TextInput
               label={`Section de nomenclature`}
+              hint='Format : 01, 02, 03, etc.'
               value={naf}
               onChange={(e) => setNaf(e.target.value)}
               required
             />
             <TextInput
               label={`Région du siege`}
+              hint='Format : 01, 02, 03, etc.'
               value={region}
               onChange={(e) => setRegion(e.target.value)}
               required
             />
             <TextInput
               label={`Année correspondant au bilan`}
+              hint='Inférieure à 2022'
               value={annee}
               onChange={(e) => setAnnee(e.target.value)}
               required
