@@ -28,7 +28,8 @@ export default function Navigation(props) {
   return (
     <Wrapper>
       <StyledTitle as='h3'>
-        Total : {props.bilan && props.bilan[`poste${props.poste}`]} kgCO2e
+        Total du poste {props.poste} :{' '}
+        {props.bilan && props.bilan[`poste${props.poste}`]} kgCO2e
       </StyledTitle>
       <StyledText>
         {isFetching

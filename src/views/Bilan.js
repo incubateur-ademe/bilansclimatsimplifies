@@ -92,7 +92,7 @@ export default function Bilan() {
             </Button>
             {bilan?.statut === 'publié' && (
               <Button onClick={() => window.alert('Pas encore disponible')}>
-                Télécharger mon bilan au format csv
+                Télécharger mon bilan
               </Button>
             )}
           </ButtonGroup>

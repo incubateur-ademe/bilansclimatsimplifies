@@ -39,7 +39,7 @@ export default function TypeSelector(props) {
             ]
           : [
               { value: '', label: '', disabled: true, hidden: true },
-              { value: '', label: 'Routier', disabled: true },
+              { value: 'routier', label: 'Routier', disabled: true },
               ...Object.entries(facteurEmission)
                 .filter((entry) => Number(entry[1].poste) === props.poste)
                 .filter((entry) => entry[1].groupe === 'Routier')
@@ -50,7 +50,7 @@ export default function TypeSelector(props) {
                   value: entry[0],
                   label: entry[1].affichage,
                 })),
-              { value: '', label: 'Non routier', disabled: true },
+              { value: 'non routier', label: 'Non routier', disabled: true },
               ...Object.entries(facteurEmission)
                 .filter((entry) => Number(entry[1].poste) === props.poste)
                 .filter((entry) => entry[1].groupe !== 'Routier')

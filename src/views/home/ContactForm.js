@@ -1,4 +1,5 @@
 import React, { useState } from 'react'
+import styled from 'styled-components'
 import {
   TextInput,
   Button,
@@ -10,6 +11,11 @@ import {
 
 import useContact from 'hooks/useContact'
 
+const Wrapper = styled.form`
+  margin-bottom: 1rem;
+  padding: 1rem 1rem 0;
+  border: 1px solid rgb(232, 232, 232);
+`
 export default function ContactForm() {
   const [name, setName] = useState('')
   const [email, setEmail] = useState('')
@@ -18,7 +24,7 @@ export default function ContactForm() {
   const mutation = useContact()
 
   return (
-    <form
+    <Wrapper
       onSubmit={(e) => {
         e.preventDefault()
         mutation.mutate(email)
@@ -69,6 +75,6 @@ export default function ContactForm() {
       {mutation.isSuccess && (
         <Alert title='Votre message est envoyé' type='success' small />
       )}
-    </form>
+    </Wrapper>
   )
 }
