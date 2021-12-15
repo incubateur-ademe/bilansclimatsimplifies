@@ -1,12 +1,8 @@
 import React from 'react'
-import styled from 'styled-components'
 import { Row, Col, Text, Title } from '@dataesr/react-dsfr'
 
 import AdemeLoginButtons from './home/AdemeLoginButtons'
 
-const StyledText = styled(Text)`
-  margin-bottom: 0.75rem;
-`
 export default function Home() {
   return (
     <>
@@ -18,16 +14,7 @@ export default function Home() {
             reçu une aide de l’Etat dans le cadre du Plan de Relance ? Calculez
             et publiez votre Bilan Climat Simplifié sur ce site.
           </Text>
-        </Col>
-      </Row>
-      <Row gutters alignItems='middle'>
-        <Col>
-          <AdemeLoginButtons />
-        </Col>
-      </Row>
-      <Row gutters alignItems='middle'>
-        <Col>
-          <StyledText>
+          <Text>
             Le Bilan Climat Simplifié prévu au{' '}
             <a
               href='https://www.legifrance.gouv.fr/jorf/article_jo/JORFARTI000042753853'
@@ -38,8 +25,8 @@ export default function Home() {
             </a>{' '}
             porte sur les émissions de Gaz à Effet de Serre (GES) directes
             produites par les sources d'énergie fixes et mobiles nécessaires aux
-            activités de votre entreprise :{' '}
-          </StyledText>
+            activités de votre entreprise :
+          </Text>
           <ul>
             <li>
               Le poste 1 du Bilan Climat Simplifié correspond aux émissions
@@ -52,12 +39,17 @@ export default function Home() {
               entreprise.
             </li>
           </ul>
-          <StyledText>
+          <Text>
             Le calculateur de ce site vous proposera selon une approche de
             contrôle opérationnel d’identifier et de quantifier ces émissions de
             façon cohérente avec la méthodologie réglementaire relative à
             l’article R. 229-49 du code de l’environnement.
-          </StyledText>
+          </Text>
+        </Col>
+      </Row>
+      <Row gutters alignItems='middle'>
+        <Col>
+          <AdemeLoginButtons />
         </Col>
       </Row>
     </>
