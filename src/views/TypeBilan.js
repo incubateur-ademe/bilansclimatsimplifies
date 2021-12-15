@@ -18,6 +18,7 @@ const Wrapper = styled.div`
   border: 1px solid rgb(232, 232, 232);
   margin-bottom: 1rem;
   padding: 1rem 1rem 0;
+  text-align: center;
 `
 export default function TypeBilan() {
   const history = useHistory()
@@ -45,12 +46,20 @@ export default function TypeBilan() {
         <Col>
           <Wrapper>
             <Title as='h2' look='h4'>
-              J'ai déjà fait mon bilan
+              J’ai déjà calculé mon bilan
+              <span
+                dangerouslySetInnerHTML={{
+                  __html: '&nbsp;',
+                }}
+              />
+              simplifié
             </Title>
             <Text>
-              Si vous connaissez déjà le total des emissions de chaque poste.
+              Vous connaissez déjà le total de vos émissions des postes 1 et 2.
+              <br />
+              <br />
             </Text>
-            <ButtonGroup align='right' isInlineFrom='md'>
+            <ButtonGroup align='center' isInlineFrom='md'>
               <Button
                 onClick={() =>
                   mutation.mutate(
@@ -63,7 +72,7 @@ export default function TypeBilan() {
                   )
                 }
               >
-                J'ai déja fait mon bilan
+                J’ai déjà calculé mon bilan
               </Button>
             </ButtonGroup>
           </Wrapper>
@@ -71,13 +80,19 @@ export default function TypeBilan() {
         <Col>
           <Wrapper>
             <Title as='h2' look='h4'>
-              Je n'ai pas déjà fait mon bilan
+              Je souhaite calculer mon bilan
+              <span
+                dangerouslySetInnerHTML={{
+                  __html: '&nbsp;',
+                }}
+              />
+              simplifié
             </Title>
             <Text>
-              Si vous avez besoin de rentrer chaque source d'emission
-              individuellement.
+              Vous avez besoin de calculer les émissions de toutes vos sources
+              des postes 1 et 2 individuellement.
             </Text>
-            <ButtonGroup align='right' isInlineFrom='md'>
+            <ButtonGroup align='center' isInlineFrom='md'>
               <Button
                 onClick={() =>
                   mutation.mutate(
@@ -90,7 +105,7 @@ export default function TypeBilan() {
                   )
                 }
               >
-                Je n'ai pas déjà fait mon bilan
+                Je calcule mon bilan
               </Button>
             </ButtonGroup>
           </Wrapper>
