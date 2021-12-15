@@ -17,7 +17,7 @@ export default function TotauxBilan() {
 
   const history = useHistory()
 
-  const { data: bilan } = useBilan(8)
+  const { data: bilan } = useBilan(id)
 
   const mutation = useBilansMutation(id)
 
