@@ -6,6 +6,7 @@ import AuthProvider from 'components/providers/AuthProvider'
 import PrivateRoute from 'components/base/PrivateRoute'
 import Web from 'components/layout/Web'
 import Home from 'views/Home'
+import Contact from 'views/Contact'
 import NewBilan from 'views/NewBilan'
 import EditBilan from 'views/EditBilan'
 import TypeBilan from 'views/TypeBilan'
@@ -44,6 +45,9 @@ function App() {
               <PrivateRoute path='/bilans'>
                 <Bilans />
               </PrivateRoute>
+              <Route path='/contact'>
+                <Contact />
+              </Route>
               <Route path='/'>
                 <Home />
               </Route>

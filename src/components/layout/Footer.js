@@ -29,6 +29,7 @@ export default function Header() {
         <FooterLink href='/'>mentions légales</FooterLink>
         <FooterLink href='/'>données personnelles</FooterLink>
         <FooterLink href='/'>gestion des cookies</FooterLink>
+        <FooterLink href='/contact'>contact</FooterLink>
       </FooterBottom>
     </Footer>
   )
