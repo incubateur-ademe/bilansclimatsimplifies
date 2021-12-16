@@ -1,10 +1,8 @@
 import React from 'react'
 import styled from 'styled-components'
-import { useHistory } from 'react-router-dom'
 import { useIsFetching } from 'react-query'
 import { Button, ButtonGroup, Title, Text } from '@dataesr/react-dsfr'
 
-import { useBilansMutation } from 'hooks/useBilans'
 import MagicLink from 'components/base/MagicLink'
 
 const Wrapper = styled.div`
@@ -19,10 +17,6 @@ const StyledText = styled(Text)`
   text-align: center;
 `
 export default function Navigation(props) {
-  const history = useHistory()
-
-  const mutation = useBilansMutation(props.id)
-
   const isFetching = useIsFetching()
 
   return (
@@ -57,27 +51,11 @@ export default function Navigation(props) {
               Revenir au poste 1
             </Button>
           </MagicLink>
-          <Button
-            icon='fr-fi-check-line'
-            iconPosition='right'
-            onClick={() =>
-              window.confirm(
-                `Souhaitez-vous vraiment publier ce bilan ?\r(Vous pourrez toujours l'éditer par la suite)`
-              ) &&
-              mutation.mutate(
-                {
-                  statut: 'publié',
-                },
-                {
-                  onSuccess: () => {
-                    history.push(`/bilans/${props.id}?done=1`)
-                  },
-                }
-              )
-            }
-          >
-            Publier mon bilan
-          </Button>
+          <MagicLink to={`/bilans/${props.id}?ready=1`}>
+            <Button icon='fr-fi-check-line' iconPosition='right'>
+              Publier mon bilan
+            </Button>
+          </MagicLink>
         </ButtonGroup>
       )}
     </Wrapper>

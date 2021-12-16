@@ -12,7 +12,7 @@ import {
   Tag,
 } from '@dataesr/react-dsfr'
 
-import { useBilan, useBilansDeletion } from 'hooks/useBilans'
+import { useBilan, useBilansMutation, useBilansDeletion } from 'hooks/useBilans'
 import Poste from './bilan/Poste'
 import Details from './bilan/Details'
 
@@ -27,6 +27,7 @@ export default function Bilan() {
 
   const history = useHistory()
 
+  const mutation = useBilansMutation(id)
   const deletion = useBilansDeletion(id)
 
   const location = useLocation()
@@ -53,10 +54,20 @@ export default function Bilan() {
           </h1>
         </Col>
       </Row>
-      {location.search.includes('done=1') && (
+      {location.search.includes('done=1') && bilan?.statut === 'publié' && (
         <Row gutters>
           <Col>
             <Alert title={`Votre bilan est publié`} type='success' />
+            <br />
+          </Col>
+        </Row>
+      )}
+      {location.search.includes('ready=1') && bilan?.statut !== 'publié' && (
+        <Row gutters>
+          <Col>
+            <Alert
+              title={`Votre bilan n'est pas encore publié. Cliquez sur "Publier ce bilan" ci-dessous pour le publier`}
+            />
             <br />
           </Col>
         </Row>
@@ -74,7 +85,7 @@ export default function Bilan() {
       </Row>
       <Row gutters>
         <Col>
-          <ButtonGroup isInlineFrom='md' align='center'>
+          <ButtonGroup isInlineFrom='md' align='right'>
             <Button
               secondary
               onClick={() =>
@@ -90,9 +101,31 @@ export default function Bilan() {
             >
               Supprimer ce bilan
             </Button>
-            {bilan?.statut === 'publié' && (
+            {bilan?.statut === 'publié' ? (
               <Button onClick={() => window.alert('Pas encore disponible')}>
-                Télécharger mon bilan
+                Télécharger ce bilan
+              </Button>
+            ) : (
+              <Button
+                icon='fr-fi-check-line'
+                iconPosition='right'
+                onClick={() =>
+                  window.confirm(
+                    `Souhaitez-vous vraiment publier ce bilan ?\r(Vous pourrez toujours l'éditer par la suite)`
+                  ) &&
+                  mutation.mutate(
+                    {
+                      statut: 'publié',
+                    },
+                    {
+                      onSuccess: () => {
+                        history.push(`/bilans/${id}?done=1`)
+                      },
+                    }
+                  )
+                }
+              >
+                Publier ce bilan
               </Button>
             )}
           </ButtonGroup>

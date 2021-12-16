@@ -26,7 +26,6 @@ export default function Poste(props) {
     <Col>
       <Wrapper>
         <StyledTitle as='h4' look='h4'>
-          Poste{' '}
           {props.index === 1
             ? 'Émissions directes GES sources fixes'
             : 'Émissions directes GES sources mobiles'}
