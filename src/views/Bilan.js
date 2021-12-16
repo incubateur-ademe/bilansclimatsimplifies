@@ -10,9 +10,13 @@ import {
   Button,
   Alert,
   Tag,
+  Callout,
+  CalloutTitle,
+  Text,
 } from '@dataesr/react-dsfr'
 
 import { useBilan, useBilansMutation, useBilansDeletion } from 'hooks/useBilans'
+import MagicLink from 'components/base/MagicLink'
 import Poste from './bilan/Poste'
 import Details from './bilan/Details'
 
@@ -129,6 +133,32 @@ export default function Bilan() {
               </Button>
             )}
           </ButtonGroup>
+        </Col>
+      </Row>
+      <Row>
+        <Col>
+          <Callout hasInfoIcon={false}>
+            <CalloutTitle>Pour aller plus loin</CalloutTitle>
+            <Text>
+              Le Bilan Climat Simplifié est un bref aperçu du réel impact GES de
+              votre entreprise et ses activités. En effet, pour la plupart des
+              entreprises, 70% de vos émissions concernent des postes non
+              calculés ici. Nous vous invitons donc à poursuivre l’exercice vers
+              un Bilan GES exhaustif de vos émissions qui est le meilleur moyen
+              de savoir où agir ! Rendez-vous sur notre Centre de Ressources
+              dédié.
+            </Text>
+            <Text>
+              Au-delà de la quantification de vos émissions GES, l’ADEME vous
+              accompagne dans la transition écologique de votre entreprise.
+              Retrouvez toutes nos aides et offres d’accompagnement sur notre
+              plateforme{' '}
+              <MagicLink to='https://agirpourlatransition.ademe.fr/'>
+                AGIR pour la transition
+              </MagicLink>
+              .
+            </Text>
+          </Callout>
         </Col>
       </Row>
     </>
