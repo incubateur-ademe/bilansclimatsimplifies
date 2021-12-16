@@ -6,7 +6,7 @@ export default function NoteInput(props) {
     <>
       <TextInput
         textarea
-        label={`Note`}
+        label={`Commentaire`}
         value={props.value}
         onChange={(e) => props.onChange(e.target.value)}
       />

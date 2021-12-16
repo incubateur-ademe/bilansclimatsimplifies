@@ -19,18 +19,21 @@ export default function Poste(props) {
   const mutation = useBilansMutation(props.bilan.id)
 
   const [localValue, setLocalValue] = useState(
-    props.bilan[`poste${props.index}`]
+    props.bilan[`poste${props.index}`] / 1000
   )
 
   return (
     <Col>
       <Wrapper>
         <StyledTitle as='h4' look='h4'>
-          Poste {props.index}
+          Poste{' '}
+          {props.index === 1
+            ? 'Émissions directes GES sources fixes'
+            : 'Émissions directes GES sources mobiles'}
         </StyledTitle>
         {!edit && (
           <StyledTitle as='h2'>
-            {props.bilan[`poste${props.index}`] || 0} kgCO2e
+            {Math.round(props.bilan[`poste${props.index}`] / 1000 || 0)} tCO2e
           </StyledTitle>
         )}
         {edit ? (
@@ -38,15 +41,14 @@ export default function Poste(props) {
             onSubmit={(e) => {
               e.preventDefault()
               mutation.mutate({
-                [`manuelPoste${props.index}`]: String(localValue)
-                  .split(',')[0]
-                  .split('.')[0],
+                [`manuelPoste${props.index}`]:
+                  Number(String(localValue).replace(',', '.')) * 1000,
               })
               setEdit(false)
             }}
           >
             <TextInput
-              label={`Total en kgCO2e`}
+              label={`Total en tCO2e`}
               value={localValue}
               onChange={(e) => setLocalValue(e.target.value)}
             />
@@ -64,7 +66,13 @@ export default function Poste(props) {
                 <Button secondary>Éditer le poste {props.index}</Button>
               </MagicLink>
             ) : (
-              <Button onClick={() => setEdit(true)} secondary>
+              <Button
+                onClick={() => {
+                  setLocalValue(props.bilan[`poste${props.index}`] / 1000)
+                  setEdit(true)
+                }}
+                secondary
+              >
                 Éditer le poste {props.index}
               </Button>
             )}

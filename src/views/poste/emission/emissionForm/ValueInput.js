@@ -7,7 +7,7 @@ export default function ValueInput(props) {
       type='text'
       inputmode='numeric'
       pattern='[0-9]*'
-      label={`Valeur`}
+      label={`Consommation (valeur)`}
       value={props.value}
       onChange={(e) => props.onChange(e.target.value)}
       disabled={!props.type}
