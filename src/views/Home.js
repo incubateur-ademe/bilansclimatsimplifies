@@ -1,6 +1,7 @@
 import React from 'react'
 import { Row, Col, Text, Title } from '@dataesr/react-dsfr'
 
+import MagicLink from 'components/base/MagicLink'
 import AdemeLoginButtons from './home/AdemeLoginButtons'
 
 export default function Home() {
@@ -50,6 +51,16 @@ export default function Home() {
       <Row gutters alignItems='middle'>
         <Col>
           <AdemeLoginButtons />
+        </Col>
+      </Row>
+      <Row>
+        <Col>
+          <Text>
+            Vous pouvez télécharger un export de l'ensemble des bilans ici :{' '}
+            <MagicLink to='https://data.ademe.fr/datasets/bilans-climat-simplifies'>
+              https://data.ademe.fr/datasets/bilans-climat-simplifies
+            </MagicLink>
+          </Text>
         </Col>
       </Row>
     </>

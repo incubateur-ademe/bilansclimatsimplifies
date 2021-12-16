@@ -29,7 +29,8 @@ export default function Navigation(props) {
     <Wrapper>
       <StyledTitle as='h3'>
         Total du poste {props.poste} :{' '}
-        {props.bilan && props.bilan[`poste${props.poste}`]} kgCO2e
+        {Math.round(props.bilan && props.bilan[`poste${props.poste}`] / 1000)}{' '}
+        tCO2e
       </StyledTitle>
       <StyledText>
         {isFetching
