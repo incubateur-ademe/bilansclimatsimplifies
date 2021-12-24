@@ -51,17 +51,21 @@ export default function AddBilan() {
               e.preventDefault()
               mutation.reset()
               setErrors([])
+              let error = false
               if (!validateSiren(siren)) {
                 setErrors((prevErrors) => [...prevErrors, 'siren'])
+                error = true
               }
               if (!validateNombreSalaries(nombreSalaries)) {
                 setErrors((prevErrors) => [...prevErrors, 'nombreSalaries'])
+                error = true
               }
               if (!validateAnnee(annee)) {
                 setErrors((prevErrors) => [...prevErrors, 'annee'])
+                error = true
               }
 
-              if (!errors.length) {
+              if (!error) {
                 mutation.mutate(
                   {
                     raisonSociale,
@@ -87,6 +91,7 @@ export default function AddBilan() {
               required
             />
             <TextInput
+              type='number'
               label={`Nombre de salariés`}
               hint='Ce bilan est réservé aux entreprises de 50 à 500 salariés'
               value={nombreSalaries}
@@ -418,6 +423,12 @@ export default function AddBilan() {
             {mutation.isError && (
               <Alert type='error' title='Une erreur est survenue' />
             )}
+            {errors.length ? (
+              <Alert
+                type='error'
+                title='Votre formulaire comporte des erreurs'
+              />
+            ) : null}
           </form>
         </Col>
       </Row>
