@@ -106,9 +106,7 @@ export default function Bilan() {
               Supprimer ce bilan
             </Button>
             {bilan?.statut === 'publié' ? (
-              <Button onClick={() => window.alert('Pas encore disponible')}>
-                Télécharger ce bilan
-              </Button>
+              <Button onClick={() => window.print()}>Imprimer ce bilan</Button>
             ) : (
               <Button
                 icon='fr-fi-check-line'
