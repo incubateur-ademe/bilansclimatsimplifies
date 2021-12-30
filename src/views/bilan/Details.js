@@ -3,6 +3,8 @@ import styled from 'styled-components'
 import { useParams } from 'react-router-dom'
 import { Text, ButtonGroup, Button } from '@dataesr/react-dsfr'
 
+import listNaf from 'utils/listNaf'
+import listRegions from 'utils/listRegions'
 import MagicLink from 'components/base/MagicLink'
 
 const Wrapper = styled.div`
@@ -21,9 +23,14 @@ export default function Details(props) {
         <br />
         Nombre de salariés : {props.bilan?.nombreSalaries}
         <br />
-        Région : {props.bilan?.region}
+        Région :{' '}
+        {
+          listRegions.find((item) => item.value === props.bilan?.region)?.label
+        }{' '}
+        ({props.bilan?.region})
         <br />
-        NAF : {props.bilan?.naf}
+        NAF : {listNaf.find((item) => item.value === props.bilan?.naf)?.label} (
+        {props.bilan?.naf})
       </Text>
       <ButtonGroup isInlineFrom='md' align='right'>
         <MagicLink to={`/bilans/${id}/infos`}>
