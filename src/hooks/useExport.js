@@ -10,3 +10,11 @@ export function useExport() {
     { enabled: false }
   )
 }
+
+export function useExportBilan(id) {
+  return useQuery(
+    ['export', id],
+    () => axios.get(`${apiUrl}/emissionsExport/${id}`).then((res) => res.data),
+    { enabled: false }
+  )
+}
