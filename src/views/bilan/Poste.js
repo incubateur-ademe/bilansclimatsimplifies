@@ -32,7 +32,10 @@ export default function Poste(props) {
         </StyledTitle>
         {!edit && (
           <StyledTitle as='h2'>
-            {Math.round(props.bilan[`poste${props.index}`] / 1000 || 0)} tCO2e
+            {props.bilan[`poste${props.index}`] > 1000
+              ? Math.round(props.bilan[`poste${props.index}`] / 1000)
+              : props.bilan[`poste${props.index}`] / 1000 || 0}{' '}
+            tCO2e
           </StyledTitle>
         )}
         {edit ? (
