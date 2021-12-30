@@ -7,6 +7,7 @@ import PrivateRoute from 'components/base/PrivateRoute'
 import Web from 'components/layout/Web'
 import Home from 'views/Home'
 import Contact from 'views/Contact'
+import MentionsLegales from 'views/MentionsLegales'
 import NewBilan from 'views/NewBilan'
 import EditBilan from 'views/EditBilan'
 import TypeBilan from 'views/TypeBilan'
@@ -47,6 +48,9 @@ function App() {
               </PrivateRoute>
               <Route path='/contact'>
                 <Contact />
+              </Route>
+              <Route path='/mentionslegales'>
+                <MentionsLegales />
               </Route>
               <Route path='/'>
                 <Home />
