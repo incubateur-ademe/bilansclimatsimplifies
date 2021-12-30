@@ -1,8 +1,6 @@
 import React from 'react'
 import { Row, Col, Text, Title } from '@dataesr/react-dsfr'
 
-import MagicLink from 'components/base/MagicLink'
-
 export default function MentionsLegales() {
   return (
     <Row>
