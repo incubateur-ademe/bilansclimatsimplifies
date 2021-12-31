@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState, useEffect } from 'react'
 import styled from 'styled-components'
 import { useLocation, useParams, useHistory } from 'react-router-dom'
 import {
@@ -39,6 +39,13 @@ export default function Bilan() {
 
   const { data: bilan } = useBilan(id)
 
+  const [print, setPrint] = useState(false)
+  useEffect(() => {
+    if (print) {
+      window.print()
+      setPrint(false)
+    }
+  }, [print])
   return (
     <>
       <Row gutters>
@@ -59,14 +66,16 @@ export default function Bilan() {
           </h1>
         </Col>
       </Row>
-      {location.search.includes('done=1') && bilan?.statut === 'publié' && (
-        <Row gutters>
-          <Col>
-            <Alert title={`Votre bilan est publié`} type='success' />
-            <br />
-          </Col>
-        </Row>
-      )}
+      {location.search.includes('done=1') &&
+        bilan?.statut === 'publié' &&
+        !print && (
+          <Row gutters>
+            <Col>
+              <Alert title={`Votre bilan est publié`} type='success' />
+              <br />
+            </Col>
+          </Row>
+        )}
       {location.search.includes('ready=1') && bilan?.statut !== 'publié' && (
         <Row gutters>
           <Col>
@@ -80,65 +89,67 @@ export default function Bilan() {
       <Row gutters>
         {bilan &&
           [1, 2].map((index) => (
-            <Poste key={index} bilan={bilan} index={index} />
+            <Poste key={index} bilan={bilan} index={index} print={print} />
           ))}
       </Row>
       <Row gutters>
         <Col>
-          <Details bilan={bilan} />
+          <Details bilan={bilan} print={print} />
         </Col>
       </Row>
-      <Row gutters>
-        <Col>
-          <ButtonGroup isInlineFrom='md' align='right'>
-            <Button
-              secondary
-              onClick={() =>
-                window.confirm(
-                  'Souhaitez-vous vraiment supprimer ce bilan ?'
-                ) &&
-                deletion.mutate(null, {
-                  onSuccess: (data) => {
-                    history.push(`/bilans`)
-                  },
-                })
-              }
-            >
-              Supprimer ce bilan
-            </Button>
-            {bilan?.statut === 'publié' ? (
-              <>
-                <Button onClick={() => window.print()}>
-                  Imprimer ce bilan
-                </Button>
-                <DownloadButton id={id} bilan={bilan} />
-              </>
-            ) : (
+      {!print && (
+        <Row gutters>
+          <Col>
+            <ButtonGroup isInlineFrom='md' align='right'>
               <Button
-                icon='fr-fi-check-line'
-                iconPosition='right'
+                secondary
                 onClick={() =>
                   window.confirm(
-                    `Souhaitez-vous vraiment publier ce bilan ?\r(Vous pourrez toujours l'éditer par la suite)`
+                    'Souhaitez-vous vraiment supprimer ce bilan ?'
                   ) &&
-                  mutation.mutate(
-                    {
-                      statut: 'publié',
+                  deletion.mutate(null, {
+                    onSuccess: (data) => {
+                      history.push(`/bilans`)
                     },
-                    {
-                      onSuccess: () => {
-                        history.push(`/bilans/${id}?done=1`)
-                      },
-                    }
-                  )
+                  })
                 }
               >
-                Publier ce bilan
+                Supprimer ce bilan
               </Button>
-            )}
-          </ButtonGroup>
-        </Col>
-      </Row>
+              {bilan?.statut === 'publié' ? (
+                <>
+                  <Button onClick={() => setPrint(true)}>
+                    Imprimer ce bilan
+                  </Button>
+                  <DownloadButton id={id} bilan={bilan} />
+                </>
+              ) : (
+                <Button
+                  icon='fr-fi-check-line'
+                  iconPosition='right'
+                  onClick={() =>
+                    window.confirm(
+                      `Souhaitez-vous vraiment publier ce bilan ?\r(Vous pourrez toujours l'éditer par la suite)`
+                    ) &&
+                    mutation.mutate(
+                      {
+                        statut: 'publié',
+                      },
+                      {
+                        onSuccess: () => {
+                          history.push(`/bilans/${id}?done=1`)
+                        },
+                      }
+                    )
+                  }
+                >
+                  Publier ce bilan
+                </Button>
+              )}
+            </ButtonGroup>
+          </Col>
+        </Row>
+      )}
       <Row>
         <Col>
           <Callout hasInfoIcon={false}>

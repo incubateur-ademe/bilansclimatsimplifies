@@ -32,11 +32,13 @@ export default function Details(props) {
         NAF : {listNaf.find((item) => item.value === props.bilan?.naf)?.label} (
         {props.bilan?.naf})
       </Text>
-      <ButtonGroup isInlineFrom='md' align='right'>
-        <MagicLink to={`/bilans/${id}/infos`}>
-          <Button secondary>Éditer les informations</Button>
-        </MagicLink>
-      </ButtonGroup>
+      {!props.print && (
+        <ButtonGroup isInlineFrom='md' align='right'>
+          <MagicLink to={`/bilans/${id}/infos`}>
+            <Button secondary>Éditer les informations</Button>
+          </MagicLink>
+        </ButtonGroup>
+      )}
     </Wrapper>
   )
 }

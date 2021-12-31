@@ -62,23 +62,25 @@ export default function Poste(props) {
             </ButtonGroup>
           </form>
         ) : (
-          <ButtonGroup align='center' isInlineFrom='md'>
-            {props.bilan.mode === 'auto' ? (
-              <MagicLink to={`/bilans/${props.bilan.id}/poste${props.index}`}>
-                <Button secondary>Éditer le poste {props.index}</Button>
-              </MagicLink>
-            ) : (
-              <Button
-                onClick={() => {
-                  setLocalValue(props.bilan[`poste${props.index}`] / 1000)
-                  setEdit(true)
-                }}
-                secondary
-              >
-                Éditer le poste {props.index}
-              </Button>
-            )}
-          </ButtonGroup>
+          !props.print && (
+            <ButtonGroup align='center' isInlineFrom='md'>
+              {props.bilan.mode === 'auto' ? (
+                <MagicLink to={`/bilans/${props.bilan.id}/poste${props.index}`}>
+                  <Button secondary>Éditer le poste {props.index}</Button>
+                </MagicLink>
+              ) : (
+                <Button
+                  onClick={() => {
+                    setLocalValue(props.bilan[`poste${props.index}`] / 1000)
+                    setEdit(true)
+                  }}
+                  secondary
+                >
+                  Éditer le poste {props.index}
+                </Button>
+              )}
+            </ButtonGroup>
+          )
         )}
       </Wrapper>
     </Col>
