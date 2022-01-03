@@ -160,15 +160,19 @@ export default function Bilan() {
               entreprises, 70% de vos émissions concernent des postes non
               calculés ici. Nous vous invitons donc à poursuivre l’exercice vers
               un Bilan GES exhaustif de vos émissions qui est le meilleur moyen
-              de savoir où agir ! Rendez-vous sur notre Centre de Ressources
+              de savoir où agir ! Rendez-vous sur notre{' '}
+              <MagicLink to='https://www.bilans-ges.ademe.fr/fr/accueil/contenu/index/page/bilan%2Bges%2Borganisation/siGras/1'>
+                Centre de Ressources
+              </MagicLink>
               dédié.
+              <br />
+              <br />
             </Text>
             <Text>
-              Au-delà de la quantification de vos émissions GES, l’ADEME vous
-              accompagne dans la transition écologique de votre entreprise.
-              Retrouvez toutes nos aides et offres d’accompagnement sur notre
-              plateforme{' '}
-              <MagicLink to='https://agirpourlatransition.ademe.fr/'>
+              L’ADEME vous accompagne plus globalement dans la transition
+              écologique de votre entreprise. Retrouvez nos offres
+              d’accompagnement et toutes nos aides sur{' '}
+              <MagicLink to='https://agirpourlatransition.ademe.fr/entreprises/'>
                 AGIR pour la transition
               </MagicLink>
               .
