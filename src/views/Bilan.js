@@ -87,39 +87,24 @@ export default function Bilan() {
         </Row>
       )}
       <Row gutters>
+        <Col>
+          <Details bilan={bilan} print={print} />
+        </Col>
+      </Row>
+      <Row gutters>
         {bilan &&
           [1, 2].map((index) => (
             <Poste key={index} bilan={bilan} index={index} print={print} />
           ))}
       </Row>
-      <Row gutters>
-        <Col>
-          <Details bilan={bilan} print={print} />
-        </Col>
-      </Row>
       {!print && (
         <Row gutters>
           <Col>
             <ButtonGroup isInlineFrom='md' align='right'>
-              <Button
-                secondary
-                onClick={() =>
-                  window.confirm(
-                    'Souhaitez-vous vraiment supprimer ce bilan ?'
-                  ) &&
-                  deletion.mutate(null, {
-                    onSuccess: (data) => {
-                      history.push(`/bilans`)
-                    },
-                  })
-                }
-              >
-                Supprimer ce bilan
-              </Button>
               {bilan?.statut === 'publié' ? (
                 <>
                   <Button onClick={() => setPrint(true)}>
-                    Imprimer le récapitualif de ce bilan
+                    Imprimer le récapitulatif de ce bilan
                   </Button>
                   <DownloadButton id={id} bilan={bilan} />
                 </>
@@ -178,6 +163,28 @@ export default function Bilan() {
               .
             </Text>
           </Callout>
+        </Col>
+      </Row>
+      <br />
+      <Row gutters>
+        <Col>
+          <ButtonGroup isInlineFrom='md' align='right'>
+            <Button
+              secondary
+              onClick={() =>
+                window.confirm(
+                  'Souhaitez-vous vraiment supprimer ce bilan ?'
+                ) &&
+                deletion.mutate(null, {
+                  onSuccess: () => {
+                    history.push(`/bilans`)
+                  },
+                })
+              }
+            >
+              Supprimer ce bilan
+            </Button>
+          </ButtonGroup>
         </Col>
       </Row>
     </>
