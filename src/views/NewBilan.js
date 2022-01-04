@@ -109,7 +109,7 @@ export default function AddBilan() {
               required
             />
             <Select
-              label={`Section de nomenclature (code NAF, niveau I)`}
+              label={`Secteur d'activité (NAF rév. 2)`}
               options={[
                 {
                   value: '',
