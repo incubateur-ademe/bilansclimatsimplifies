@@ -29,7 +29,7 @@ export default function Navigation(props) {
       <StyledText>
         {isFetching
           ? 'Sauvegarde en cours...'
-          : `Votre bilan est sauvegardé. Vous pouvez fermer cette page et revenir l'éditer plus tard`}
+          : `Votre bilan est sauvegardé. Vous pouvez fermer cette page et revenir éditer votre bilan plus tard depuis la rubrique "Mes Brouillons"`}
       </StyledText>
       {props.poste === 1 ? (
         <ButtonGroup isInlineFrom='md' align='center' isEquisized>
