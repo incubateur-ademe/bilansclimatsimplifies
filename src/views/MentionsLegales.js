@@ -50,7 +50,7 @@ export default function MentionsLegales() {
           296, San Francisco, California 94107.
           <br />
           <br />
-          L'ensemble des données utilisateurs sont hébérgées en Europe.
+          L'ensemble des données utilisateurs sont hébérgées en France.
         </Text>
         <Title as='h2' look='h2'>
           Conditions d'utilisation

@@ -119,7 +119,7 @@ export default function Bilan() {
               {bilan?.statut === 'publié' ? (
                 <>
                   <Button onClick={() => setPrint(true)}>
-                    Imprimer ce bilan
+                    Imprimer le récapitualif de ce bilan
                   </Button>
                   <DownloadButton id={id} bilan={bilan} />
                 </>
