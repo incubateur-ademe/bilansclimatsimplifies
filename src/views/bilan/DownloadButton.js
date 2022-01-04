@@ -19,7 +19,7 @@ export default function DownloadButton(props) {
 
   return (
     <Button onClick={fetchExport}>
-      Télécharger le détail de ce bilan (format .csv)
+      Télécharger le bilan détaillé (format .csv)
     </Button>
   )
 }
