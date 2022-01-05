@@ -1,14 +1,5 @@
 import React, { useState } from 'react'
 import { useHistory } from 'react-router-dom'
-
-import {
-  validateSiren,
-  validateNombreSalaries,
-  validateAnnee,
-} from 'utils/validators'
-import listNaf from 'utils/listNaf'
-import listRegions from 'utils/listRegions'
-import { useBilansCreation } from 'hooks/useBilans'
 import {
   Row,
   Col,
@@ -17,10 +8,16 @@ import {
   Alert,
   ButtonGroup,
   Button,
-  TextInput,
-  Select,
 } from '@dataesr/react-dsfr'
+
+import {
+  validateSiren,
+  validateNombreSalaries,
+  validateAnnee,
+} from 'utils/validators'
+import { useBilansCreation } from 'hooks/useBilans'
 import MagicLink from 'components/base/MagicLink'
+import BilanForm from './newBilan/BilanForm'
 
 export default function AddBilan() {
   const history = useHistory()
@@ -35,6 +32,11 @@ export default function AddBilan() {
   const mutation = useBilansCreation()
 
   const [errors, setErrors] = useState([])
+  const dictionary = {
+    annee: 'Année de reporting du bilan',
+    nombreSalaries: 'Nombre de salariés',
+    siren: 'SIREN',
+  }
 
   return (
     <>
@@ -86,66 +88,20 @@ export default function AddBilan() {
               }
             }}
           >
-            <TextInput
-              label={`Raison sociale`}
-              value={raisonSociale}
-              onChange={(e) => setRaisonSociale(e.target.value)}
-              required
-            />
-            <TextInput
-              type='number'
-              label={`Nombre de salariés`}
-              hint='Ce bilan est réservé aux entreprises de 50 à 500 salariés'
-              value={nombreSalaries}
-              onChange={(e) => setNombreSalaries(e.target.value)}
-              messageType={errors.includes('nombreSalaries') ? 'error' : null}
-              required
-            />
-            <TextInput
-              label={`SIREN`}
-              value={siren}
-              onChange={(e) => setSiren(e.target.value)}
-              messageType={errors.includes('siren') ? 'error' : null}
-              required
-            />
-            <Select
-              label={`Secteur d'activité (NAF rév. 2)`}
-              options={[
-                {
-                  value: '',
-                  label: '',
-                  disabled: true,
-                  hidden: true,
-                },
-                ...listNaf,
-              ]}
-              selected={naf}
-              onChange={(e) => setNaf(e.target.value)}
-              required
-            />
-            <Select
-              label={`Région du siège de l’entreprise`}
-              options={[
-                {
-                  value: '',
-                  label: '',
-                  disabled: true,
-                  hidden: true,
-                },
-                ...listRegions,
-              ]}
-              selected={region}
-              onChange={(e) => setRegion(e.target.value)}
-              required
-            />
-
-            <TextInput
-              label={`Année de reporting du bilan`}
-              hint='Année n, n-1 ou n-2 par rapport à l’année en cours'
-              value={annee}
-              onChange={(e) => setAnnee(e.target.value)}
-              messageType={errors.includes('annee') ? 'error' : null}
-              required
+            <BilanForm
+              raisonSociale={raisonSociale}
+              setRaisonSociale={setRaisonSociale}
+              nombreSalaries={nombreSalaries}
+              setNombreSalaries={setNombreSalaries}
+              siren={siren}
+              setSiren={setSiren}
+              naf={naf}
+              setNaf={setNaf}
+              region={region}
+              setRegion={setRegion}
+              annee={annee}
+              setAnnee={setAnnee}
+              errors={errors}
             />
             <ButtonGroup isInlineFrom='md' align='right'>
               <MagicLink to='/bilans'>
@@ -160,6 +116,24 @@ export default function AddBilan() {
               <Alert
                 type='error'
                 title='Votre formulaire comporte des erreurs'
+                description={`${
+                  errors.length > 1 ? 'Les champs' : 'Le champ'
+                } ${errors
+                  .map(
+                    (error, index) =>
+                      `${dictionary[error]}${
+                        index === errors.length - 2
+                          ? ' et '
+                          : index < errors.length - 2
+                          ? ', '
+                          : ''
+                      }`
+                  )
+                  .join('')} ${
+                  errors.length > 1
+                    ? 'ne sont pas correctement remplis'
+                    : `n'est pas correctement rempli`
+                }.`}
               />
             ) : null}
           </form>

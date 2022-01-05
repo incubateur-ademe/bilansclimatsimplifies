@@ -8,11 +8,16 @@ import {
   Alert,
   Button,
   ButtonGroup,
-  TextInput,
 } from '@dataesr/react-dsfr'
 
+import {
+  validateSiren,
+  validateNombreSalaries,
+  validateAnnee,
+} from 'utils/validators'
 import { useBilan, useBilansMutation } from 'hooks/useBilans'
 import MagicLink from 'components/base/MagicLink'
+import BilanForm from './newBilan/BilanForm'
 
 export default function EditBilan() {
   const history = useHistory()
@@ -28,7 +33,6 @@ export default function EditBilan() {
   const [naf, setNaf] = useState('')
   const [region, setRegion] = useState('')
   const [annee, setAnnee] = useState('')
-
   useEffect(() => {
     if (bilan) {
       setRaisonSociale(bilan.raisonSociale)
@@ -39,6 +43,13 @@ export default function EditBilan() {
       setAnnee(bilan.annee)
     }
   }, [bilan])
+
+  const [errors, setErrors] = useState([])
+  const dictionary = {
+    annee: 'Année de reporting du bilan',
+    nombreSalaries: 'Nombre de salariés',
+    siren: 'SIREN',
+  }
 
   return (
     <>
@@ -58,63 +69,55 @@ export default function EditBilan() {
           <form
             onSubmit={(e) => {
               e.preventDefault()
-              mutation.mutate(
-                {
-                  raisonSociale,
-                  nombreSalaries,
-                  siren,
-                  naf,
-                  region,
-                  annee,
-                },
-                {
-                  onSuccess: () => {
-                    history.push(`/bilans/${id}`)
+              mutation.reset()
+              setErrors([])
+              let error = false
+              if (!validateSiren(siren)) {
+                setErrors((prevErrors) => [...prevErrors, 'siren'])
+                error = true
+              }
+              if (!validateNombreSalaries(nombreSalaries)) {
+                setErrors((prevErrors) => [...prevErrors, 'nombreSalaries'])
+                error = true
+              }
+              if (!validateAnnee(annee)) {
+                setErrors((prevErrors) => [...prevErrors, 'annee'])
+                error = true
+              }
+
+              if (!error) {
+                mutation.mutate(
+                  {
+                    raisonSociale,
+                    nombreSalaries,
+                    siren,
+                    naf,
+                    region,
+                    annee,
                   },
-                }
-              )
+                  {
+                    onSuccess: () => {
+                      history.push(`/bilans/${id}`)
+                    },
+                  }
+                )
+              }
             }}
           >
-            <TextInput
-              label={`Raison sociale`}
-              value={raisonSociale}
-              onChange={(e) => setRaisonSociale(e.target.value)}
-              required
-            />
-            <TextInput
-              label={`Nombre de salariés`}
-              hint='Inférieur à 500'
-              value={nombreSalaries}
-              onChange={(e) => setNombreSalaries(e.target.value)}
-              required
-            />
-            <TextInput
-              label={`SIREN`}
-              hint='SIREN réel nécessaire'
-              value={siren}
-              onChange={(e) => setSiren(e.target.value)}
-              required
-            />
-            <TextInput
-              label={`Section de nomenclature`}
-              hint='Format : 01, 02, 03, etc.'
-              value={naf}
-              onChange={(e) => setNaf(e.target.value)}
-              required
-            />
-            <TextInput
-              label={`Région du siege`}
-              hint='Format : 01, 02, 03, etc.'
-              value={region}
-              onChange={(e) => setRegion(e.target.value)}
-              required
-            />
-            <TextInput
-              label={`Année correspondant au bilan`}
-              hint='Inférieure à 2022'
-              value={annee}
-              onChange={(e) => setAnnee(e.target.value)}
-              required
+            <BilanForm
+              raisonSociale={raisonSociale}
+              setRaisonSociale={setRaisonSociale}
+              nombreSalaries={nombreSalaries}
+              setNombreSalaries={setNombreSalaries}
+              siren={siren}
+              setSiren={setSiren}
+              naf={naf}
+              setNaf={setNaf}
+              region={region}
+              setRegion={setRegion}
+              annee={annee}
+              setAnnee={setAnnee}
+              errors={errors}
             />
 
             <ButtonGroup align='right' isInlineFrom='md'>
@@ -126,6 +129,30 @@ export default function EditBilan() {
             {mutation.isError && (
               <Alert type='error' title='Une erreur est survenue' />
             )}
+            {errors.length ? (
+              <Alert
+                type='error'
+                title='Votre formulaire comporte des erreurs'
+                description={`${
+                  errors.length > 1 ? 'Les champs' : 'Le champ'
+                } ${errors
+                  .map(
+                    (error, index) =>
+                      `${dictionary[error]}${
+                        index === errors.length - 2
+                          ? ' et '
+                          : index < errors.length - 2
+                          ? ', '
+                          : ''
+                      }`
+                  )
+                  .join('')} ${
+                  errors.length > 1
+                    ? 'ne sont pas correctement remplis'
+                    : `n'est pas correctement rempli`
+                }.`}
+              />
+            ) : null}
           </form>
         </Col>
       </Row>
