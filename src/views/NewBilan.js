@@ -37,7 +37,6 @@ export default function AddBilan() {
     nombreSalaries: 'Nombre de salariés',
     siren: 'SIREN',
   }
-
   return (
     <>
       <Row gutters>
@@ -110,7 +109,11 @@ export default function AddBilan() {
               <Button submit>Commencer mon bilan</Button>
             </ButtonGroup>
             {mutation.isError && (
-              <Alert type='error' title='Une erreur est survenue' />
+              <Alert
+                type='error'
+                title='Une erreur est survenue'
+                description={mutation?.error?.response?.data?.nonFieldErrors}
+              />
             )}
             {errors.length ? (
               <Alert

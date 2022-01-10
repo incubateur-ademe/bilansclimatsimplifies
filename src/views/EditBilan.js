@@ -50,6 +50,7 @@ export default function EditBilan() {
     nombreSalaries: 'Nombre de salariés',
     siren: 'SIREN',
   }
+  console.log(mutation)
 
   return (
     <>
@@ -127,7 +128,11 @@ export default function EditBilan() {
               <Button submit>Valider</Button>
             </ButtonGroup>
             {mutation.isError && (
-              <Alert type='error' title='Une erreur est survenue' />
+              <Alert
+                type='error'
+                title='Une erreur est survenue'
+                description={mutation?.error?.response?.data?.nonFieldErrors}
+              />
             )}
             {errors.length ? (
               <Alert
