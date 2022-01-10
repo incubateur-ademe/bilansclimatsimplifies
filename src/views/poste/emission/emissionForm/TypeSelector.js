@@ -43,6 +43,9 @@ export default function TypeSelector(props) {
               ...Object.entries(facteurEmission)
                 .filter((entry) => Number(entry[1].poste) === props.poste)
                 .filter((entry) => entry[1].groupe === 'Routier')
+                .filter(
+                  (entry) => entry[1].classification === props.classification
+                )
                 .sort((a, b) =>
                   a[0].toLowerCase() > b[0].toLowerCase() ? 1 : -1
                 )
@@ -54,6 +57,9 @@ export default function TypeSelector(props) {
               ...Object.entries(facteurEmission)
                 .filter((entry) => Number(entry[1].poste) === props.poste)
                 .filter((entry) => entry[1].groupe !== 'Routier')
+                .filter(
+                  (entry) => entry[1].classification === props.classification
+                )
                 .sort((a, b) =>
                   a[0].toLowerCase() > b[0].toLowerCase() ? 1 : -1
                 )

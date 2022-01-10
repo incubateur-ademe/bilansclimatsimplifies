@@ -1,6 +1,6 @@
-import React from 'react'
+import React, { useState } from 'react'
 import styled from 'styled-components'
-import { Row, Col } from '@dataesr/react-dsfr'
+import { Row, Col, RadioGroup, Radio } from '@dataesr/react-dsfr'
 
 import TypeSelector from './emissionForm/TypeSelector'
 import LocationSelector from './emissionForm/LocationSelector'
@@ -16,9 +16,11 @@ const StyledCol = styled(Col)`
   }
 `
 export default function EmissionForm(props) {
-  return (
+  const [classification, setclassification] = useState(null)
+
+  return classification || props.poste === 1 ? (
     <>
-      <Row gutters>
+      <Row>
         <StyledCol n='6'>
           <TypeSelector
             value={props.type}
@@ -26,6 +28,7 @@ export default function EmissionForm(props) {
               props.setType(type)
               props.setLocalisation(null)
             }}
+            classification={classification}
             poste={props.poste}
           />
         </StyledCol>
@@ -62,5 +65,22 @@ export default function EmissionForm(props) {
         </Col>
       </Row>
     </>
+  ) : (
+    <Row gutters>
+      <Col>
+        <RadioGroup onChange={setclassification}>
+          <Radio
+            label='Je connais les consommations de carburant de mes véhicules'
+            value='carburant'
+            isExtended
+          />
+          <Radio
+            label='Je connais les distances parcourues et tonnages transportés de mes véhicules'
+            value='véhicule'
+            isExtended
+          />
+        </RadioGroup>
+      </Col>
+    </Row>
   )
 }
