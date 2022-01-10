@@ -6,7 +6,6 @@ import {
   Breadcrumb,
   BreadcrumbItem,
   Title,
-  Text,
 } from '@dataesr/react-dsfr'
 
 import { useBilan } from 'hooks/useBilans'
@@ -40,7 +39,6 @@ export default function Poste() {
           <Title as='h1'>
             {bilan?.raisonSociale} - {bilan?.annee} - Poste {poste}
           </Title>
-          <Text></Text>
         </Col>
       </Row>
       {emissions

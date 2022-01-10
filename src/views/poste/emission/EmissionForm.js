@@ -68,7 +68,7 @@ export default function EmissionForm(props) {
   ) : (
     <Row gutters>
       <Col>
-        <RadioGroup onChange={setclassification}>
+        <RadioGroup onChange={setclassification} legend=''>
           <Radio
             label='Je connais les consommations de carburant de mes véhicules'
             value='carburant'
