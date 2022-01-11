@@ -46,9 +46,9 @@ export default function DownloadButton(props) {
         <ModalTitle>Télécharger le bilan détaillé</ModalTitle>
 
         <ModalFooter>
-          <ButtonGroup>
-            <Button onClick={fetchExport}>Format csv</Button>
-            <Button onClick={fetchExportXls}>Format xls</Button>
+          <ButtonGroup align='center' isInlineFrom='md'>
+            <Button onClick={fetchExport}>Format .csv</Button>
+            <Button onClick={fetchExportXls}>Format .xls</Button>
           </ButtonGroup>
         </ModalFooter>
       </Modal>
