@@ -7,6 +7,7 @@ import {
   Button,
   ButtonGroup,
   Alert,
+  Text,
 } from '@dataesr/react-dsfr'
 
 import { useSignup } from 'hooks/useUser'
@@ -68,6 +69,12 @@ export default function Signup() {
               onChange={(e) => setCgu((prevCgu) => !prevCgu)}
               required
             />
+            <Text size='xs'>
+              <MagicLink to='https://agirpourlatransition.ademe.fr/politique-protection-donnees-a-caractere-personnel'>
+                Voir la politique de protection des données personnelles de
+                l'ADEME
+              </MagicLink>
+            </Text>
             <ButtonGroup align='right' isInlineFrom='md'>
               <MagicLink to={`/`}>
                 <Button secondary>Annuler</Button>
