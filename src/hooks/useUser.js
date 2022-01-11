@@ -32,3 +32,14 @@ export function useCsrfToken() {
     axios.get(`${baseUrl}/csrf/`).then((res) => res.data.csrfToken)
   )
 }
+
+export function useSignup() {
+  const { data: csrfToken } = useCsrfToken()
+
+  return useMutation((user) =>
+    axios.post(`${apiUrl}/ademeAccount/`, user, {
+      'Content-Type': 'multipart/form-data',
+      'X-CSRFToken': csrfToken,
+    })
+  )
+}

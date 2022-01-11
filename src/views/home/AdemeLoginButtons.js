@@ -39,8 +39,11 @@ export default function AdemeLoginButton() {
       </Wrapper>
     ) : (
       <ButtonGroup isInlineFrom='md' align='center'>
+        <MagicLink to='/inscription'>
+          <Button size='lg'>M'inscrire</Button>
+        </MagicLink>
         <Button onClick={keycloak.login} size='lg'>
-          M'inscrire ou me connecter
+          Me connecter
         </Button>
       </ButtonGroup>
     )

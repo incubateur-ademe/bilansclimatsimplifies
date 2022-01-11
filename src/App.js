@@ -15,6 +15,7 @@ import TotauxBilan from 'views/TotauxBilan'
 import Poste from 'views/Poste'
 import Bilans from 'views/Bilans'
 import Bilan from 'views/Bilan'
+import Signup from 'views/Signup'
 
 const queryClient = new QueryClient()
 
@@ -51,6 +52,9 @@ function App() {
               </Route>
               <Route path='/mentionslegales'>
                 <MentionsLegales />
+              </Route>
+              <Route path='/inscription'>
+                <Signup />
               </Route>
               <Route path='/'>
                 <Home />
