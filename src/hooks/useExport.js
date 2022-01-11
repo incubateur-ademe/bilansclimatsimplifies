@@ -5,16 +5,28 @@ import apiUrl from 'utils/apiUrl'
 
 export function useExport() {
   return useQuery(
-    ['export'],
+    ['privateExportCsv'],
     () => axios.get(`${apiUrl}/export/`).then((res) => res.data),
     { enabled: false }
   )
 }
 
-export function useExportBilan(id) {
+export function useExportBilanCsv(id) {
   return useQuery(
-    ['export', id],
+    ['exportCsv', id],
     () => axios.get(`${apiUrl}/emissionsExport/${id}`).then((res) => res.data),
+    { enabled: false }
+  )
+}
+export function useExportBilanXls(id) {
+  return useQuery(
+    ['exportXls', id],
+    () =>
+      axios
+        .get(`${apiUrl}/emissionsXlsxExport/${id}`, {
+          responseType: 'blob',
+        })
+        .then((res) => res.data),
     { enabled: false }
   )
 }

@@ -1,10 +1,22 @@
-import React, { useEffect } from 'react'
-import { Button } from '@dataesr/react-dsfr'
+import React, { useState, useEffect } from 'react'
+import {
+  Button,
+  ButtonGroup,
+  Modal,
+  ModalTitle,
+  ModalContent,
+  ModalFooter,
+  ModalClose,
+} from '@dataesr/react-dsfr'
+import { saveAs } from 'file-saver'
 
-import { useExportBilan } from 'hooks/useExport'
+import { useExportBilanCsv, useExportBilanXls } from 'hooks/useExport'
 
 export default function DownloadButton(props) {
-  const { data: csv, refetch: fetchExport } = useExportBilan(props.id)
+  const [open, setOpen] = useState(false)
+
+  const { data: csv, refetch: fetchExport } = useExportBilanCsv(props.id)
+  const { data: xls, refetch: fetchExportXls } = useExportBilanXls(props.id)
 
   const bilan = props.bilan
   useEffect(() => {
@@ -16,10 +28,30 @@ export default function DownloadButton(props) {
       hiddenElement.click()
     }
   }, [csv, bilan])
+  useEffect(() => {
+    if (xls && bilan) {
+      saveAs(xls, `bilan_${bilan.annee}_${bilan.raisonSociale}.xls`)
+    }
+  }, [xls, bilan])
 
   return (
-    <Button onClick={fetchExport}>
-      Télécharger le bilan détaillé (format .csv)
-    </Button>
+    <>
+      <Button onClick={() => setOpen(true)}>
+        Télécharger le bilan détaillé
+      </Button>
+      <Modal isOpen={open} hide={() => setOpen(false)}>
+        <ModalClose hide={() => setOpen(false)} title='Fermer'>
+          Fermer
+        </ModalClose>
+        <ModalTitle>Télécharger le bilan détaillé</ModalTitle>
+
+        <ModalFooter>
+          <ButtonGroup>
+            <Button onClick={fetchExport}>Format csv</Button>
+            <Button onClick={fetchExportXls}>Format xls</Button>
+          </ButtonGroup>
+        </ModalFooter>
+      </Modal>
+    </>
   )
 }
