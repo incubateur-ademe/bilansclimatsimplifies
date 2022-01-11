@@ -4,7 +4,6 @@ import {
   ButtonGroup,
   Modal,
   ModalTitle,
-  ModalContent,
   ModalFooter,
   ModalClose,
 } from '@dataesr/react-dsfr'
@@ -47,8 +46,22 @@ export default function DownloadButton(props) {
 
         <ModalFooter>
           <ButtonGroup align='center' isInlineFrom='md'>
-            <Button onClick={fetchExport}>Format .csv</Button>
-            <Button onClick={fetchExportXls}>Format .xls</Button>
+            <Button
+              onClick={() => {
+                setOpen(false)
+                fetchExport()
+              }}
+            >
+              Format .csv
+            </Button>
+            <Button
+              onClick={() => {
+                setOpen(false)
+                fetchExportXls()
+              }}
+            >
+              Format .xls
+            </Button>
           </ButtonGroup>
         </ModalFooter>
       </Modal>

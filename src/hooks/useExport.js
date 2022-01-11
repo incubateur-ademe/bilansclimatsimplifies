@@ -3,10 +3,22 @@ import axios from 'axios'
 
 import apiUrl from 'utils/apiUrl'
 
-export function useExport() {
+export function useExportCsv() {
   return useQuery(
     ['privateExportCsv'],
     () => axios.get(`${apiUrl}/export/`).then((res) => res.data),
+    { enabled: false }
+  )
+}
+export function useExportXls() {
+  return useQuery(
+    ['privateExportXls'],
+    () =>
+      axios
+        .get(`${apiUrl}/xlsxExport/`, {
+          responseType: 'blob',
+        })
+        .then((res) => res.data),
     { enabled: false }
   )
 }
