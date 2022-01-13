@@ -7,7 +7,11 @@ export default function TypeSelector(props) {
   const { data: facteurEmission } = useFacteursEmission()
   return facteurEmission ? (
     <Select
-      label={props.poste === 1 ? `Type de combustible` : 'Type de carburant'}
+      label={
+        props.poste === 1
+          ? `Type de combustible`
+          : `Type de ${props.classification}`
+      }
       selected={props.value}
       onChange={(e) => props.onChange(e.target.value)}
       options={

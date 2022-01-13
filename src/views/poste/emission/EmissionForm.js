@@ -1,6 +1,6 @@
-import React, { useState } from 'react'
+import React from 'react'
 import styled from 'styled-components'
-import { Row, Col, RadioGroup, Radio } from '@dataesr/react-dsfr'
+import { Row, Col, RadioGroup, Select, Radio } from '@dataesr/react-dsfr'
 
 import TypeSelector from './emissionForm/TypeSelector'
 import LocationSelector from './emissionForm/LocationSelector'
@@ -16,11 +16,29 @@ const StyledCol = styled(Col)`
   }
 `
 export default function EmissionForm(props) {
-  const [classification, setclassification] = useState(null)
-
-  return classification || props.poste === 1 ? (
+  console.log(props.classification)
+  return props.classification || props.poste === 1 ? (
     <>
-      <Row>
+      {props.poste === 2 && (
+        <Row gutters>
+          <StyledCol n='6'>
+            <Select
+              selected={props.classification}
+              onChange={(e) => {
+                props.setClassification(e.target.value)
+                props.setType('')
+                props.setUnite('')
+                props.setValeur('')
+              }}
+              options={[
+                { value: 'carburant', label: 'Carburant' },
+                { value: 'véhicule', label: 'Véhicule' },
+              ]}
+            />
+          </StyledCol>
+        </Row>
+      )}
+      <Row gutters>
         <StyledCol n='6'>
           <TypeSelector
             value={props.type}
@@ -28,7 +46,7 @@ export default function EmissionForm(props) {
               props.setType(type)
               props.setLocalisation(null)
             }}
-            classification={classification}
+            classification={props.classification}
             poste={props.poste}
           />
         </StyledCol>
@@ -68,7 +86,7 @@ export default function EmissionForm(props) {
   ) : (
     <Row gutters>
       <Col>
-        <RadioGroup onChange={setclassification} legend=''>
+        <RadioGroup onChange={props.setClassification} legend=''>
           <Radio
             label='Je connais les consommations de carburant de mes véhicules'
             value='carburant'

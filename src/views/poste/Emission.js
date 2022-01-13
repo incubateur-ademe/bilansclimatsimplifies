@@ -19,13 +19,15 @@ export default function Emission(props) {
   const [valeur, setValeur] = useState('')
   const [unite, setUnite] = useState('')
   const [note, setNote] = useState('')
+  const [classification, setClassification] = useState('')
   useEffect(() => {
     setType(props.emission.type)
     setValeur(props.emission.valeur)
     setUnite(props.emission.unite)
     setNote(props.emission.note)
+    setClassification(props.emission.classification)
   }, [props.emission])
-
+  console.log(props.emission)
   const mutation = useEmissionsMutation(props.emission.id)
   const deletion = useEmissionsDeletion(props.emission.id)
 
@@ -63,6 +65,8 @@ export default function Emission(props) {
                 setUnite={setUnite}
                 note={note}
                 setNote={setNote}
+                classification={classification}
+                setClassification={setClassification}
               />
               <Row gutters>
                 <Col>

@@ -27,12 +27,14 @@ export default function NewEmission(props) {
   const [valeur, setValeur] = useState('')
   const [unite, setUnite] = useState('')
   const [note, setNote] = useState('')
+  const [classification, setClassification] = useState('')
 
   useEffect(() => {
     setType('')
     setValeur('')
     setUnite('')
     setNote('')
+    setClassification('')
   }, [open])
 
   const poste = props.poste
@@ -74,6 +76,8 @@ export default function NewEmission(props) {
         setUnite={setUnite}
         note={note}
         setNote={setNote}
+        classification={classification}
+        setClassification={setClassification}
       />
       <Row gutters>
         <Col>
