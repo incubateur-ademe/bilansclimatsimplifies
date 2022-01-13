@@ -28,7 +28,7 @@ export default function DownloadButton(props) {
   }, [csv])
   useEffect(() => {
     if (xls) {
-      saveAs(xls, `bilans.xls`)
+      saveAs(xls, `bilans.xlsx`)
     }
   }, [xls])
 
