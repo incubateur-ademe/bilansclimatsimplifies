@@ -1,4 +1,5 @@
 import React from 'react'
+import { useHistory } from 'react-router-dom'
 import styled from 'styled-components'
 import {
   Header as HeaderComponent,
@@ -10,10 +11,9 @@ import {
   ToolItemGroup,
   Button,
 } from '@dataesr/react-dsfr'
+import { useKeycloak } from '@react-keycloak/web'
 
 import Ademe from 'components/base/Ademe'
-
-import { useKeycloak } from '@react-keycloak/web'
 
 const Wrapper = styled(HeaderComponent)`
   .fr-header__navbar {
@@ -21,6 +21,8 @@ const Wrapper = styled(HeaderComponent)`
   }
 `
 export default function Header() {
+  let history = useHistory()
+
   const { keycloak } = useKeycloak()
 
   return (
@@ -37,7 +39,17 @@ export default function Header() {
         {keycloak.authenticated && (
           <Tool>
             <ToolItemGroup>
-              <Button secondary onClick={() => keycloak.logout()}>
+              <Button
+                secondary
+                onClick={() => {
+                  keycloak
+                    .logout({ redirectUri: window.location.origin })
+                    .then(() => {
+                      console.log('logout')
+                      history.push('/')
+                    })
+                }}
+              >
                 Me déconnecter
               </Button>
             </ToolItemGroup>
