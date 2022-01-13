@@ -16,7 +16,6 @@ const StyledCol = styled(Col)`
   }
 `
 export default function EmissionForm(props) {
-  console.log(props.classification)
   return props.classification || props.poste === 1 ? (
     <>
       {props.poste === 2 && (

@@ -27,7 +27,6 @@ export default function Emission(props) {
     setNote(props.emission.note)
     setClassification(props.emission.classification)
   }, [props.emission])
-  console.log(props.emission)
   const mutation = useEmissionsMutation(props.emission.id)
   const deletion = useEmissionsDeletion(props.emission.id)
 
