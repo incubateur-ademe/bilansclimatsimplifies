@@ -42,12 +42,7 @@ export default function Header() {
               <Button
                 secondary
                 onClick={() => {
-                  keycloak
-                    .logout({ redirectUri: window.location.origin })
-                    .then(() => {
-                      console.log('logout')
-                      history.push('/')
-                    })
+                  keycloak.logout({ redirectUri: window.location.origin })
                 }}
               >
                 Me déconnecter
