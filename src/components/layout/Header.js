@@ -1,5 +1,4 @@
 import React from 'react'
-import { useHistory } from 'react-router-dom'
 import styled from 'styled-components'
 import {
   Header as HeaderComponent,
@@ -21,8 +20,6 @@ const Wrapper = styled(HeaderComponent)`
   }
 `
 export default function Header() {
-  let history = useHistory()
-
   const { keycloak } = useKeycloak()
 
   return (
