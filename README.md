@@ -2,7 +2,7 @@
 
 Site permettant aux entreprises de renseigner leur bilan climat
 
-https://bilansclimatsimplifies.netlify.app/
+https://bilans-climat-simplifies.ademe.fr/
 
 ## Développement
 
