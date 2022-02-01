@@ -92,6 +92,15 @@ export default function AddBilan() {
               setRaisonSociale={setRaisonSociale}
               nombreSalaries={nombreSalaries}
               setNombreSalaries={setNombreSalaries}
+              checkNombreSalaries={() => {
+                if (!validateNombreSalaries(nombreSalaries)) {
+                  setErrors((prevErrors) => [...prevErrors, 'nombreSalaries'])
+                } else {
+                  setErrors((prevErrors) =>
+                    prevErrors.filter((error) => error !== 'nombreSalaries')
+                  )
+                }
+              }}
               siren={siren}
               setSiren={setSiren}
               naf={naf}

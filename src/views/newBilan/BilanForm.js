@@ -2,7 +2,7 @@ import React from 'react'
 
 import listNaf from 'utils/listNaf'
 import listRegions from 'utils/listRegions'
-import { TextInput, Select } from '@dataesr/react-dsfr'
+import { TextInput, Select, Alert } from '@dataesr/react-dsfr'
 
 export default function BilanForm(props) {
   return (
@@ -19,9 +19,16 @@ export default function BilanForm(props) {
         hint='Ce bilan est réservé aux entreprises de 50 à 500 salariés'
         value={props.nombreSalaries}
         onChange={(e) => props.setNombreSalaries(e.target.value)}
+        onBlur={props.checkNombreSalaries}
         messageType={props.errors.includes('nombreSalaries') ? 'error' : null}
         required
       />
+      {props.errors.includes('nombreSalaries') && (
+        <Alert
+          type='error'
+          description={`Le nombre de salarié doit être compris entre 50 et 500`}
+        />
+      )}
       <TextInput
         label={`SIREN`}
         value={props.siren}
@@ -60,10 +67,21 @@ export default function BilanForm(props) {
         required
       />
 
-      <TextInput
+      <Select
         label={`Année de reporting du bilan`}
         hint='Année n, n-1 ou n-2 par rapport à l’année en cours'
-        value={props.annee}
+        options={[
+          {
+            value: '',
+            label: '',
+            disabled: true,
+            hidden: true,
+          },
+          { value: 2022, label: '2022' },
+          { value: 2021, label: '2021' },
+          { value: 2020, label: '2020' },
+        ]}
+        selected={props.annee}
         onChange={(e) => props.setAnnee(e.target.value)}
         messageType={props.errors.includes('annee') ? 'error' : null}
         required
