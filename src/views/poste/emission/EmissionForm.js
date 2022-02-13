@@ -6,6 +6,7 @@ import TypeSelector from './emissionForm/TypeSelector'
 import LocationSelector from './emissionForm/LocationSelector'
 import UnitSelector from './emissionForm/UnitSelector'
 import ValueInput from './emissionForm/ValueInput'
+import EmissionFactor from './emissionForm/EmissionFactor'
 import NoteInput from './emissionForm/NoteInput'
 
 const StyledCol = styled(Col)`
@@ -73,6 +74,15 @@ export default function EmissionForm(props) {
             onChange={props.setUnite}
             type={props.type}
             localisation={props.localisation}
+          />
+        </StyledCol>
+      </Row>
+      <Row gutters>
+        <StyledCol n='6' offset='6'>
+          <EmissionFactor
+            type={props.type}
+            localisation={props.localisation}
+            unite={props.unite}
           />
         </StyledCol>
       </Row>
