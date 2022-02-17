@@ -38,7 +38,7 @@ export function useSignup() {
 
   return useMutation((user) =>
     axios.post(`${apiUrl}/ademeAccount/`, user, {
-      'Content-Type': 'multipart/form-data',
+      'Content-Type': 'application/json',
       'X-CSRFToken': csrfToken,
     })
   )
