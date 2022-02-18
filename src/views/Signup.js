@@ -8,6 +8,9 @@ import {
   ButtonGroup,
   Alert,
   Text,
+  Callout,
+  CalloutText,
+  CalloutTitle,
 } from '@dataesr/react-dsfr'
 
 import { useSignup } from 'hooks/useUser'
@@ -20,8 +23,18 @@ export default function Signup() {
   const [cgu, setCgu] = useState(false)
 
   const mutation = useSignup()
-
-  return (
+  console.log(mutation)
+  return mutation.isSuccess ? (
+    <Callout hasInfoIcon={false}>
+      <CalloutTitle as='h1'>Votre compte a bien été créé</CalloutTitle>
+      <CalloutText>
+        Vous allez recevoir un email sous peu afin de l'activer.
+      </CalloutText>
+      <MagicLink to='/'>
+        <Button title='retour'>Retourner à l'accueil</Button>
+      </MagicLink>
+    </Callout>
+  ) : (
     <>
       <Row gutters>
         <Col>
@@ -29,19 +42,12 @@ export default function Signup() {
             onSubmit={(e) => {
               e.preventDefault()
 
-              mutation.mutate(
-                {
-                  email,
-                  firstname,
-                  lastname,
-                  cgu,
-                },
-                {
-                  onSuccess: () => {
-                    console.log('wouh')
-                  },
-                }
-              )
+              mutation.mutate({
+                email,
+                firstname,
+                lastname,
+                cgu,
+              })
             }}
           >
             <TextInput
@@ -83,7 +89,11 @@ export default function Signup() {
               <Button submit>Valider</Button>
             </ButtonGroup>
             {mutation.isError && (
-              <Alert type='error' title='Une erreur est survenue' />
+              <Alert
+                type='error'
+                title='Une erreur est survenue'
+                description={mutation?.error?.response?.data?.message}
+              />
             )}
           </form>
         </Col>
