@@ -25,10 +25,13 @@ export default function Header() {
         </FooterBodyItem>
       </FooterBody>
       <FooterBottom>
-        <FooterLink href='/'>accessibilité : non conforme</FooterLink>
-        <FooterLink href='/'>mentions légales</FooterLink>
-        <FooterLink href='/'>données personnelles</FooterLink>
-        <FooterLink href='/'>gestion des cookies</FooterLink>
+        <FooterLink href='/mentionslegales'>
+          accessibilité : non conforme
+        </FooterLink>
+        <FooterLink href='/mentionslegales'>mentions légales</FooterLink>
+        <FooterLink href='/mentionslegales'>données personnelles</FooterLink>
+        <FooterLink href='/mentionslegales'>gestion des cookies</FooterLink>
+        <FooterLink href='/contact'>contact</FooterLink>
       </FooterBottom>
     </Footer>
   )

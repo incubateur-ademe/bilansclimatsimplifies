@@ -1,12 +1,17 @@
 import React from 'react'
-import styled from 'styled-components'
-import { Row, Col, Text, Title } from '@dataesr/react-dsfr'
+import {
+  Row,
+  Col,
+  Text,
+  Title,
+  Callout,
+  CalloutTitle,
+  CalloutText,
+} from '@dataesr/react-dsfr'
 
-import ContactForm from './home/ContactForm'
+import MagicLink from 'components/base/MagicLink'
+import AdemeLoginButtons from './home/AdemeLoginButtons'
 
-const StyledText = styled(Text)`
-  margin-bottom: 0.75rem;
-`
 export default function Home() {
   return (
     <>
@@ -14,21 +19,11 @@ export default function Home() {
         <Col>
           <Title as='h1'>Bilans Climat Simplifiés</Title>
           <Text size='lead'>
-            Vous êtes une entreprise employant entre 50 et 500 salariés et avez reçu une
-            aide de l’Etat dans le cadre du Plan de Relance ? Vous pourrez
-            prochainement calculer et publier votre Bilan Climat Simplifié sur
-            ce site.
+            Vous êtes une entreprise employant entre 50 et 500 salariés et avez
+            reçu une aide de l’Etat dans le cadre du Plan de Relance ? Calculez
+            et publiez votre Bilan Climat Simplifié sur ce site.
           </Text>
-        </Col>
-      </Row>
-      <Row gutters alignItems='middle'>
-        <Col>
-          <ContactForm />
-        </Col>
-      </Row>
-      <Row gutters alignItems='middle'>
-        <Col>
-          <StyledText>
+          <Text>
             Le Bilan Climat Simplifié prévu au{' '}
             <a
               href='https://www.legifrance.gouv.fr/jorf/article_jo/JORFARTI000042753853'
@@ -39,8 +34,8 @@ export default function Home() {
             </a>{' '}
             porte sur les émissions de Gaz à Effet de Serre (GES) directes
             produites par les sources d'énergie fixes et mobiles nécessaires aux
-            activités de votre entreprise :{' '}
-          </StyledText>
+            activités de votre entreprise :
+          </Text>
           <ul>
             <li>
               Le poste 1 du Bilan Climat Simplifié correspond aux émissions
@@ -53,12 +48,30 @@ export default function Home() {
               entreprise.
             </li>
           </ul>
-          <StyledText>
+          <Text>
             Le calculateur de ce site vous proposera selon une approche de
             contrôle opérationnel d’identifier et de quantifier ces émissions de
             façon cohérente avec la méthodologie réglementaire relative à
             l’article R. 229-49 du code de l’environnement.
-          </StyledText>
+          </Text>
+        </Col>
+      </Row>
+      <Row gutters alignItems='middle'>
+        <Col>
+          <AdemeLoginButtons />
+        </Col>
+      </Row>
+      <Row>
+        <Col>
+          <Callout hasInfoIcon={false}>
+            <CalloutTitle>Consulter les bilans</CalloutTitle>
+            <CalloutText>
+              Vous pouvez télécharger un export de l'ensemble des bilans ici :{' '}
+              <MagicLink to='https://data.ademe.fr/datasets/bilans-climat-simplifies'>
+                https://data.ademe.fr/datasets/bilans-climat-simplifies
+              </MagicLink>
+            </CalloutText>
+          </Callout>
         </Col>
       </Row>
     </>
