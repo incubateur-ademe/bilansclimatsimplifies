@@ -25,7 +25,7 @@ export default function Contact() {
         <form
           onSubmit={(e) => {
             e.preventDefault()
-            mutation.mutate(email)
+            mutation.mutate({ name, email, message })
           }}
         >
           <Title as='h4'>Contact</Title>
