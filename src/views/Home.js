@@ -25,13 +25,9 @@ export default function Home() {
           </Text>
           <Text>
             Le Bilan Climat Simplifié prévu au{' '}
-            <a
-              href='https://www.legifrance.gouv.fr/jorf/article_jo/JORFARTI000042753853'
-              target='_blank'
-              rel='noreferrer'
-            >
+            <MagicLink to='https://www.legifrance.gouv.fr/jorf/article_jo/JORFARTI000042753853'>
               1° du I de l'article 244 de la loi n° 2020-1721
-            </a>{' '}
+            </MagicLink>{' '}
             porte sur les émissions de Gaz à Effet de Serre (GES) directes
             produites par les sources d'énergie fixes et mobiles nécessaires aux
             activités de votre entreprise :
@@ -56,29 +52,17 @@ export default function Home() {
           </Text>
           <Text>
             Pour plus d’informations, vous pouvez consulter la{' '}
-            <a
-              href='https://www.economie.gouv.fr/files/files/directions_services/plan-de-relance/FAQ_Entreprises_France_Relance.pdf?v=1643372205'
-              target='_blank'
-              rel='noreferrer'
-            >
+            <MagicLink to='https://www.economie.gouv.fr/files/files/directions_services/plan-de-relance/FAQ_Entreprises_France_Relance.pdf?v=1643372205'>
               FAQ dédiée
-            </a>{' '}
+            </MagicLink>{' '}
             ainsi que la{' '}
-            <a
-              href='https://www.economie.gouv.fr/files/files/directions_services/plan-de-relance/Tableau_mesures_Article_244_LFI_2021_v1412.pdf?v=1643372205'
-              target='_blank'
-              rel='noreferrer'
-            >
+            <MagicLink to='https://www.economie.gouv.fr/files/files/directions_services/plan-de-relance/Tableau_mesures_Article_244_LFI_2021_v1412.pdf?v=1643372205'>
               liste des mesures concernées du plan France Relance
-            </a>{' '}
+            </MagicLink>{' '}
             disponibles sur le{' '}
-            <a
-              href='https://www.economie.gouv.fr/plan-de-relance/documents-utiles'
-              target='_blank'
-              rel='noreferrer'
-            >
+            <MagicLink to='https://www.economie.gouv.fr/plan-de-relance/documents-utiles'>
               site du Ministère de l’économie des finances et de la relance
-            </a>{' '}
+            </MagicLink>
             .
           </Text>
         </Col>
