@@ -54,6 +54,33 @@ export default function Home() {
             façon cohérente avec la méthodologie réglementaire relative à
             l’article R. 229-49 du code de l’environnement.
           </Text>
+          <Text>
+            Pour plus d’informations, vous pouvez consulter la{' '}
+            <a
+              href='https://www.economie.gouv.fr/files/files/directions_services/plan-de-relance/FAQ_Entreprises_France_Relance.pdf?v=1643372205'
+              target='_blank'
+              rel='noreferrer'
+            >
+              FAQ dédiée
+            </a>{' '}
+            ainsi que la{' '}
+            <a
+              href='https://www.economie.gouv.fr/files/files/directions_services/plan-de-relance/Tableau_mesures_Article_244_LFI_2021_v1412.pdf?v=1643372205'
+              target='_blank'
+              rel='noreferrer'
+            >
+              liste des mesures concernées du plan France Relance
+            </a>{' '}
+            disponibles sur le{' '}
+            <a
+              href='https://www.economie.gouv.fr/plan-de-relance/documents-utiles'
+              target='_blank'
+              rel='noreferrer'
+            >
+              site du Ministère de l’économie des finances et de la relance
+            </a>{' '}
+            .
+          </Text>
         </Col>
       </Row>
       <Row gutters alignItems='middle'>
