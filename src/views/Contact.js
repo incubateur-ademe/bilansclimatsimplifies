@@ -25,7 +25,12 @@ export default function Contact() {
         <form
           onSubmit={(e) => {
             e.preventDefault()
-            mutation.mutate({ 'form-name': 'contact', name, email, message })
+            const formData = new URLSearchParams()
+            formData.append('form-name', 'contact')
+            formData.append('name', name)
+            formData.append('email', email)
+            formData.append('message', message)
+            mutation.mutate(formData)
           }}
         >
           <Title as='h4'>Contact</Title>
