@@ -25,12 +25,11 @@ export default function Contact() {
         <form
           onSubmit={(e) => {
             e.preventDefault()
-            mutation.mutate({ name, email, message })
+            mutation.mutate({ 'form-name': 'contact', name, email, message })
           }}
         >
           <Title as='h4'>Contact</Title>
           <Text>Vous avez une question ? Contactez nous via ce formulaire</Text>
-          <input type='hidden' name='form-name' value='contact' />
           <TextInput
             value={email}
             onChange={(e) => {
