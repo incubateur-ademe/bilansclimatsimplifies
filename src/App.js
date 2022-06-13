@@ -8,6 +8,7 @@ import Web from 'components/layout/Web'
 import Home from 'views/Home'
 import Contact from 'views/Contact'
 import MentionsLegales from 'views/MentionsLegales'
+import Accessibility from 'views/Accessibility'
 import NewBilan from 'views/NewBilan'
 import EditBilan from 'views/EditBilan'
 import TypeBilan from 'views/TypeBilan'
@@ -52,6 +53,9 @@ function App() {
               </Route>
               <Route path='/mentionslegales'>
                 <MentionsLegales />
+              </Route>
+              <Route path='/accessibilite'>
+                <Accessibility />
               </Route>
               <Route path='/inscription'>
                 <Signup />

@@ -25,7 +25,7 @@ export default function Header() {
         </FooterBodyItem>
       </FooterBody>
       <FooterBottom>
-        <FooterLink href='/mentionslegales'>
+        <FooterLink href='/accessibilite'>
           accessibilité : non conforme
         </FooterLink>
         <FooterLink href='/mentionslegales'>mentions légales</FooterLink>
