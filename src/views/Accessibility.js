@@ -1,6 +1,8 @@
 import React from 'react'
 import { Row, Col, Text, Title } from '@dataesr/react-dsfr'
 
+import MagicLink from 'components/base/MagicLink'
+
 export default function MentionsLegales() {
   return (
     <Row>
@@ -157,10 +159,17 @@ export default function MentionsLegales() {
           disposition :
         </Text>
         <ul>
-          <li>un formulaire de contact ;</li>
           <li>
-            la liste du ou des délégués de votre région avec leurs informations
-            de contact direct ;
+            <MagicLink to='https://formulaire.defenseurdesdroits.fr/defenseur/code/afficher.php?ETAPE=informations'>
+              un formulaire de contact
+            </MagicLink>{' '}
+            ;
+          </li>
+          <li>
+            <MagicLink to='www.defenseurdesdroits.fr/office/'>
+              la liste du ou des délégués de votre région
+            </MagicLink>{' '}
+            avec leurs informations de contact direct ;
           </li>
           <li>un numéro de téléphone : 09 69 39 00 00 ;</li>
           <li>
