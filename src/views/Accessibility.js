@@ -141,9 +141,9 @@ export default function MentionsLegales() {
           accès, dans un délai raisonnable, aux informations et fonctionnalités
           recherchées par la personne handicapée, que le contenu fasse l'objet
           d'une dérogation ou non. L’ADEME invite les personnes qui
-          rencontreraient des difficultés à la contacter [xxx] afin qu’une
-          assistance puisse être apportée (alternative accessible, information
-          et contenu donnés sous une autre forme).
+          rencontreraient des difficultés à la contacter (rgaa@ademe.fr) afin
+          qu’une assistance puisse être apportée (alternative accessible,
+          information et contenu donnés sous une autre forme).
         </Text>
         <Title as='h2' look='h2'>
           Voies de recours
