@@ -135,9 +135,11 @@ export default function MentionsLegales() {
           Il est important de rappeler qu’en vertu de l’article 11 de la loi de
           février 2005 :
           <br />
-          « la personne handicapée a droit à la compensation des conséquences de
-          son handicap, quels que soient l’origine et la nature de sa
-          déficience, son âge ou son mode de vie. »
+          <blockquote>
+            « la personne handicapée a droit à la compensation des conséquences
+            de son handicap, quels que soient l’origine et la nature de sa
+            déficience, son âge ou son mode de vie. »
+          </blockquote>
           <br />
           L’ADEME s'engage à prendre les moyens nécessaires afin de donner
           accès, dans un délai raisonnable, aux informations et fonctionnalités
@@ -166,7 +168,7 @@ export default function MentionsLegales() {
             ;
           </li>
           <li>
-            <MagicLink to='www.defenseurdesdroits.fr/office/'>
+            <MagicLink to='https://www.defenseurdesdroits.fr/office/'>
               la liste du ou des délégués de votre région
             </MagicLink>{' '}
             avec leurs informations de contact direct ;
