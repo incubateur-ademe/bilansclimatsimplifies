@@ -9,14 +9,12 @@ import Home from 'views/Home'
 import Contact from 'views/Contact'
 import MentionsLegales from 'views/MentionsLegales'
 import Accessibility from 'views/Accessibility'
-import NewBilan from 'views/NewBilan'
 import EditBilan from 'views/EditBilan'
 import TypeBilan from 'views/TypeBilan'
 import TotauxBilan from 'views/TotauxBilan'
 import Poste from 'views/Poste'
 import Bilans from 'views/Bilans'
 import Bilan from 'views/Bilan'
-import Signup from 'views/Signup'
 
 const queryClient = new QueryClient()
 
@@ -27,9 +25,9 @@ function App() {
         <AuthProvider>
           <Web>
             <Switch>
-              <PrivateRoute path='/bilans/nouveau'>
+              {/* <PrivateRoute path='/bilans/nouveau'>
                 <NewBilan />
-              </PrivateRoute>
+              </PrivateRoute> */}
               <PrivateRoute path='/bilans/:id/infos'>
                 <EditBilan />
               </PrivateRoute>
@@ -57,9 +55,9 @@ function App() {
               <Route path='/accessibilite'>
                 <Accessibility />
               </Route>
-              <Route path='/inscription'>
+              {/* <Route path='/inscription'>
                 <Signup />
-              </Route>
+              </Route> */}
               <Route path='/'>
                 <Home />
               </Route>

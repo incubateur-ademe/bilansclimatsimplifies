@@ -10,7 +10,6 @@ import {
 } from '@dataesr/react-dsfr'
 
 import MagicLink from 'components/base/MagicLink'
-import AdemeLoginButtons from './home/AdemeLoginButtons'
 
 export default function Home() {
   return (
@@ -65,11 +64,6 @@ export default function Home() {
             </MagicLink>
             .
           </Text>
-        </Col>
-      </Row>
-      <Row gutters alignItems='middle'>
-        <Col>
-          <AdemeLoginButtons />
         </Col>
       </Row>
       <Row>
